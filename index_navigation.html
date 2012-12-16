@@ -1,0 +1,80 @@
+<html>
+
+<head>
+<title>webGFX</title>
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v2.0
+  if (document.images) {
+    var imgFiles = MM_preloadImages.arguments;
+    if (document.preloadArray==null) document.preloadArray = new Array();
+    var i = document.preloadArray.length;
+    with (document) for (var j=0; j<imgFiles.length; j++) if (imgFiles[j].charAt(0)!="#"){
+      preloadArray[i] = new Image;
+      preloadArray[i++].src = imgFiles[j];
+  } }
+}
+
+function MM_swapImgRestore() { //v2.0
+  if (document.MM_swapImgData != null)
+    for (var i=0; i<(document.MM_swapImgData.length-1); i+=2)
+      document.MM_swapImgData[i].src = document.MM_swapImgData[i+1];
+}
+
+function MM_swapImage() { //v2.0
+  var i,j=0,objStr,obj,swapArray=new Array,oldArray=document.MM_swapImgData;
+  for (i=0; i < (MM_swapImage.arguments.length-2); i+=3) {
+    objStr = MM_swapImage.arguments[(navigator.appName == 'Netscape')?i:i+1];
+    if ((objStr.indexOf('document.layers[')==0 && document.layers==null) ||
+        (objStr.indexOf('document.all[')   ==0 && document.all   ==null))
+      objStr = 'document'+objStr.substring(objStr.lastIndexOf('.'),objStr.length);
+    obj = eval(objStr);
+    if (obj != null) {
+      swapArray[j++] = obj;
+      swapArray[j++] = (oldArray==null || oldArray[j-1]!=obj)?obj.src:oldArray[j];
+      obj.src = MM_swapImage.arguments[i+2];
+  } }
+  document.MM_swapImgData = swapArray; //used for restore
+}
+//-->
+</script>
+
+</head>
+
+<body text="#FFFFFF" topmargin="0" leftmargin="0" bgcolor="#ffffff" 
+onLoad="MM_preloadImages('item11.jpg','#923500004468');
+MM_preloadImages('item12.jpg','#923500025296');
+MM_preloadImages('item13.jpg','#923500033281');
+MM_preloadImages('item14.jpg','#923500040015');
+MM_preloadImages('item15.jpg','#923500046109');
+MM_preloadImages('item16.jpg','#923500052906');
+MM_preloadImages('item17.jpg','#923500059125');
+MM_preloadImages('item18.jpg','#923500065625');
+MM_preloadImages('item19.jpg','#923500071687');
+MM_preloadImages('item20.jpg','#923500077875');">
+<table border="0" cellspacing="0" cellpadding="0" width="110">
+  <tr>
+    <td valign="top" align="right" height="6"></td>
+    <td valign="top" align="right" height="6"></td>
+  </tr>
+  <tr>
+    
+    <td valign="top" align="right"><img src="images/nav3s_line1_1.jpg" WIDTH="104" HEIGHT="14"><br>
+      <a href="index.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('document.button1','document.button1','item11.jpg','#923500004468')"><img src="item1.jpg" name="button1" border="0" WIDTH="104" HEIGHT="20"></a><br>
+      <img src="images/nav3s_line4_1.jpg" WIDTH="104" HEIGHT="33"><br>
+      <a href="index.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('document.button3','document.button3','item12.jpg','#923500025296')"><img src="item2.jpg" name="button3" border="0" WIDTH="104" HEIGHT="33"></a><br>
+      <a href="index.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('document.button4','document.button4','item13.jpg','#923500033281')"><img src="item3.jpg" name="button4" border="0" WIDTH="104" HEIGHT="36"></a><br>
+      <a href="index.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('document.button5','document.button5','item14.jpg','#923500040015')"><img src="item4.jpg" name="button5" border="0" WIDTH="104" HEIGHT="32"></a><br>
+      <img src="images/nav3s_line8_1.jpg" WIDTH="104" HEIGHT="14"><br>
+      <a href="navigation.html#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('document.button6','document.button6','item15.jpg','#923500046109')"><img src="item5.jpg" name="button6" border="0" WIDTH="104" HEIGHT="32"></a><br>
+      <a href="navigation.html#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('document.button7','document.button7','item16.jpg','#923500052906')"><img src="item6.jpg" name="button7" border="0" WIDTH="104" HEIGHT="33"></a><br>
+      <a href="navigation.html#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('document.button8','document.button8','item17.jpg','#923500059125')"><img src="item7.jpg" name="button8" border="0" WIDTH="104" HEIGHT="33"></a><br>
+      <img src="images/nav3s_line8_1.jpg" WIDTH="104" HEIGHT="14"><br>
+      <a href="navigation.html#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('document.button9','document.button9','item18.jpg','#923500065625')"><img src="item8.jpg" name="button9" border="0" WIDTH="104" HEIGHT="33"></a><br>
+      <a href="navigation.html#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('document.button10','document.button10','item19.jpg','#923500071687')"><img src="item9.jpg" name="button10" border="0" WIDTH="104" HEIGHT="32"></a><br>
+      <a href="navigation.html#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('document.button11','document.button11','item20.jpg','#923500077875')"><img src="item10.jpg" name="button11" border="0" WIDTH="104" HEIGHT="37"></a></td>
+<td valign="top" align="right">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>
