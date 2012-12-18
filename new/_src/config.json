@@ -1,0 +1,8 @@
+{
+	"output": "./../",
+	"locals": {
+		"url": "http://localhost:8080",
+		"owner": "Thomas Wolter",
+		"name": "Thomas' Homepage"
+	}
+}

@@ -1,0 +1,27 @@
+!!! 5
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title
+      block title
+        = locals.name
+    link(rel='stylesheet', href='css/normalize.css')
+    link(rel='stylesheet', href='css/style.css')
+    block styles
+    block scripts
+  body
+    header
+      div.inner
+          a(href='/')
+            img(src='img/logo.png')
+            h1= locals.name
+          nav
+            a.nav-snake(href='snake.html') Rubik's Snake
+            a.nav-atompuzzle(href='atompuzzle.html') AtomPuzzle
+    div#content
+      block content
+        h2 Welcome to zombocom!
+    footer
+      div.inner
+        block footer
+          p &copy; #{ new Date().getFullYear() } #{ locals.owner }

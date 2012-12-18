@@ -1,0 +1,20 @@
+{
+	"template": "index.jade",
+	"figures": [
+		{"filename": "transport.png", "title": "Transport", "data":"10R2-10L2-8L2-7R2-5R2-5L2-2R2"},
+		{"filename": "compact1.png", "title": "Kompakt 1", "data":"1R3-3L2-4R3-3R2-5R1-5L2-6R3-7L2-7R3-6L2-8R1-8L2-9R3-11L2-12R1-9L2"},
+		{"filename": "compact2.png", "title": "Kompakt 2", "data":"1R2-2L1-3R3-4R3-4L2-5L2-5R1-6L2-6R3-9L1-11R2-12L2-10L3-9R2"},
+		{"filename": "transport.png", "title": "Transport", "data":"10R2-10L2-8L2-7R2-5R2-5L2-2R2"},
+		{"filename": "compact1.png", "title": "Kompakt 1", "data":"1R3-3L2-4R3-3R2-5R1-5L2-6R3-7L2-7R3-6L2-8R1-8L2-9R3-11L2-12R1-9L2"},
+		{"filename": "compact2.png", "title": "Kompakt 2", "data":"1R2-2L1-3R3-4R3-4L2-5L2-5R1-6L2-6R3-9L1-11R2-12L2-10L3-9R2"},
+		{"filename": "transport.png", "title": "Transport", "data":"10R2-10L2-8L2-7R2-5R2-5L2-2R2"},
+		{"filename": "compact1.png", "title": "Kompakt 1", "data":"1R3-3L2-4R3-3R2-5R1-5L2-6R3-7L2-7R3-6L2-8R1-8L2-9R3-11L2-12R1-9L2"},
+		{"filename": "compact2.png", "title": "Kompakt 2", "data":"1R2-2L1-3R3-4R3-4L2-5L2-5R1-6L2-6R3-9L1-11R2-12L2-10L3-9R2"},
+		{"filename": "transport.png", "title": "Transport", "data":"10R2-10L2-8L2-7R2-5R2-5L2-2R2"},
+		{"filename": "compact1.png", "title": "Kompakt 1", "data":"1R3-3L2-4R3-3R2-5R1-5L2-6R3-7L2-7R3-6L2-8R1-8L2-9R3-11L2-12R1-9L2"},
+		{"filename": "compact2.png", "title": "Kompakt 2", "data":"1R2-2L1-3R3-4R3-4L2-5L2-5R1-6L2-6R3-9L1-11R2-12L2-10L3-9R2"},
+		{"filename": "transport.png", "title": "Transport", "data":"10R2-10L2-8L2-7R2-5R2-5L2-2R2"},
+		{"filename": "compact1.png", "title": "Kompakt 1", "data":"1R3-3L2-4R3-3R2-5R1-5L2-6R3-7L2-7R3-6L2-8R1-8L2-9R3-11L2-12R1-9L2"},
+		{"filename": "compact2.png", "title": "Kompakt 2", "data":"1R2-2L1-3R3-4R3-4L2-5L2-5R1-6L2-6R3-9L1-11R2-12L2-10L3-9R2"}
+	]
+}
