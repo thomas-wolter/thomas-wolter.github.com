@@ -11,35 +11,31 @@ $(document).ready(function() {
 	$('#3dviewer').hide();
 	$('#3dviewer').append(renderer.domElement);
 	
-	$('canvas').on('touchstart mousedown', function(ev){
+	$('canvas').on(TouchMouseEvent.DOWN, function(ev){
+		ev.preventDefault();
 			
-		switch(ev.which) {
-			case 1:
-				var lastX = ev.pageX;
-				var lastY = ev.pageY;
+		if(ev.originalEvent.which == 3) {
+			var canvas = $('canvas').get(0);
+			var dataUrl = canvas.toDataURL('image/png');
+			window.open(dataUrl, "toDataURL() image", "width=500, height=500");
+		} else {
+			var lastX = ev.pageX;
+			var lastY = ev.pageY;
 			
-				$('canvas').on('touchmove mousemove', function(ev) {
-					var diffX = ev.pageX - lastX;
-					var diffY = ev.pageY - lastY;
+			$('canvas').on(TouchMouseEvent.MOVE, function(ev) {
+				var diffX = ev.pageX - lastX;
+				var diffY = ev.pageY - lastY;
 				
-					snake.rotateCamera(-diffY * Math.PI/180, -diffX * Math.PI/180, 0);
+				snake.rotateCamera(-diffY * Math.PI/180, -diffX * Math.PI/180, 0);
 				
-					lastX = ev.pageX;
-					lastY = ev.pageY;
-				
-				});
-				break;
-			case 3:
-				ev.preventDefault();
-				var canvas = $('canvas').get(0);
-				var dataUrl = canvas.toDataURL('image/png');
-				window.open(dataUrl, "toDataURL() image", "width=500, height=500");
-				ev.preventDefault();
-				break;
-			default:
+				lastX = ev.pageX;
+				lastY = ev.pageY;
+			});
 		}
+		
+		return false;
 	});
-	$(document).on('touchend mouseup', function(){
-		$('canvas').off('touchmove mousemove');
+	$(document).on(TouchMouseEvent.UP, function(){
+		$('canvas').off(TouchMouseEvent.MOVE);
 	});
 });
