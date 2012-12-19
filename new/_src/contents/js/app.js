@@ -11,14 +11,14 @@ $(document).ready(function() {
 	$('#3dviewer').hide();
 	$('#3dviewer').append(renderer.domElement);
 	
-	$('canvas').mousedown(function(ev){
+	$('canvas').on('touchstart mousedown', function(ev){
 			
 		switch(ev.which) {
 			case 1:
 				var lastX = ev.pageX;
 				var lastY = ev.pageY;
 			
-				$('canvas').bind('mousemove', function(ev) {
+				$('canvas').on('touchmove mousemove', function(ev) {
 					var diffX = ev.pageX - lastX;
 					var diffY = ev.pageY - lastY;
 				
@@ -39,7 +39,7 @@ $(document).ready(function() {
 			default:
 		}
 	});
-	$(document).mouseup(function(){
-		$('canvas').unbind('mousemove');
+	$(document).on('touchend mouseup', function(){
+		$('canvas').off('touchmove mousemove');
 	});
 });
