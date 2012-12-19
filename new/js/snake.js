@@ -1,14 +1,10 @@
-$(document).ready(function() {
+(function (exports) {
+
+	var renderer, scene, camera;
+	var geometryEven, geometryOdd, materialEven, materialOdd;
+	var prisms = [];
 	
-	$('.fancybox').fancybox({
-        beforeLoad : function() {
-			var human = $(this.element).attr('data');
-			var notation = parseNotation(human);
-			build(notation);
-        }
-    });
-	
-	var map = {
+	var humanNotationToComputer = {
 		'1R' : 0,
 		'2L' : 1,
 		'2R' : 2,
@@ -34,27 +30,21 @@ $(document).ready(function() {
 		'12R' : 22,
 	};
 	
-	var camera, scene, renderer;
-	var geometryEven, geometryOdd, materialEven, materialOdd;
-	var pieces = [];
+	function parseNotation(humanNotation) {
+		var instructions = humanNotation.split(/-/g);
 
-	init();
-	
-	$('#3dviewer').hide();
-	
-	function parseNotation(human) {
-		var planes = human.split(/-/g);
-
-		var computer = [];
+		var computerNotation = [];
 		for(var i = 0; i < 24; i++) {
-		    computer.push(0);
+		    computerNotation.push(0);
 		}
-		planes.forEach(function(plane) {
-			var split_index = plane.search(/R|L/);
+		instructions.forEach(function(instruction) {
+			var split_index = instruction.search(/R|L/);
 	
-			var position = plane.substring(0,split_index+1);
-			var side = plane.substring(split_index,split_index+1);
-			var orientation = parseInt(plane.substring(split_index+1, plane.length));
+			var position = instruction.substring(0,split_index+1);
+			var side = instruction.substring(split_index,split_index+1);
+			var orientation = parseInt(instruction.substring(split_index+1, instruction.length));
+			
+			// transform human direction to computer clockwise notation
 			if(side === 'L') {
 				if (orientation === 3) {
 					orientation = 3;
@@ -63,88 +53,13 @@ $(document).ready(function() {
 				}
 			}
 	
-			computer[map[position]] = orientation;
+			computerNotation[humanNotationToComputer[position]] = orientation;
 		});
 		
-		return computer;
-	}
+		return computerNotation;
+	};
 	
-	function connect(left, right) {
-		var a1 = new THREE.Vector3(0,0,0);
-		a1.copy(left.children[0].geometry.right);
-		left.matrix.multiplyVector3(a1);
-		
-		var a2 = new THREE.Vector3(0,0,0);
-		a2.copy(right.children[0].geometry.left);
-		right.matrix.multiplyVector3(a2);
-		
-		var diff = new THREE.Vector3(0,0,0);
-		diff.sub(a1,a2);
-		
-		right.position.addSelf(diff);
-		right.updateMatrix();
-	}
-	
-	function computeQuaternion(mesh, angle) {
-		var inverseTransposeM = new THREE.Matrix4();
-		inverseTransposeM.getInverse(mesh.matrix);
-		inverseTransposeM.transpose();
-		
-		var n1 = new THREE.Vector3(0,0,0);
-		n1.copy(mesh.children[0].geometry.rightNormal);
-		inverseTransposeM.multiplyVector3(n1);
-		n1.normalize();
-		n1.x = Math.round(n1.x);
-		n1.y = Math.round(n1.y);
-		n1.z = Math.round(n1.z);
-		
-		var q = new THREE.Quaternion();
-		q.setFromAxisAngle(n1, angle * Math.PI/2);
-		return q;
-	}
-	
-	function build(notation) {
-	    scene = new THREE.Scene();
-		pieces = [];
-		
-		var Q = new THREE.Quaternion();
-		
-		var previous = null;
-		for(var i = 0; i < notation.length; i++) {
-			if(i % 2) {
-				// console.log('odd');
-				var mesh = THREE.SceneUtils.createMultiMaterialObject(geometryOdd, materialOdd);
-			} else {
-				var mesh = THREE.SceneUtils.createMultiMaterialObject(geometryEven, materialEven);
-			}
-			mesh.useQuaternion = true;
-			scene.add(mesh);
-			pieces.push(mesh);
-			
-			mesh.quaternion.copy(Q);
-			mesh.updateMatrix();
-			
-			Q.multiply(computeQuaternion(mesh, notation[i]),Q);
-			
-			if(previous !== null) {
-				connect(previous, mesh);
-			}
-			previous = mesh;
-		}
-		
-		var positions = pieces.map(function(mesh) {
-			return mesh.position;
-		})
-		var center = calculateCenter(positions);
-		
-		pieces.forEach(function(mesh) {
-			mesh.position.subSelf(center);
-		});
-		
-		setupCamera();
-	}
-	
-	function calculateCenter(vertices) {
+	function computeCenter(vertices) {
 		var center = new THREE.Vector3(0,0,0);
 		
 		vertices.forEach(function(vertex) {
@@ -154,9 +69,99 @@ $(document).ready(function() {
 		center.divideScalar(vertices.length);
 		
 		return center;
-	}
+	};
 	
-	function init() {
+	function connectPrisms(leftPrism, rightPrism) {
+		// because material groups are used for each prism
+		// the first child material is simply taken as the
+		// geometry is simply replicated for each material
+		var rightCenterInWorld = new THREE.Vector3(0,0,0);
+		rightCenterInWorld.copy(leftPrism.children[0].geometry.right);
+		leftPrism.matrix.multiplyVector3(rightCenterInWorld);
+		
+		var leftCenterInWorld = new THREE.Vector3(0,0,0);
+		leftCenterInWorld.copy(rightPrism.children[0].geometry.left);
+		rightPrism.matrix.multiplyVector3(leftCenterInWorld);
+		
+		var displacement = new THREE.Vector3(0,0,0);
+		displacement.sub(rightCenterInWorld,leftCenterInWorld);
+		
+		// move rightPrism by displacement to correct position
+		rightPrism.position.addSelf(displacement);
+		rightPrism.updateMatrix();
+	};
+	
+	function advanceQuaternion(mesh, angle) {
+		// transforming a normal requires the inverse transpose
+		// of the transformation matrix
+		var inverseTransposeM = new THREE.Matrix4();
+		inverseTransposeM.getInverse(mesh.matrix);
+		inverseTransposeM.transpose();
+		
+		var rightCenterNormal = new THREE.Vector3(0,0,0);
+		rightCenterNormal.copy(mesh.children[0].geometry.rightNormal);
+		
+		// transform normal to world space
+		inverseTransposeM.multiplyVector3(rightCenterNormal);
+		rightCenterNormal.normalize();
+		
+		// round the normal to always "snap" to the primary
+		// axis to avoid numerical instabilities for the rotation
+		rightCenterNormal.x = Math.round(rightCenterNormal.x);
+		rightCenterNormal.y = Math.round(rightCenterNormal.y);
+		rightCenterNormal.z = Math.round(rightCenterNormal.z);
+		
+		var q = new THREE.Quaternion();
+		q.setFromAxisAngle(rightCenterNormal, angle * Math.PI/2);
+		return q;
+	};
+	
+	function setupCamera() {
+		// WARNING: Both init() and build() have had to be executed
+		// before, as this function relies on globally set variables
+		
+		// to ensure that the figure is always visible using an
+		// orthographic camera the axis aligned bounding box
+		// is calculated and the longest side is used to define
+		// the view frustum of the camera
+		var minX = 99999;
+		var minY = 99999;
+		var minZ = 99999;
+		var maxX = -99999;
+		var maxY = -99999;
+		var maxZ = -99999;
+		prisms.forEach(function(prism) {
+			if(prism.position.x < minX) {
+				minX = prism.position.x;
+			} else if (prism.position.x > maxX) {
+				maxX = prism.position.x;
+			}
+			if(prism.position.y < minY) {
+				minY = prism.position.y;
+			} else if (prism.position.y > maxY) {
+				maxY = prism.position.y;
+			}
+			if(prism.position.z < minZ) {
+				minZ = prism.position.z;
+			} else if (prism.position.z > maxZ) {
+				maxZ = prism.position.z;
+			}
+		});
+		
+		var rangeX = maxX - minX;
+		var rangeY = maxY - minY;
+		var rangeZ = maxZ - minZ;
+		
+		var range = Math.max.apply(Math, [rangeX, rangeY, rangeZ]);
+		frustum = range;
+		
+		camera = new THREE.OrthographicCamera(-frustum, frustum, frustum, -frustum, -frustum, frustum);
+		camera.updateProjectionMatrix();	
+		
+	    renderer.render( scene, camera );
+	};
+	
+	exports.init = function(width, height) {
 		geometryEven = new THREE.Geometry();
 		geometryEven.vertices.push(new THREE.Vector3(0,-1,0));
 		geometryEven.vertices.push(new THREE.Vector3(0,0,0));
@@ -171,16 +176,16 @@ $(document).ready(function() {
 		geometryEven.faces.push(new THREE.Face4(1,2,5,4));
 		geometryEven.faces.push(new THREE.Face4(0,3,5,2));
 		
-		var c = calculateCenter(geometryEven.vertices);
+		var c = computeCenter(geometryEven.vertices);
 		geometryEven.vertices.forEach(function(vertex) {
 			vertex = vertex.subSelf(c);
 		});
 		
-		var r = calculateCenter([geometryEven.vertices[1],geometryEven.vertices[2],geometryEven.vertices[4],geometryEven.vertices[5]]);
+		var r = computeCenter([geometryEven.vertices[1],geometryEven.vertices[2],geometryEven.vertices[4],geometryEven.vertices[5]]);
 		geometryEven.right = r;
 		geometryEven.rightNormal = new THREE.Vector3(0,1,0);
 		
-		var l = calculateCenter([geometryEven.vertices[0],geometryEven.vertices[1],geometryEven.vertices[3],geometryEven.vertices[4]]);
+		var l = computeCenter([geometryEven.vertices[0],geometryEven.vertices[1],geometryEven.vertices[3],geometryEven.vertices[4]]);
 		geometryEven.left = l;
 		geometryEven.leftNormal = new THREE.Vector3(-1,0,0);
 		
@@ -198,16 +203,16 @@ $(document).ready(function() {
 		geometryOdd.faces.push(new THREE.Face4(1,4,5,2));
 		geometryOdd.faces.push(new THREE.Face4(0,2,5,3));
 		
-		var c = calculateCenter(geometryOdd.vertices);
+		var c = computeCenter(geometryOdd.vertices);
 		geometryOdd.vertices.forEach(function(vertex) {
 			vertex = vertex.subSelf(c);
 		});
 		
-		var r = calculateCenter([geometryOdd.vertices[1],geometryOdd.vertices[2],geometryOdd.vertices[4],geometryOdd.vertices[5]]);
+		var r = computeCenter([geometryOdd.vertices[1],geometryOdd.vertices[2],geometryOdd.vertices[4],geometryOdd.vertices[5]]);
 		geometryOdd.right = r;
 		geometryOdd.rightNormal = new THREE.Vector3(1,0,0);
 		
-		var l = calculateCenter([geometryOdd.vertices[0],geometryOdd.vertices[1],geometryOdd.vertices[3],geometryOdd.vertices[4]]);;
+		var l = computeCenter([geometryOdd.vertices[0],geometryOdd.vertices[1],geometryOdd.vertices[3],geometryOdd.vertices[4]]);;
 		geometryOdd.left = l;
 		geometryOdd.leftNormal = new THREE.Vector3(0,-1,0);
 		
@@ -222,97 +227,61 @@ $(document).ready(function() {
 
 	    renderer = new THREE.CanvasRenderer();
 	    renderer.setSize( 500, 500 );
-
-	    $('#3dviewer').append( renderer.domElement );
 		
-		$('canvas').mousedown(function(ev){
-			
-			switch(ev.which) {
-				case 1:
-					var lastX = ev.pageX;
-					var lastY = ev.pageY;
-			
-					$('canvas').bind('mousemove', function(ev) {
-						var diffX = ev.pageX - lastX;
-						var diffY = ev.pageY - lastY;
-				
-						camera.rotation.y -= diffX * Math.PI/180;
-						camera.rotation.x -= diffY * Math.PI/180;
-						camera.updateProjectionMatrix();
-				
-						lastX = ev.pageX;
-						lastY = ev.pageY;
-				
-					    renderer.render( scene, camera );
-					});
-					break;
-				case 3:
-					ev.preventDefault();
-					var canvas = $('canvas').get(0);
-					var dataUrl = canvas.toDataURL('image/png');
-					window.open(dataUrl, "toDataURL() image", "width=500, height=500");
-					ev.preventDefault();
-					break;
-				default:
+		return renderer;
+	};
+	
+	exports.build = function(humanNotation) {
+	    scene = new THREE.Scene();
+		prisms = [];
+		
+		var computerNotation = parseNotation(humanNotation);
+		
+		// after adding a new prism its exit direction
+		// is cumulated in this quaternion to be used to
+		// orient the next prism
+		var Q = new THREE.Quaternion();
+		var previous = null;
+		
+		for(var i = 0; i < computerNotation.length; i++) {
+			if(i % 2) {
+				var mesh = THREE.SceneUtils.createMultiMaterialObject(geometryOdd, materialOdd);
+			} else {
+				var mesh = THREE.SceneUtils.createMultiMaterialObject(geometryEven, materialEven);
 			}
+			mesh.useQuaternion = true;
+			scene.add(mesh);
+			prisms.push(mesh);
+			
+			mesh.quaternion.copy(Q);
+			mesh.updateMatrix();
+			
+			Q.multiply(advanceQuaternion(mesh, computerNotation[i]),Q);
+			
+			if(previous !== null) {
+				connectPrisms(previous, mesh);
+			}
+			previous = mesh;
+		}
+		
+		// center each figure around 0,0,0
+		var positions = prisms.map(function(prism) {
+			return prism.position;
+		})
+		var center = computeCenter(positions);
+		prisms.forEach(function(prism) {
+			prism.position.subSelf(center);
 		});
-		$(document).mouseup(function(){
-			$('canvas').unbind('mousemove');
-		}); 
-	}
+		
+		setupCamera();
+	};
 	
-	function setupCamera() {
+	exports.rotateCamera = function(rotationX, rotationY, rotationZ) {
+		camera.rotation.x += rotationX;
+		camera.rotation.y += rotationY;
+		camera.rotation.z += rotationZ;
 		
-		var center = new THREE.Vector3(0,0,0);
-		
-		var minX = 99999;
-		var minY = 99999;
-		var minZ = 99999;
-		var maxX = -99999;
-		var maxY = -99999;
-		var maxZ = -99999;
-		pieces.forEach(function(piece) {
-			center.addSelf(piece.position);
-			
-			if(piece.position.x < minX) {
-				minX = piece.position.x;
-			} else if (piece.position.x > maxX) {
-				maxX = piece.position.x;
-			}
-			if(piece.position.y < minY) {
-				minY = piece.position.y;
-			} else if (piece.position.y > maxY) {
-				maxY = piece.position.y;
-			}
-			if(piece.position.z < minZ) {
-				minZ = piece.position.z;
-			} else if (piece.position.z > maxZ) {
-				maxZ = piece.position.z;
-			}
-		});
-		center = center.divideScalar(pieces.length);
-		
-		var rangeX = maxX - minX;
-		var rangeY = maxY - minY;
-		var rangeZ = maxZ - minZ;
-		
-		var range = Math.max.apply(Math, [rangeX, rangeY, rangeZ]);
-		frustum = range;
-		
-		camera = new THREE.OrthographicCamera(-frustum, frustum, frustum, -frustum, -frustum, frustum);
-		camera.updateProjectionMatrix();	
-		
-	    renderer.render( scene, camera );	
-	}
-
-	function animate() {
-	
-	    // note: three.js includes requestAnimationFrame shim
-	    requestAnimationFrame( animate );
-	
-	    // mesh.rotation.x += 0.01;
-	    // mesh.rotation.y += 0.02;
-	
+		camera.updateProjectionMatrix();
 	    renderer.render( scene, camera );
 	}
-});
+})(typeof exports === 'undefined'? this['snake']={} : exports);
