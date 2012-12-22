@@ -43,15 +43,6 @@
 			var position = instruction.substring(0,split_index+1);
 			var side = instruction.substring(split_index,split_index+1);
 			var orientation = parseInt(instruction.substring(split_index+1, instruction.length));
-			
-			// transform human direction to computer clockwise notation
-			if(side === 'L') {
-				if (orientation === 3) {
-					orientation = 3;
-				} else if (orientation === 1) {
-					orientation = 1;
-				}
-			}
 	
 			computerNotation[humanNotationToComputer[position]] = orientation;
 		});
@@ -226,7 +217,7 @@
 		];
 
 	    renderer = new THREE.CanvasRenderer();
-	    renderer.setSize( 500, 500 );
+	    renderer.setSize( width, height );
 		
 		return renderer;
 	};
