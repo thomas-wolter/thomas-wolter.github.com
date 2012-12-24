@@ -15,7 +15,7 @@ block content
 	each figure in page.metadata.figures
 		.figure 
 			a.fancybox(href="#3dviewer",data=figure.data,title=figure.title)
-				img(src="img/"+figure.filename,alt=figure.title,width="130px",height="130px")
+				img(src="img/figures/easy/"+figure.filename,alt=figure.title,width="130px",height="130px")
 			p.title #{figure.title}
 			- var breakable = figure.data.replace(/-/g,'-&#8203;')
 			p #{breakable}
