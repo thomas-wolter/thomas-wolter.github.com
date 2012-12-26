@@ -43,8 +43,10 @@
 			var position = instruction.substring(0,split_index+1);
 			var side = instruction.substring(split_index,split_index+1);
 			var orientation = parseInt(instruction.substring(split_index+1, instruction.length));
-	
-			computerNotation[humanNotationToComputer[position]] = orientation;
+
+			if(position.length != 0 && side.length !=0 && !isNaN(orientation)) {
+				computerNotation[humanNotationToComputer[position]] = orientation;
+			}
 		});
 		
 		return computerNotation;
