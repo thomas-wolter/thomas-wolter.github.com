@@ -44,6 +44,14 @@
 			var side = instruction.substring(split_index,split_index+1);
 			var orientation = parseInt(instruction.substring(split_index+1, instruction.length));
 
+			if (side === 'R') {
+				if (orientation === 1) {
+					orientation = 3;
+				} else if (orientation === 3) {
+					orientation = 1;
+				} 
+			};
+
 			if(position.length != 0 && side.length !=0 && !isNaN(orientation)) {
 				computerNotation[humanNotationToComputer[position]] = orientation;
 			}
