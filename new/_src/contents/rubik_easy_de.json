@@ -3,7 +3,7 @@
 	"figures": [
         {"filename": "pitti.png", "title": "Pitti", "data":"1R1-2L2-3R2-5L2-6R3-7L2-7R1-9L2-10R2-12L2-12R3"},
         {"filename": "speedboat.png", "title": "Schnellboot", "data":"2R1-4L1-6R1-5L3-4R2-7L2-7R3-9L1-9R2-10L3-11R3"},
-        {"filename": "smallship.png", "title": "Schiffchen", "data":"1R3-2R1-3L1-4L1-5R1-6L1-4R1-7R3-8R1-9L1-10L1-12L1-11R1-10R1"},
+        {"filename": "smallship.png", "title": "Schiffchen", "data":"1R3-2R1-3L1-4L1-5R1-6L1-4R1-7R3-7L3-8R1-9L1-10L1-12L1-11R1-10R1"},
         {"filename": "compact.png", "title": "Kompakt", "data":"1R3-3L2-4R3-3R2-5R1-5L2-6R3-7L2-7R3-6L2-8R1-8L2-9R3-11L2-12R1-9L2"},
         {"filename": "snowman.png", "title": "Schneemann", "data":"2L2-2R2-3R2-4L2-6L2-6R2-7R2-8L2-10L2-11R2-10R2-12L2"},
         {"filename": "compact2.png", "title": "Kompakt 2", "data":"1R2-2L3-3R3-4R3-4L2-5L2-5R1-6L2-6R3-9L3-11R2-12L2-10L1-9R2"},
