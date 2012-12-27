@@ -86,15 +86,6 @@ nav {
 	margin: 20px auto;
 }
 
-footer {
-	background: #c19161;
-	height: 30px;
-	line-height: 30px;
-	text-align: center;
-
-	font-size: 12px;
-}
-
 .figure {
 	width: 210px;
 	height: 310px;
@@ -136,4 +127,13 @@ footer {
 
 .clear {
 	clear: both;
+}
+
+footer {
+  background: #c19161;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+
+  font-size: 12px;
 }

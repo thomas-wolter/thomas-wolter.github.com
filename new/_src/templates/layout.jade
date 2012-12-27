@@ -24,14 +24,12 @@ html(lang='en')
           h1 THOMAS-WOLTER.DE
       nav.bottom-seperator
         .main-navigation
-          a(href='/') HOME
-          a(href='snake.html').selected RUBIK'S SNAKE
-          a(href='atompuzzle.html') ATOMPUZZLE
+          a(href='/', class="#{page.filename === "index.html" ? "selected" : ""}") HOME
+          a(href='rubik_notation_de.html', class="#{page.filename.indexOf('rubik') !== -1 ? "selected" : ""}") RUBIK'S SNAKE
+          a(href='atom_de.html', class="#{page.filename.indexOf('atom') !== -1 ? "selected" : ""}") ATOMPUZZLE
       nav
         .sub-navigation
-          a(href='notation.html') notation
-          a(href='easy_de.html').selected einfache figuren
-          a(href='hard_de.html') schwere figuren
+          block subnav
     #content
       block content
         h2 Welcome to zombocom!

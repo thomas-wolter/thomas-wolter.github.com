@@ -1,0 +1,6 @@
+extends layout
+
+block subnav
+  a(href='rubik_notation_de.html', class="#{page.filename.indexOf('notation') !== -1 ? "selected" : ""}") notation
+  a(href='rubik_easy_de.html', class="#{page.filename.indexOf('easy') !== -1 ? "selected" : ""}") einfache figuren
+  a(href='rubik_hard_de.html', class="#{page.filename.indexOf('hard') !== -1 ? "selected" : ""}") schwere figuren

@@ -1,15 +1,9 @@
-extends layout
+extends rubik
 
 block scripts
     script(src="js/app.js")
 
 block content
     each figure in page.metadata.figures
-        .figure 
-            p.title #{figure.title}
-            a.fancybox(href="#3dviewer",data=figure.data,title=figure.title)
-                img(src="img/figures/easy/"+figure.filename,alt=figure.title)
-            - var breakable = figure.data.replace(/-/g,'-&#8203;')
-            p.notation #{breakable}
-
+      include includes/figure_card
     #3dviewer
