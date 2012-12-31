@@ -1,0 +1,41 @@
+{
+  "template": "figures_list_manuals.jade",
+  "figures_de": [
+        {"filename": "cat.png", "title": "Katze", "data":"9R2-9L2-8L2-7R2-6R2-6L2-5L3-4L2-3R2-2R2-2L2"},
+        {"filename": "wolf.png", "title": "Wolf", "data":"2R2-3L2-4L2-5R2-6R2-7L2-8L2-10L2-10R2-12R2"},
+        {"filename": "cook.png", "title": "Hahn", "data":"2R2-3L2-4L3-5L3-5R3-7R2-8L2-9L1-6R3-6L2-10L1-9R2-10R1-11R1-12R2"},
+        {"filename": "terrier.png", "title": "Terrier", "data":"1R2-2R2-3L2-4L2-6L2-6R2-7R2-9L2-10L2-10R2"},
+        {"filename": "swan.png", "title": "Schwan", "data":"2L2-3L2-3R3-4L1-5L1-4R2-6L3-7L3-6R2-5R2-7R3-10L3-9L3-9R2-10R2-8R3-8L2-11L1-12R1-12L1-11R2"},
+        {"filename": "hexagon.png", "title": "Sechseck", "data":"3R3-5L3-7R3-9L3-11R3"},
+        {"filename": "triangle.png", "title": "Dreieck", "data":"4R1-5L1-8R1-9L1-12R1"},
+        {"filename": "parrot.png", "title": "Paradiesvogel", "data":"3R1-4L3-5L1-6L3-5R2-7L3-8L3-9L3-11L3-10L1-9R2-11R3-12R2"},
+        {"filename": "frog.png", "title": "Frosch", "data":"6R3-5R1-6L2-4R3-5L2-3R3-4L2-3L3-2L1-2R1-1R3-7R1-8R1-10R1-9R3-9L2-11L3-11R3-12L3-12R1"},
+        {"filename": "bow.png", "title": "Schleife", "data":"1R3-2L1-2R3-3L3-4R1-4L3-3R3-5L3-5R3-6L1-6R3-9L3-8R1-8L3-7R3-7L3-9R3-10L1-12R1-12L3-11R3-11L3-10R3"},
+        {"filename": "seal.png", "title": "Seehund", "data":"12R3-11R2-11L2-10L1-9R1-9L2-8L1-8R3-7R3-6R1-5R3-4R1-6L2-4L3-3R1-1R3-2L1-2R3-3L2"},
+        {"filename": "ball.png", "title": "Ball", "data":"1R1-2L3-2R3-3L1-3R1-4L1-4R1-5L3-5R3-12R3-12L3-11R3-11L3-10R1-10L1-9R1-9L1-8R3-8L3-7R1-6R3-6L3-7L1"},
+        {"filename": "snowflake.png", "title": "Schneeflocke", "data":"1R3-2L1-2R3-3L3-3R1-4L3-4R1-5L1-5R3-6L1-6R3-7L3-7R1-8L3-8R1-9L1-9R3-10L1-10R3-12L3-11R1-11L3-12R"},
+        {"filename": "propeller.png", "title": "Propeller", "data":"3L3-4L1-4R1-5L1-7L3-8L1-8R1-11L3-9L1-12L1-12R1"},
+        {"filename": "turtle.png", "title": "Schildkröte", "data":"1R1-2L3-2R1-3L1-5L1-4R3-4L1-3R1-6R3-6L1-5R2-7L3-8L3-8R1-9L2-7R3-9R3-10L3-11R3-12L3"}
+    ],
+  "figures_dk": [
+        {"filename": "duck.png", "title": "Ente", "data":"1R2-3R1-4R1-6L1-8R1-7L3-6R2-9R3-9L2-11L3-12L3"},
+        {"filename": "telephone.png", "title": "Telefon", "data":"4R1-5L3-5R3-7L1-6R3-6L3-10R1-11L3-11R3-12R3-12L3"},
+        {"filename": "flyingboat.png", "title": "Flugboot", "data":"1R1-2R3-3R1-4R3-6R1-7R3-7L2-9R1-10R3-11R1-12R3"},
+        {"filename": "penguin.png", "title": "Pinguin", "data":"2L2-2R2-3R2-4L2-5L1-6L1-5R2-6R3-7L1-9L3-8R1-8L1-7R1-9R3-11L1-10R3-10L3-11R1-12R2"},
+        {"filename": "frog3.png", "title": "Frosch", "data":"1R3-2R3-2L2-3L3-3R3-4L1-4R3-5L3-5R1-6L3-6R1-8L1-7R3-7L2-8R3-9L1-10L3-10R1-9R1-11L1-11R1-12R1-12L2"},
+        {"filename": "turtle2.png", "title": "Schildkröte", "data":"1R3-2L3-2R3-3L3-3R1-4L1-4R1-5R3-5L1-6R1-6L2-7L3-8L1-7R2-9R1-8R1-10L1-11R1-11L3-10R2-12L3"},
+        {"filename": "giantcobra.png", "title": "Riesen-Kobra", "data":"2L1-3L2-3R2-4R2-5L2-6L1-8R1-8L2-9L3-10L3-9R2-11L2-12L2"},
+        {"filename": "dog2.png", "title": "Hund", "data":"1R2-2L1-2R3-3L1-4R3-4L3-3R2-5R3-6L3-7R3-7L1-6R2-8L1-9L1-10L2-10R2-11R2-12L2"},
+        {"filename": "cat2.png", "title": "Katze", "data":"1R3-2L1-2R3-3R1-3L2-4L1-5L1-5R1-7L1-6R3-6L2-8L3-8R1-9L1-9R1-11L3-10R3-10L1-12R1-12L3-11R3"},
+        {"filename": "ostrich3.png", "title": "Strauß", "data":"1R2-3L1-2R2-3R3-4L1-4R1-5L1-6L3-5R1-6R3-7L3-8L1-7R3-8R1-9L2-10L2-12R2"},
+        {"filename": "airplane.png", "title": "Flugzeug", "data":"1R2-3R1-5R2-6L2-8L2-11R1-11L2-10L2-9R2"},
+        {"filename": "desk.png", "title": "Couch-Tisch", "data":"1R1-2L3-3R3-3L1-2R2-4L3-4R1-5R3-5L2-7L2-6L3-7R2-8R3-9L3-10R3-10L1-9R2-11L3-11R1-12R3-12L2"},
+        {"filename": "turkey.png", "title": "Truthahn", "data":"1R2-6L1-5R2-6R3-7L1-8R3-8L3-7R2-9R3-10L3-12L1-11R3-11L1-10R2-12L1"},
+        {"filename": "bird.png", "title": "Vogel (Pirol)", "data":"1R2-2R2-3L2-5L3-5R1-6L3-7L1-6R2-7R1-8R1-9L1-10R1-10L3-9R2-11L3-11R2"},
+        {"filename": "robot.png", "title": "Roboter", "data":"2L3-3L1-3R1-4L3-4R1-5L1-5R3-6L1-6R3-8L3-7R1-7L2-9L3-8R1-10R3-10L1-9R3-11L3-12L1"},
+        {"filename": "giraffe.png", "title": "Giraffe", "data":"2R1-3L3-3R1-4R3-5L3-4L2-6L3-6R3-8R1-8L3-7R1-7L2-12R2"},
+        {"filename": "rocket2.png", "title": "Rakete", "data":"1R2-3L1-4L3-6R1-7R3-7L2-10L1-11L3-12R2"},
+        {"filename": "toad.png", "title": "Kröte", "data":"1R3-2L2-3L2-3R3-4L1-5L3-4R2-6L1-6R3-7R1-7L2-8L3-9L1-10L3-11L2-10R1-9R2-12R1-12L2"}
+
+    ]  
+}
