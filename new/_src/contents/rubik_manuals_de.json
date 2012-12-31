@@ -1,5 +1,6 @@
 {
   "template": "figures_list_manuals.jade",
+  "img_root": "figures/manuals/",
   "figures_de": [
         {"filename": "cat.png", "title": "Katze", "data":"9R2-9L2-8L2-7R2-6R2-6L2-5L3-4L2-3R2-2R2-2L2"},
         {"filename": "wolf.png", "title": "Wolf", "data":"2R2-3L2-4L2-5R2-6R2-7L2-8L2-10L2-10R2-12R2"},

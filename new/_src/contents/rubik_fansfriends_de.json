@@ -1,5 +1,6 @@
 {
 	"template": "figures_list.jade",
+  "img_root": "figures/fansfriends/",
 	"figures": [
         {"filename": "cobra.png", "title": "Kobra - von Ryan A.", "data":"2L3-2R3-3L1-3R1-4L1-5L3-4R1-5R3-6L3-7L1-6R3-7R3-8L1-9L1-9R1-11L2-12R1"},
         {"filename": "doubletoboggan.png", "title": "Rodeldoppelsitzer - Moti", "data":"3L3-4L1-3R2-6L2-6R2-9L1-9R2-10L3-12R2"},

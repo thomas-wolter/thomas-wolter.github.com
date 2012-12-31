@@ -1,5 +1,6 @@
 {
   "template": "figures_list.jade",
+  "img_root": "figures/notation/",
   "figures": [
         {"filename": "pitti.png", "title": "Coming soon", "data":"1R1-2L2-3R2-5L2-6R3-7L2-7R1-9L2-10R2-12L2-12R3"}
     ]

@@ -1,5 +1,6 @@
 {
 	"template": "figures_list.jade",
+  "img_root": "figures/hard/",
 	"figures": [
         {"filename": "spitzbergen.png", "title": "Spitzbergen", "data":"1R2-2L1-3L3-3R1-4L1-4R2-5R3-7L3-6R1-6L2-8L1-8R3-7R2-9R1-9L2-12L1-11R3-11L3-10R2"},
         {"filename": "tealightstick.png", "title": "Teelichthalter", "data":"1R1-2R2-3L2-4L1-5L2-5R3-6L1-4R1-6R1-7L3-7R2-12R2-12L3-11R1-11L1-10R3-10L2-9R1-9L3-8R3-8L1"},
