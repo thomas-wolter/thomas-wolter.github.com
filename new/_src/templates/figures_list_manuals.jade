@@ -4,12 +4,13 @@ block scripts
     script(src="js/app.js")
 
 block content
-    h2 DEUTSCHLAND
+    h3 Figuren aus Anleitung in DEUTSCHLAND gekauft
     each figure in page.metadata.figures_de
       include includes/figure_card
     
-    .clear
-    h2 DÄNEMARK
+    .clear 
+       
+    h3 Figuren aus Anleitung in DÄNEMARK gekauft
     each figure in page.metadata.figures_dk
       include includes/figure_card
 
