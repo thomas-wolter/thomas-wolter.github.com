@@ -3,7 +3,8 @@ $(document).ready(function() {
 	$('.fancybox').fancybox({
 		beforeLoad : function() {
 			var human = $(this.element).attr('data');
-			snake.build(human);
+      var rotation = $(this.element).attr('rotation');
+			snake.build(human, rotation);
 		},
 		enableKeyboardNav : false
 	});

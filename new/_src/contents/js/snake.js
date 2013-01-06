@@ -233,10 +233,16 @@
 		return renderer;
 	};
 	
-	exports.build = function(humanNotation) {
+	exports.build = function(humanNotation, rotation) {
+    rotation = typeof rotation !== 'undefined' ? rotation : "[0,0,0]";
+
+    rotationArray = JSON.parse(rotation);
+
     scene = new THREE.Scene();
     figure = new THREE.Object3D();
     figure.useQuaternion = true;
+    figure.quaternion = new THREE.Quaternion();
+    figure.quaternion.setFromEuler(new THREE.Vector3(rotationArray[0]*Math.PI/180,rotationArray[1]*Math.PI/180,rotationArray[2]*Math.PI/180));
     scene.add(figure);
 		prisms = [];
     figure
