@@ -2,17 +2,17 @@
   "template": "rubik_notation_de.jade",
   "img_root": "figures/notation/",
   "figures_notation_guide": [
-        {"filename": "12R0.png", "title": "Ausgangslage, ohne Notation", "data":"12R0"},
-        {"filename": "11L1.png", "title": "11L1", "data":"11L1"},
-        {"filename": "11L2.png", "title": "11L2", "data":"11L2"},
-        {"filename": "11L3.png", "title": "11L3", "data":"11L3"},
-        {"filename": "11R1.png", "title": "11R1", "data":"11R1"},
-        {"filename": "11R2.png", "title": "11R2", "data":"11R2"},
-        {"filename": "11R3.png", "title": "11R3", "data":"11R3"}
+        {"filename": "12R0.png", "title": "Ausgangslage, ohne Notation", "data":"12R0", "rotation": "[0, 0, -45]"},
+        {"filename": "11L1.png", "title": "11L1", "data":"11L1", "rotation": "[-45, 45, -45]"},
+        {"filename": "11L2.png", "title": "11L2", "data":"11L2", "rotation": "[180, 0, 45]"},
+        {"filename": "11L3.png", "title": "11L3", "data":"11L3", "rotation": "[45, -45, -90]"},
+        {"filename": "11R1.png", "title": "11R1", "data":"11R1", "rotation": "[0, 0, -45]"},
+        {"filename": "11R2.png", "title": "11R2", "data":"11R2", "rotation": "[0, 0, -45]"},
+        {"filename": "11R3.png", "title": "11R3", "data":"11R3", "rotation": "[0, 0, -45]"}
     ],
   "figures_notation_samples": [
-        {"filename": "wolf.png", "title": "Wolf", "data":"2R2-3L2-4L2-5R2-6R2-7L2-8L2-10L2-10R2-12R2"},
-        {"filename": "cat.png", "title": "Katze", "data":"9R2-9L2-8L2-7R2-6R2-6L2-5L3-4L2-3R2-2R2-2L2"},
-        {"filename": "snowflake.png", "title": "Schneeflocke", "data":"1R3-2L1-2R3-3L3-3R1-4L3-4R1-5L1-5R3-6L1-6R3-7L3-7R1-8L3-8R1-9L1-9R3-10L1-10R3-12L3-11R1-11L3-12R"}
+        {"filename": "wolf.png", "title": "Wolf", "data":"2R2-3L2-4L2-5R2-6R2-7L2-8L2-10L2-10R2-12R2", "rotation": "[180, 0, 45]"},
+        {"filename": "cat.png", "title": "Katze", "data":"9R2-9L2-8L2-7R2-6R2-6L2-5L3-4L2-3R2-2R2-2L2", "rotation": "[-60, 45, 0]"},
+        {"filename": "snowflake.png", "title": "Schneeflocke", "data":"1R3-2L1-2R3-3L3-3R1-4L3-4R1-5L1-5R3-6L1-6R3-7L3-7R1-8L3-8R1-9L1-9R3-10L1-10R3-12L3-11R1-11L3-12R", "rotation": "[-45, -45, 0]"}
     ]  
 }
