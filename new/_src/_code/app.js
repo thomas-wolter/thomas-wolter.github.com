@@ -45,10 +45,10 @@ async.forEachSeries(figure_pages, function(figure_page, callback) {
 
         stream.on('data', function(chunk) {
           out.write(chunk);
-        })
+        });
 
         stream.on('end', function() {
-          console.log('saved: ' + output)
+          console.log('saved: ' + output);
           callback();
         });
       }, function(err) {
@@ -64,28 +64,3 @@ async.forEachSeries(figure_pages, function(figure_page, callback) {
   }
   console.log("DONE!");
 });
-
-
-// var figures = JSON.parse(fs.readFileSync('../contents/rubik_easy_de.json').toString()).figures;
-
-// async.forEachSeries(figures, function(figure, callback) {
-
-
-// }, function(err) {
-//   console.log('DONE!');
-// });
-// var renderer = snake.init(500, 500);
-// snake.build('10R2-10L2-8L2-7R2-5R2-5L2-2R2');
-
-
-// var fs = require('fs')
-//   , out = fs.createWriteStream(__dirname + '/text.png')
-//   , stream = renderer.domElement.createPNGStream();
-
-// stream.on('data', function(chunk){
-//   out.write(chunk);
-// });
-
-// stream.on('end', function(){
-//   console.log('saved png');
-// });

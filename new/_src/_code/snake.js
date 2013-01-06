@@ -5,6 +5,7 @@
   var renderer, scene, camera;
   var geometryEven, geometryOdd, materialEven, materialOdd;
   var prisms = [];
+  var figure;
   
   var humanNotationToComputer = {
     '1R' : 0,
@@ -236,7 +237,11 @@
   
   exports.build = function(humanNotation) {
     scene = new THREE.Scene();
+    figure = new THREE.Object3D();
+    figure.useQuaternion = true;
+    scene.add(figure);
     prisms = [];
+    figure
     
     var computerNotation = parseNotation(humanNotation);
     
@@ -253,7 +258,7 @@
         var mesh = THREE.SceneUtils.createMultiMaterialObject(geometryEven, materialEven);
       }
       mesh.useQuaternion = true;
-      scene.add(mesh);
+      figure.add(mesh);
       prisms.push(mesh);
       
       mesh.quaternion.copy(Q);
@@ -278,6 +283,33 @@
     
     setupCamera();
   };
+
+  exports.arcball = function(dx, dy) {
+
+    var up = new THREE.Vector3(0,1,0);
+    var right = new THREE.Vector3(1,0,0);
+
+    var q = new THREE.Quaternion();
+    q.copy(figure.quaternion);
+    var invQ = new THREE.Quaternion();
+    invQ.copy(q);
+    invQ.inverse();
+
+    invQ.multiplyVector3(up);
+    var upQ = new THREE.Quaternion();
+    upQ.setFromAxisAngle(up, 0.0005 * dx * 180/Math.PI);
+    q.multiply(q, upQ);
+
+    invQ.multiplyVector3(right);
+    var rightQ = new THREE.Quaternion();
+    rightQ.setFromAxisAngle(right, 0.0005 * dy * 180/Math.PI);
+    q.multiply(q, rightQ);
+
+    figure.quaternion = q;
+    figure.updateMatrix();
+
+    renderer.render( scene, camera );
+  }
   
   exports.rotateCamera = function(rotationX, rotationY, rotationZ) {
     camera.rotation.x += rotationX;
