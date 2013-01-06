@@ -49,7 +49,7 @@ $(document).ready(function() {
 			var diffX = ev.pageX - lastX;
 			var diffY = ev.pageY - lastY;
 			
-			snake.rotateCamera(-diffY * Math.PI/180, -diffX * Math.PI/180, 0);
+			snake.arcball(diffX, diffY);
 			
 			lastX = ev.pageX;
 			lastY = ev.pageY;
