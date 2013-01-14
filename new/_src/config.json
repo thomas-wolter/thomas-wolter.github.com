@@ -3,6 +3,32 @@
 	"locals": {
 		"url": "http://localhost:8080",
 		"owner": "Thomas Wolter",
-		"name": "thomas-wolter.de"
+		"name": "thomas-wolter.de",
+    "texts": {
+      "de": {
+        "main_nav_home": "HOME",
+        "main_nav_rubik": "RUBIK'S SNAKE",
+        "main_nav_atom": "ATOMPUZZLE",
+        "sub_nav_rubik_notation": "notation",
+        "sub_nav_rubik_easy": "einfache figuren",
+        "sub_nav_rubik_hard": "schwere figuren",
+        "sub_nav_rubik_manuals": "aus anleitungen",
+        "sub_nav_rubik_fansfriends": "fans & friends",
+        "sub_nav_rubik_victorsworld": "victor's welt",
+        "sub_nav_rubik_player": "player"
+        },
+      "en": {
+        "main_nav_home": "HOME",
+        "main_nav_rubik": "RUBIK'S SNAKE",
+        "main_nav_atom": "ATOMPUZZLE",
+        "sub_nav_rubik_notation": "notation",
+        "sub_nav_rubik_easy": "easy figures",
+        "sub_nav_rubik_hard": "hard figures",
+        "sub_nav_rubik_manuals": "from manuals",
+        "sub_nav_rubik_fansfriends": "fans & friends",
+        "sub_nav_rubik_victorsworld": "victor's world",
+        "sub_nav_rubik_player": "player"
+      }
+    }
 	}
 }

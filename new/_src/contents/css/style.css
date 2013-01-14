@@ -67,6 +67,15 @@ nav {
 	margin-right: 20px;
 }
 
+#language-selector {
+  float:right;
+}
+
+#language-selector .flag {
+  width: 32px;
+  height: 32px;
+}
+
 .sub-navigation {
 	max-width: 1140px;
 	margin: 0 auto;

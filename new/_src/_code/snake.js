@@ -1,3 +1,5 @@
+/*global require, exports */
+
 (function (exports) {
 
   var THREE = require('three.js');
@@ -30,7 +32,7 @@
     '11L' : 19,
     '11R' : 20,
     '12L' : 21,
-    '12R' : 22,
+    '12R' : 22
   };
   
   function parseNotation(humanNotation) {
@@ -45,7 +47,7 @@
   
       var position = instruction.substring(0,split_index+1);
       var side = instruction.substring(split_index,split_index+1);
-      var orientation = parseInt(instruction.substring(split_index+1, instruction.length));
+      var orientation = parseInt(instruction.substring(split_index+1, instruction.length), 10);
 
       if (side === 'R') {
         if (orientation === 1) {
@@ -53,15 +55,15 @@
         } else if (orientation === 3) {
           orientation = 1;
         } 
-      };
+      }
 
-      if(position.length != 0 && side.length !=0 && !isNaN(orientation)) {
+      if(position.length !== 0 && side.length !== 0 && !isNaN(orientation)) {
         computerNotation[humanNotationToComputer[position]] = orientation;
       }
     });
     
     return computerNotation;
-  };
+  }
   
   function computeCenter(vertices) {
     var center = new THREE.Vector3(0,0,0);
@@ -73,7 +75,7 @@
     center.divideScalar(vertices.length);
     
     return center;
-  };
+  }
   
   function connectPrisms(leftPrism, rightPrism) {
     // because material groups are used for each prism
@@ -93,7 +95,7 @@
     // move rightPrism by displacement to correct position
     rightPrism.position.addSelf(displacement);
     rightPrism.updateMatrix();
-  };
+  }
   
   function advanceQuaternion(mesh, angle) {
     // transforming a normal requires the inverse transpose
@@ -118,7 +120,7 @@
     var q = new THREE.Quaternion();
     q.setFromAxisAngle(rightCenterNormal, angle * Math.PI/2);
     return q;
-  };
+  }
   
   function setupCamera() {
     // WARNING: Both init() and build() have had to be executed
@@ -157,13 +159,13 @@
     var rangeZ = maxZ - minZ;
     
     var range = Math.max.apply(Math, [rangeX, rangeY, rangeZ]);
-    frustum = range;
+    var frustum = range;
     
     camera = new THREE.OrthographicCamera(-frustum, frustum, frustum, -frustum, -frustum, frustum);
     camera.updateProjectionMatrix();  
     
       renderer.render( scene, camera );
-  };
+  }
   
   exports.init = function(width, height) {
     geometryEven = new THREE.Geometry();
@@ -180,16 +182,17 @@
     geometryEven.faces.push(new THREE.Face4(1,2,5,4));
     geometryEven.faces.push(new THREE.Face4(0,3,5,2));
     
-    var c = computeCenter(geometryEven.vertices);
+    var c, r, l;
+    c = computeCenter(geometryEven.vertices);
     geometryEven.vertices.forEach(function(vertex) {
       vertex = vertex.subSelf(c);
     });
     
-    var r = computeCenter([geometryEven.vertices[1],geometryEven.vertices[2],geometryEven.vertices[4],geometryEven.vertices[5]]);
+    r = computeCenter([geometryEven.vertices[1],geometryEven.vertices[2],geometryEven.vertices[4],geometryEven.vertices[5]]);
     geometryEven.right = r;
     geometryEven.rightNormal = new THREE.Vector3(0,1,0);
     
-    var l = computeCenter([geometryEven.vertices[0],geometryEven.vertices[1],geometryEven.vertices[3],geometryEven.vertices[4]]);
+    l = computeCenter([geometryEven.vertices[0],geometryEven.vertices[1],geometryEven.vertices[3],geometryEven.vertices[4]]);
     geometryEven.left = l;
     geometryEven.leftNormal = new THREE.Vector3(-1,0,0);
     
@@ -207,16 +210,16 @@
     geometryOdd.faces.push(new THREE.Face4(1,4,5,2));
     geometryOdd.faces.push(new THREE.Face4(0,2,5,3));
     
-    var c = computeCenter(geometryOdd.vertices);
+    c = computeCenter(geometryOdd.vertices);
     geometryOdd.vertices.forEach(function(vertex) {
       vertex = vertex.subSelf(c);
     });
     
-    var r = computeCenter([geometryOdd.vertices[1],geometryOdd.vertices[2],geometryOdd.vertices[4],geometryOdd.vertices[5]]);
+    r = computeCenter([geometryOdd.vertices[1],geometryOdd.vertices[2],geometryOdd.vertices[4],geometryOdd.vertices[5]]);
     geometryOdd.right = r;
     geometryOdd.rightNormal = new THREE.Vector3(1,0,0);
     
-    var l = computeCenter([geometryOdd.vertices[0],geometryOdd.vertices[1],geometryOdd.vertices[3],geometryOdd.vertices[4]]);;
+    l = computeCenter([geometryOdd.vertices[0],geometryOdd.vertices[1],geometryOdd.vertices[3],geometryOdd.vertices[4]]);
     geometryOdd.left = l;
     geometryOdd.leftNormal = new THREE.Vector3(0,-1,0);
     
@@ -235,27 +238,32 @@
     return renderer;
   };
   
-  exports.build = function(humanNotation) {
+  exports.build = function(humanNotation, rotation) {
+    rotation = typeof rotation !== 'undefined' ? rotation : "[0,0,0]";
+
+    var rotationArray = JSON.parse(rotation);
+
     scene = new THREE.Scene();
     figure = new THREE.Object3D();
     figure.useQuaternion = true;
+    figure.quaternion = new THREE.Quaternion();
+    figure.quaternion.setFromEuler(new THREE.Vector3(rotationArray[0]*Math.PI/180,rotationArray[1]*Math.PI/180,rotationArray[2]*Math.PI/180));
     scene.add(figure);
     prisms = [];
-    figure
-    
-    var computerNotation = parseNotation(humanNotation);
+ var computerNotation = parseNotation(humanNotation);
     
     // after adding a new prism its exit direction
     // is cumulated in this quaternion to be used to
     // orient the next prism
     var Q = new THREE.Quaternion();
     var previous = null;
-    
+
     for(var i = 0; i < computerNotation.length; i++) {
+      var mesh;
       if(i % 2) {
-        var mesh = THREE.SceneUtils.createMultiMaterialObject(geometryOdd, materialOdd);
+        mesh = THREE.SceneUtils.createMultiMaterialObject(geometryOdd, materialOdd);
       } else {
-        var mesh = THREE.SceneUtils.createMultiMaterialObject(geometryEven, materialEven);
+        mesh = THREE.SceneUtils.createMultiMaterialObject(geometryEven, materialEven);
       }
       mesh.useQuaternion = true;
       figure.add(mesh);
@@ -275,7 +283,7 @@
     // center each figure around 0,0,0
     var positions = prisms.map(function(prism) {
       return prism.position;
-    })
+    });
     var center = computeCenter(positions);
     prisms.forEach(function(prism) {
       prism.position.subSelf(center);
@@ -309,7 +317,7 @@
     figure.updateMatrix();
 
     renderer.render( scene, camera );
-  }
+  };
   
   exports.rotateCamera = function(rotationX, rotationY, rotationZ) {
     camera.rotation.x += rotationX;
@@ -318,5 +326,5 @@
     
     camera.updateProjectionMatrix();
       renderer.render( scene, camera );
-  }
-})(typeof exports === 'undefined'? this['snake']={} : exports);
+  };
+})(typeof exports === 'undefined'? this.snake = {} : exports);

@@ -38,7 +38,7 @@ async.forEachSeries(figure_pages, function(figure_page, callback) {
         var output = output_path + figure.filename;
 
         var renderer = snake.init(380, 380);
-        snake.build(figure.data);
+        snake.build(figure.data,figure.rotation);
 
         var out = fs.createWriteStream(output);
         var stream = renderer.domElement.createPNGStream();

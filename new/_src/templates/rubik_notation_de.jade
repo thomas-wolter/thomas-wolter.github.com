@@ -6,7 +6,9 @@ block scripts
 block content
   p Die Notation der verschiedenen Drehungen von RUBIK's Snake basiert auf ein paar wenigen Regeln.
   p Es wird eine Ausgangslage (Referenzlage) definiert. Dabei schaut man die Bausteine so an, dass man deren Dreiecksform sieht. Die dunklen Bausteine (violett) liegen unten (die längste Dreiecksseite liegt unten), die hellen (grün) oben (die längste Dreiecksseite liegt oben). Der links liegende Baustein ist ein dunkler Baustein, der rechts außen auf dem Kopf liegende Baustein ist ein heller Baustein.
-  p Anmerkung: Natürlich lässt sich der Farbbezug auch umgekehrt definieren, dabei ergeben sich dann Figuren mit vertauschten Farben.
+
+  blockquote
+    p Anmerkung: Natürlich lässt sich der Farbbezug auch umgekehrt definieren, dabei ergeben sich dann Figuren mit vertauschten Farben.
 
   p Jeder dunkle Baustein erhält eine Nummer von 1 bis 12, wobei von links nach rechts gezählt wird. Der linksaußen liegende dunkle Baustein erhält also die Nummer 1, der rechtsaußen liegende dunkle Baustein die Nummmer 12.
 
@@ -14,11 +16,12 @@ block content
 
   p Die dunklen Bausteine verbleiben immer in ihrer Ausgangslage, zu mindestens gedanklich. An der linken und rechten Drehfläche (Seite) werden die hellen Bausteine gedreht. Dabei ergeben sich an jeder Seite vier Drehungen bis die Ausgangslage wieder erreicht ist. Die Ausgangslage wird nicht gesondert notiert, die an jeder Seite drei anderen Positionen werden mit 1, 2 und 3 durchnummeriert.
 
-
   p Die möglichen Drehungen und ihre Notationen sind im folgenden aufgelistet. Die Beschreibung jeder Drehung setzt sich aus drei Anteilen zusammen:
-  p Baustein-Nummer: 1 bis 12
-  p linke oder rechte Baustein-Seite: L oder R
-  p Position der Drehung: 1, 2 oder 3
+
+  ol
+    li Baustein-Nummer: 1 bis 12
+    li linke oder rechte Baustein-Seite: L oder R
+    li Position der Drehung: 1, 2 oder 3
 
   h2 Notation Demonstration
   each figure in page.metadata.figures_notation_guide

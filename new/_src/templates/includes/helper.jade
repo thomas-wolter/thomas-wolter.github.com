@@ -1,0 +1,5 @@
+- var cur_lang = function() { return page.filename.indexOf('_en.') !== -1 ? 'en' : 'de'; }
+- var get_language_specific_page_name = function(neutral) { return cur_lang() === 'en' ? neutral + '_en.html' : neutral + '_de.html'; }
+- var switch_page_name_language = function() { return cur_lang() == 'en' ? page.filename.replace('_en.', '_de.') : page.filename.indexOf('_de.') !== -1 ? page.filename.replace('_de.', '_en.') : page.filename.replace('.html', '_en.html'); }
+- var lookup_text = function(id) { return locals.texts[cur_lang()][id.toString()] }
+- var get_link_selected_status = function(indicator) { return page.filename.indexOf(indicator) !== -1 ? 'selected' : '' }

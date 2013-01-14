@@ -1,3 +1,5 @@
+include includes/helper
+
 !!! 5
 html(lang='en')
   head
@@ -25,9 +27,15 @@ html(lang='en')
           h1 thomas-wolter.de
       nav.bottom-seperator
         .main-navigation
-          a(href='/', class="#{page.filename === "index.html" ? "selected" : ""}") HOME
-          a(href='rubik_notation_de.html', class="#{page.filename.indexOf('rubik') !== -1 ? "selected" : ""}") RUBIK'S SNAKE
-          a(href='atom_de.html', class="#{page.filename.indexOf('atom') !== -1 ? "selected" : ""}") ATOMPUZZLE
+          a(href='/', class=get_link_selected_status('index.html')) HOME
+          a(href=get_language_specific_page_name('rubik_notation'), class=get_link_selected_status('rubik')) RUBIK'S SNAKE
+          a(href=get_language_specific_page_name('atom'), class=get_link_selected_status('atom')) ATOMPUZZLE
+          #language-selector
+            a(href=switch_page_name_language())
+              - if (cur_lang === 'en')
+                  img(src='img/flag_de.png').flag
+              - else
+                  img(src='img/flag_en.png').flag
       nav
         .sub-navigation
           block subnav

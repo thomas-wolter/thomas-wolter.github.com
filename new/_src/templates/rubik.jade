@@ -1,11 +1,11 @@
 extends layout
 
 block subnav
-  a(href='rubik_notation_de.html', class="#{page.filename.indexOf('notation') !== -1 ? "selected" : ""}") notation
-  a(href='rubik_easy_de.html', class="#{page.filename.indexOf('easy') !== -1 ? "selected" : ""}") einfache figuren
-  a(href='rubik_hard_de.html', class="#{page.filename.indexOf('hard') !== -1 ? "selected" : ""}") schwere figuren
-  a(href='rubik_manuals_de.html', class="#{page.filename.indexOf('manuals') !== -1 ? "selected" : ""}") aus anleitungen
-  a(href='rubik_fansfriends_de.html', class="#{page.filename.indexOf('fansfriends') !== -1 ? "selected" : ""}") fans & friends
-  a(href='rubik_victorsworld_de.html', class="#{page.filename.indexOf('victorsworld') !== -1 ? "selected" : ""}") victor's welt
-  a(href='rubik_player_de.html', class="#{page.filename.indexOf('player') !== -1 ? "selected" : ""}") player
+  a(href=get_language_specific_page_name('rubik_notation'), class=get_link_selected_status('notation')) notation
+  a(href=get_language_specific_page_name('rubik_easy'), class=get_link_selected_status('easy')) #{lookup_text('sub_nav_rubik_easy')}
+  a(href=get_language_specific_page_name('rubik_hard'), class=get_link_selected_status('hard')) schwere figuren
+  a(href=get_language_specific_page_name('rubik_manuals'), class=get_link_selected_status('manuals')) aus anleitungen
+  a(href=get_language_specific_page_name('rubik_fansfriends'), class=get_link_selected_status('fansfriends')) fans & friends
+  a(href=get_language_specific_page_name('rubik_victorsworld'), class=get_link_selected_status('victorsworld')) victor's welt
+  a(href=get_language_specific_page_name('rubik_player'), class=get_link_selected_status('player')) player
   
