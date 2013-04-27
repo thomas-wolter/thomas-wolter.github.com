@@ -352,7 +352,7 @@
     var rightQ = new THREE.Quaternion();
     rightQ.setFromAxisAngle(right, rotationX);
     q.multiply(q, rightQ);
-    
+
     up.applyQuaternion(invQ);
     var upQ = new THREE.Quaternion();
     upQ.setFromAxisAngle(up, rotationY);
@@ -368,4 +368,15 @@
 
     renderer.render(scene, camera);
   };
+
+  exports.currentEulerAngles = function() {
+
+    var q = figure.quaternion;
+    var rotationX = Math.round(Math.atan2(2 * (q.x * q.w - q.y * q.z), q.w * q.w - q.x * q.x - q.y * q.y + q.z * q.z) * (180 / Math.PI));
+    var rotationY = Math.round(Math.asin(2 * (q.x * q.z + q.y * q.w)) * (180 / Math.PI));
+    var rotationZ = Math.round(Math.atan2(2 * (q.z * q.w - q.x * q.y), q.w * q.w + q.x * q.x - q.y * q.y - q.z * q.z) * (180 / Math.PI));
+
+    return [rotationX, rotationY, rotationZ];
+  };
+
 })(typeof exports === 'undefined' ? this.snake = {} : exports);
