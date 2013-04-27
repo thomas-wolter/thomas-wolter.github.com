@@ -1,7 +1,9 @@
 (function(exports) {
 
+  var useFirstColor = true;
+
   var renderer, scene, camera;
-  var geometryEven, geometryOdd, materialEven, materialOdd;
+  var geometryEven, geometryOdd, materialEven, materialOdd, materialFirst;
   var prisms = [];
   var figure;
 
@@ -239,6 +241,16 @@
     new THREE.MeshBasicMaterial({
       color: 0x5770b7
     })];
+    materialFirst = [
+    new THREE.MeshBasicMaterial({
+      color: 0x000000,
+      shading: THREE.FlatShading,
+      wireframe: true,
+      transparent: false
+    }),
+    new THREE.MeshBasicMaterial({
+      color: 0x3d4f80
+    })];
 
     renderer = new THREE.CanvasRenderer();
     renderer.setSize(width, height);
@@ -271,7 +283,11 @@
       if (i % 2) {
         mesh = THREE.SceneUtils.createMultiMaterialObject(geometryOdd, materialOdd);
       } else {
-        mesh = THREE.SceneUtils.createMultiMaterialObject(geometryEven, materialEven);
+        if (useFirstColor === true && i === 0) {
+          mesh = THREE.SceneUtils.createMultiMaterialObject(geometryEven, materialFirst);
+        } else {
+          mesh = THREE.SceneUtils.createMultiMaterialObject(geometryEven, materialEven);
+        }
       }
       mesh.useQuaternion = true;
       figure.add(mesh);

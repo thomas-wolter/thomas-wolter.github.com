@@ -2,6 +2,7 @@ $(document).ready(function() {
 	
 	var renderer = snake.init(500, 500);
 	$('#3dviewer').append(renderer.domElement);
+  snake.build('');
 
 	$('#instructions').bind('input propertychange', function() {
 		snake.build($(this).val());
