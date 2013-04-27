@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+  $('.figure-thumb').lazyload();
 	
 	$('.fancybox').fancybox({
 		beforeLoad : function() {

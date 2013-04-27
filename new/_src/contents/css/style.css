@@ -1,149 +1,140 @@
-body {
-	background: #f2ecd1;
-	color: #412e2a;
-  font-family: droid-sans, serif;
-}
-
-a {
-	text-decoration: none;	
-	color: #412e2a;
-}
-
-a:hover {
-	color: #f2ecd1;
-}
-
-a.selected {
-	color: #f2ecd1;
-}
-
-header .inner {
-	max-width: 1140px;
-	margin: 0 auto;
-	height: 85px;
-	line-height: 85px;
-}
-
-header img {
-	margin-left: 2%;
-	display: inline;
-	vertical-align: middle;
-}
-
-header h1 {
-	margin-left: 1%;
-	font-weight: 200;
-	display: inline;
-	vertical-align: middle;
-}
-
-header .inner a:hover {
-	color: #412e2a;
-}
-
-nav a {
-	font-weight: 600;
-}
-
-nav {
-	background: #c19161;
-}
-
-.bottom-seperator {
-	border-bottom: 1px solid #412e2a;
-}
-
-.main-navigation {
-	max-width: 1140px;
-	margin: 0 auto;
-	height: 40px;
-	line-height: 40px;
-	padding-left: 2%;
-	padding-right: 2%;
-}
-
-.main-navigation a {
-	margin-left: 20px;
-	margin-right: 20px;
-}
-
-#language-selector {
-  float:right;
-}
-
-#language-selector .flag {
-  width: 32px;
-  height: 32px;
-}
-
-.sub-navigation {
-	max-width: 1140px;
-	margin: 0 auto;
-	height: 30px;
-	line-height: 30px;
-	padding-left: 2%;
-	padding-right: 2%;
-}
-
-.sub-navigation a {
-	margin-left: 10px;
-	margin-right: 10px;
-	font-size: 14px;
-}
-
-#content {
-	max-width: 1140px;
-	margin: 20px auto;
-}
-
-.figure {
-	width: 210px;
-	height: 310px;
-	float: left;
-	margin: 8px;
-	border: 1px solid #412e2a;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-}
-
-.figure img {
-	margin-left: 10px;
-	margin-top: 10px;
-	width: 190px;
-	height: 190px;
-}
-
-.title {
-	background: #f2d39d;
-	height: 25px;
-	line-height: 25px;
-	text-align: center;
-	margin: 0px;
-	-webkit-border-top-left-radius: 5px;
-	-webkit-border-top-right-radius: 5px;
-	-moz-border-radius-topleft: 5px;
-	-moz-border-radius-topright: 5px;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	font-size: 15px;
-}
-
-.notation {
-	font-size: 14px;
-	padding: 10px;
-	margin: 0px;
+html, body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  background-color: #faf5e6;
 }
 
 .clear {
-	clear: both;
+  clear: both;
 }
 
-footer {
-  background: #c19161;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
+#header-wrap {
+  background-color: #93cebd;
+  height: 60px;
+}
 
-  font-size: 12px;
+#site-header, #sub-nav, #content {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+#content {
+  margin-top: 12px;
+}
+
+#site-link {
+  text-decoration: none;
+}
+
+#site-logo {
+  margin: 0 12px;
+  height: 60px;
+  line-height: 60px;
+  display: inline;
+  color: #fff;
+  font-weight: 900;
+  font-style: italic;
+  text-shadow: 0 1px 0 #4f8173;
+}
+
+#main-nav {
+  float: right;
+  height: 60px;
+  line-height: 60px;
+}
+
+.main-nav-item {
+  display: inline-block;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: 200;
+  font-size: 22px;
+  color: #fff;
+  text-shadow: 0 1px 0 #4f8173;
+  height: 60px;
+  text-transform: uppercase;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+.main-nav-item.selected {
+  background-image: url(../img/indicator.svg);
+  background-size: 14px 7px;
+  background-repeat: no-repeat;
+  background-position:center bottom;
+}
+
+.main-nav-item:hover {
+  color: #4a4645;
+  text-shadow: 0 1px 0 #a3e5d3;
+}
+
+#sub-nav-wrap {
+  background-color: #4f8173;
+  height: 48px;
+}
+
+#sub-nav {
+  max-width: 1140px;
+  margin: 0 auto;
+  line-height: 48px;
+  color: #fff;
+}
+
+.sub-nav-item {
+  display: inline-block;
+  margin: 0 12px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 200;
+  color: #fff;
+  text-transform: lowercase;
+}
+
+.sub-nav-item.selected {
+  font-weight: 600;
+}
+
+.sub-nav-item:hover {
+  font-weight:400;
+}
+
+figure {
+  float: left;
+  background: #ebe6d8;
+  margin: 12px;
+  width: 356px;
+  height: 178px;
+}
+
+.figure-thumb {
+  float: left;
+  width: 178px;
+  height: 178px;
+}
+
+figcaption {
+  padding: 6px;
+  display: inline-block;
+  width: 166px;
+  height: 166px;
+  background: #93cebd;
+}
+
+.figure-title {
+  margin: 0;
+  color: #4a4645;
+  font-size: 20px;
+  font-weight: 400;
+  text-shadow: 0 1px 0 #fff;
+}
+
+.figure-notation {
+  margin: 6px 2px;
+  color: #fff;
+  text-shadow: 0 1px 0 #4f8173;
+  font-size: 16px;
 }

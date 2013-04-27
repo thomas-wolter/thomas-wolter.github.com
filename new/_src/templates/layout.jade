@@ -11,39 +11,37 @@ html(lang='en')
     link(rel='stylesheet', href='css/normalize.css')
     link(rel='stylesheet', href='css/style.css')
     link(rel='stylesheet', href='css/jquery.fancybox.css')
-    script(src="http://use.edgefonts.net/droid-sans.js")
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic')
     script(src="js/jquery.min.js")
     script(src="js/jquery.fancybox.pack.js")
     script(src="js/jquery.touchmouse.js")
+    script(src="js/jquery.lazyload.js")
     script(src="js/three.min.js")
     script(src="js/snake.js")
     block styles
     block scripts
   body
-    header
-      div.inner
-        a(href='/')
-          img(src='img/logo3.png')
-          h1 thomas-wolter.de
-      nav.bottom-seperator
-        .main-navigation
-          a(href='/', class=get_link_selected_status('index.html')) HOME
-          a(href=get_language_specific_page_name('rubik_notation'), class=get_link_selected_status('rubik')) RUBIK'S SNAKE
-          a(href=get_language_specific_page_name('atom'), class=get_link_selected_status('atom')) ATOMPUZZLE
-          #language-selector
-            a(href=switch_page_name_language())
-              - if (cur_lang === 'en')
-                  img(src='img/flag_de.png').flag
-              - else
-                  img(src='img/flag_en.png').flag
-      nav
-        .sub-navigation
-          block subnav
-    #content
+    #header-wrap
+      header#site-header
+        a(href='/')#site-link
+          h1#site-logo thomas-wolter.de
+        nav#main-nav
+          a.main-nav-item(class=get_link_selected_status('index.html'), href='/') HOME
+          a.main-nav-item(class=get_link_selected_status('rubik'), href=get_language_specific_page_name('rubik_notation')) RUBIK'S SNAKE
+          a.main-nav-item(class=get_link_selected_status('atom'), href=get_language_specific_page_name('atom')) ATOMPUZZLE
+          //- #language-selector
+          //-   a(href=switch_page_name_language())
+          //-     - if (cur_lang === 'en')
+          //-         img(src='img/flag_de.png').flag
+          //-     - else
+          //-         img(src='img/flag_en.png').flag
+    #sub-nav-wrap
+      nav#sub-nav
+        block subnav
+    #content(role='main')
       block content
-        h2 Welcome to zombocom!
     .clear
-    footer
-      div.inner
-        block footer
-          p &copy; #{ new Date().getFullYear() } #{ locals.owner }
+    //- footer
+    //-   div.inner
+    //-     block footer
+    //-       p &copy; #{ new Date().getFullYear() } #{ locals.owner }

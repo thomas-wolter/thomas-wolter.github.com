@@ -8,35 +8,29 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/jquery.fancybox.css">
-    <script src="http://use.edgefonts.net/droid-sans.js"></script>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic">
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.fancybox.pack.js"></script>
     <script src="js/jquery.touchmouse.js"></script>
+    <script src="js/jquery.lazyload.js"></script>
     <script src="js/three.min.js"></script>
     <script src="js/snake.js"></script>
   </head>
   <body>
-    <header>
-      <div class="inner"><a href="/"><img src="img/logo3.png">
-          <h1>thomas-wolter.de</h1></a></div>
-      <nav class="bottom-seperator">
-        <div class="main-navigation"><a href="/" class="">HOME</a><a href="rubik_notation_de.html" class="">RUBIK'S SNAKE</a><a href="atom_de.html" class="selected">ATOMPUZZLE</a>
-          <div id="language-selector"><a href="atom_en.html"><img src="img/flag_en.png" class="flag"></a></div>
-        </div>
+    <div id="header-wrap">
+      <header id="site-header"><a href="/" id="site-link">
+          <h1 id="site-logo">thomas-wolter.de</h1></a>
+        <nav id="main-nav"><a href="/" class="main-nav-item ">HOME</a><a href="rubik_notation_de.html" class="main-nav-item ">RUBIK'S SNAKE</a><a href="atom_de.html" class="main-nav-item selected">ATOMPUZZLE</a>
+        </nav>
+      </header>
+    </div>
+    <div id="sub-nav-wrap">
+      <nav id="sub-nav">
       </nav>
-      <nav>
-        <div class="sub-navigation">
-        </div>
-      </nav>
-    </header>
-    <div id="content">
+    </div>
+    <div id="content" role="main">
       <h1>AtomPuzzle</h1>
     </div>
     <div class="clear"></div>
-    <footer>
-      <div class="inner">
-        <p>&copy; 2013 Thomas Wolter</p>
-      </div>
-    </footer>
   </body>
 </html>

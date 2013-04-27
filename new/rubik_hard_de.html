@@ -8,327 +8,467 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/jquery.fancybox.css">
-    <script src="http://use.edgefonts.net/droid-sans.js"></script>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic">
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.fancybox.pack.js"></script>
     <script src="js/jquery.touchmouse.js"></script>
+    <script src="js/jquery.lazyload.js"></script>
     <script src="js/three.min.js"></script>
     <script src="js/snake.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/app.js?v=2"></script>
   </head>
   <body>
-    <header>
-      <div class="inner"><a href="/"><img src="img/logo3.png">
-          <h1>thomas-wolter.de</h1></a></div>
-      <nav class="bottom-seperator">
-        <div class="main-navigation"><a href="/" class="">HOME</a><a href="rubik_notation_de.html" class="selected">RUBIK'S SNAKE</a><a href="atom_de.html" class="">ATOMPUZZLE</a>
-          <div id="language-selector"><a href="rubik_hard_en.html"><img src="img/flag_en.png" class="flag"></a></div>
-        </div>
-      </nav>
-      <nav>
-        <div class="sub-navigation"><a href="rubik_notation_de.html" class="">notation</a><a href="rubik_easy_de.html" class="">einfache figuren</a><a href="rubik_hard_de.html" class="selected">schwere figuren</a><a href="rubik_manuals_de.html" class="">aus anleitungen</a><a href="rubik_fansfriends_de.html" class="">fans & friends</a><a href="rubik_victorsworld_de.html" class="">victor's welt</a><a href="rubik_player_de.html" class="">player</a></div>
-      </nav>
-    </header>
-    <div id="content">
-      <div class="figure"> 
-        <p class="title">Spitzbergen</p><a href="#3dviewer" data="1R2-2L1-3L3-3R1-4L1-4R2-5R3-7L3-6R1-6L2-8L1-8R3-7R2-9R1-9L2-12L1-11R3-11L3-10R2" title="Spitzbergen" class="fancybox"><img src="img/figures/hard/spitzbergen.png" alt="Spitzbergen"></a>
-        <p class="notation">1R2-&#8203;2L1-&#8203;3L3-&#8203;3R1-&#8203;4L1-&#8203;4R2-&#8203;5R3-&#8203;7L3-&#8203;6R1-&#8203;6L2-&#8203;8L1-&#8203;8R3-&#8203;7R2-&#8203;9R1-&#8203;9L2-&#8203;12L1-&#8203;11R3-&#8203;11L3-&#8203;10R2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Teelichthalter</p><a href="#3dviewer" data="1R1-2R2-3L2-4L1-5L2-5R3-6L1-4R1-6R1-7L3-7R2-12R2-12L3-11R1-11L1-10R3-10L2-9R1-9L3-8R3-8L1" title="Teelichthalter" class="fancybox"><img src="img/figures/hard/tealightstick.png" alt="Teelichthalter"></a>
-        <p class="notation">1R1-&#8203;2R2-&#8203;3L2-&#8203;4L1-&#8203;5L2-&#8203;5R3-&#8203;6L1-&#8203;4R1-&#8203;6R1-&#8203;7L3-&#8203;7R2-&#8203;12R2-&#8203;12L3-&#8203;11R1-&#8203;11L1-&#8203;10R3-&#8203;10L2-&#8203;9R1-&#8203;9L3-&#8203;8R3-&#8203;8L1</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Three Peaks</p><a href="#3dviewer" data="6R1-6L3-5R2-5L3-4R2-4L1-1R1-3L3-3R2-7L2-7R3-8L1-8R2-9L1-9R2-10L3-12R3-11L1-10R2" title="Three Peaks" class="fancybox"><img src="img/figures/hard/threepeaks.png" alt="Three Peaks"></a>
-        <p class="notation">6R1-&#8203;6L3-&#8203;5R2-&#8203;5L3-&#8203;4R2-&#8203;4L1-&#8203;1R1-&#8203;3L3-&#8203;3R2-&#8203;7L2-&#8203;7R3-&#8203;8L1-&#8203;8R2-&#8203;9L1-&#8203;9R2-&#8203;10L3-&#8203;12R3-&#8203;11L1-&#8203;10R2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Talkessel</p><a href="#3dviewer" data="2L3-3L1-2R2-4L3-3R2-5L3-4R2-5R3-6L3-7L2-8L1-8R1-9L1-10L1-9R2-10R2-11L3-12L1-11R2" title="Talkessel" class="fancybox"><img src="img/figures/hard/valley.png" alt="Talkessel"></a>
-        <p class="notation">2L3-&#8203;3L1-&#8203;2R2-&#8203;4L3-&#8203;3R2-&#8203;5L3-&#8203;4R2-&#8203;5R3-&#8203;6L3-&#8203;7L2-&#8203;8L1-&#8203;8R1-&#8203;9L1-&#8203;10L1-&#8203;9R2-&#8203;10R2-&#8203;11L3-&#8203;12L1-&#8203;11R2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Kreuz 3D</p><a href="#3dviewer" data="1R2-2R1-3R3-3L2-4R1-5R1-5L2-4L2-6L2-6R3-7R1-7L2-8R2-9L3-10L3-9R2-10R3-12R2-12L3-11R3-11L2" title="Kreuz 3D" class="fancybox"><img src="img/figures/hard/cross3d.png" alt="Kreuz 3D"></a>
-        <p class="notation">1R2-&#8203;2R1-&#8203;3R3-&#8203;3L2-&#8203;4R1-&#8203;5R1-&#8203;5L2-&#8203;4L2-&#8203;6L2-&#8203;6R3-&#8203;7R1-&#8203;7L2-&#8203;8R2-&#8203;9L3-&#8203;10L3-&#8203;9R2-&#8203;10R3-&#8203;12R2-&#8203;12L3-&#8203;11R3-&#8203;11L2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Keine Ahnung</p><a href="#3dviewer" data="2L3-3R3-3L1-2R2-4L1-5L1-6R1-6L3-5R2-7L2-7R3-8L1-8R2-9L3-11L3-10L3-10R1-12L1-11R2" title="Keine Ahnung" class="fancybox"><img src="img/figures/hard/noclue.png" alt="Keine Ahnung"></a>
-        <p class="notation">2L3-&#8203;3R3-&#8203;3L1-&#8203;2R2-&#8203;4L1-&#8203;5L1-&#8203;6R1-&#8203;6L3-&#8203;5R2-&#8203;7L2-&#8203;7R3-&#8203;8L1-&#8203;8R2-&#8203;9L3-&#8203;11L3-&#8203;10L3-&#8203;10R1-&#8203;12L1-&#8203;11R2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Revolution</p><a href="#3dviewer" data="1R3-2L1-3L3-2R2-4L2-5L1-6R1-6L3-5R2-7L2-7R3-8L1-9L3-8R2-10L2-11L1-12R1-12L3-11R2" title="Revolution" class="fancybox"><img src="img/figures/hard/revolution.png" alt="Revolution"></a>
-        <p class="notation">1R3-&#8203;2L1-&#8203;3L3-&#8203;2R2-&#8203;4L2-&#8203;5L1-&#8203;6R1-&#8203;6L3-&#8203;5R2-&#8203;7L2-&#8203;7R3-&#8203;8L1-&#8203;9L3-&#8203;8R2-&#8203;10L2-&#8203;11L1-&#8203;12R1-&#8203;12L3-&#8203;11R2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Kerzenhalter</p><a href="#3dviewer" data="1R3-2R3-2L2-3R1-4R3-4L2-5R1-6R1-6L2-7R3-8R3-8L2-9R1-10R3-10L2-11R1-12R1-12L2-7L2" title="Kerzenhalter" class="fancybox"><img src="img/figures/hard/candlestick.png" alt="Kerzenhalter"></a>
-        <p class="notation">1R3-&#8203;2R3-&#8203;2L2-&#8203;3R1-&#8203;4R3-&#8203;4L2-&#8203;5R1-&#8203;6R1-&#8203;6L2-&#8203;7R3-&#8203;8R3-&#8203;8L2-&#8203;9R1-&#8203;10R3-&#8203;10L2-&#8203;11R1-&#8203;12R1-&#8203;12L2-&#8203;7L2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Küken</p><a href="#3dviewer" data="1R1-2L3-2R1-3R3-3L2-4R3-4L2-5R1-5L2-6L3-6R1-7R3-8L1-8R3-9R1-10L2-9L2-7L2-10R1-12R3-12L1-11R3-11L2" title="Küken" class="fancybox"><img src="img/figures/hard/chick.png" alt="Küken"></a>
-        <p class="notation">1R1-&#8203;2L3-&#8203;2R1-&#8203;3R3-&#8203;3L2-&#8203;4R3-&#8203;4L2-&#8203;5R1-&#8203;5L2-&#8203;6L3-&#8203;6R1-&#8203;7R3-&#8203;8L1-&#8203;8R3-&#8203;9R1-&#8203;10L2-&#8203;9L2-&#8203;7L2-&#8203;10R1-&#8203;12R3-&#8203;12L1-&#8203;11R3-&#8203;11L2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Haus an Haus</p><a href="#3dviewer" data="1R3-2R3-2L2-3R3-3L2-4R1-4L2-5R1-5L2-6R1-6L2-7R3-8R3-8L2-9R3-9L2-10R1-10L2-11R1-11L2-12R1-12L2-7L2" title="Haus an Haus" class="fancybox"><img src="img/figures/hard/housebyhouse.png" alt="Haus an Haus"></a>
-        <p class="notation">1R3-&#8203;2R3-&#8203;2L2-&#8203;3R3-&#8203;3L2-&#8203;4R1-&#8203;4L2-&#8203;5R1-&#8203;5L2-&#8203;6R1-&#8203;6L2-&#8203;7R3-&#8203;8R3-&#8203;8L2-&#8203;9R3-&#8203;9L2-&#8203;10R1-&#8203;10L2-&#8203;11R1-&#8203;11L2-&#8203;12R1-&#8203;12L2-&#8203;7L2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Endloses Band</p><a href="#3dviewer" data="2L3-2R3-4R3-5L3-6L2-8R1-8L1-7L1-6R1-9L1-10L1-9R2-10R1-11L1-12R1-12L1" title="Endloses Band" class="fancybox"><img src="img/figures/hard/endlessbelt.png" alt="Endloses Band"></a>
-        <p class="notation">2L3-&#8203;2R3-&#8203;4R3-&#8203;5L3-&#8203;6L2-&#8203;8R1-&#8203;8L1-&#8203;7L1-&#8203;6R1-&#8203;9L1-&#8203;10L1-&#8203;9R2-&#8203;10R1-&#8203;11L1-&#8203;12R1-&#8203;12L1</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Windschutz</p><a href="#3dviewer" data="12R2-11R2-11L2-10L1-9L3-9R2-8R1-8L2-7R3-6R2-5R1-4R3-4L1-5L2-3L3-3R2-1R2-2L2" title="Windschutz" class="fancybox"><img src="img/figures/hard/windshield.png" alt="Windschutz"></a>
-        <p class="notation">12R2-&#8203;11R2-&#8203;11L2-&#8203;10L1-&#8203;9L3-&#8203;9R2-&#8203;8R1-&#8203;8L2-&#8203;7R3-&#8203;6R2-&#8203;5R1-&#8203;4R3-&#8203;4L1-&#8203;5L2-&#8203;3L3-&#8203;3R2-&#8203;1R2-&#8203;2L2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Hochgeschlagen</p><a href="#3dviewer" data="12L2-11R2-10R3-9R1-10L2-9L2-8R3-7R3-8L2-6R2-5R1-5L2-4R1-4L2-3R3-2R3-3L2-1R2" title="Hochgeschlagen" class="fancybox"><img src="img/figures/hard/longnecked.png" alt="Hochgeschlagen"></a>
-        <p class="notation">12L2-&#8203;11R2-&#8203;10R3-&#8203;9R1-&#8203;10L2-&#8203;9L2-&#8203;8R3-&#8203;7R3-&#8203;8L2-&#8203;6R2-&#8203;5R1-&#8203;5L2-&#8203;4R1-&#8203;4L2-&#8203;3R3-&#8203;2R3-&#8203;3L2-&#8203;1R2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Schaf</p><a href="#3dviewer" data="12R3-12L3-11R3-11L1-10R3-10L1-9R3-9L3-8R3-7R1-8L3-7L3-6L3-6R1-5R3-5L3-3R1-4L1-4R3-3L3-1R1-2L1-2R3" title="Schaf" class="fancybox"><img src="img/figures/hard/sheep.png" alt="Schaf"></a>
-        <p class="notation">12R3-&#8203;12L3-&#8203;11R3-&#8203;11L1-&#8203;10R3-&#8203;10L1-&#8203;9R3-&#8203;9L3-&#8203;8R3-&#8203;7R1-&#8203;8L3-&#8203;7L3-&#8203;6L3-&#8203;6R1-&#8203;5R3-&#8203;5L3-&#8203;3R1-&#8203;4L1-&#8203;4R3-&#8203;3L3-&#8203;1R1-&#8203;2L1-&#8203;2R3</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Durchblick</p><a href="#3dviewer" data="2L3-3L1-3R2-2R2-4L3-5R1-6R3-6L2-7L1-7R1-10R3-9L1-8L3-8R2-11R1-12R3-12L2-11L2" title="Durchblick" class="fancybox"><img src="img/figures/hard/view.png" alt="Durchblick"></a>
-        <p class="notation">2L3-&#8203;3L1-&#8203;3R2-&#8203;2R2-&#8203;4L3-&#8203;5R1-&#8203;6R3-&#8203;6L2-&#8203;7L1-&#8203;7R1-&#8203;10R3-&#8203;9L1-&#8203;8L3-&#8203;8R2-&#8203;11R1-&#8203;12R3-&#8203;12L2-&#8203;11L2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Quelle</p><a href="#3dviewer" data="12R2-12L3-11R1-11L1-10R1-9R3-10L1-8R1-9L2-8L3-7R3-6R3-6L1-5R2-7L3-5L3-3L2-4L1-4R2-1R2-2L3" title="Quelle" class="fancybox"><img src="img/figures/hard/source.png" alt="Quelle"></a>
-        <p class="notation">12R2-&#8203;12L3-&#8203;11R1-&#8203;11L1-&#8203;10R1-&#8203;9R3-&#8203;10L1-&#8203;8R1-&#8203;9L2-&#8203;8L3-&#8203;7R3-&#8203;6R3-&#8203;6L1-&#8203;5R2-&#8203;7L3-&#8203;5L3-&#8203;3L2-&#8203;4L1-&#8203;4R2-&#8203;1R2-&#8203;2L3</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Ohne Namen</p><a href="#3dviewer" data="1R2-2L3-2R2-3L3-3R1-4R3-4L2-5L1-5R2-6R2-7L3-8L1-7R2-8R2-9R2-10L3-10R1-12R2-12L1-11R3-11L2" title="Ohne Namen" class="fancybox"><img src="img/figures/hard/withoutname.png" alt="Ohne Namen"></a>
-        <p class="notation">1R2-&#8203;2L3-&#8203;2R2-&#8203;3L3-&#8203;3R1-&#8203;4R3-&#8203;4L2-&#8203;5L1-&#8203;5R2-&#8203;6R2-&#8203;7L3-&#8203;8L1-&#8203;7R2-&#8203;8R2-&#8203;9R2-&#8203;10L3-&#8203;10R1-&#8203;12R2-&#8203;12L1-&#8203;11R3-&#8203;11L2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Maulwurf</p><a href="#3dviewer" data="2L3-3L3-3R3-4L3-4R2-5R3-6R1-6L2-7R2-8L1-8R1-9L1-10L1-11L3-11R1-12R3-12L2" title="Maulwurf" class="fancybox"><img src="img/figures/hard/mole.png" alt="Maulwurf"></a>
-        <p class="notation">2L3-&#8203;3L3-&#8203;3R3-&#8203;4L3-&#8203;4R2-&#8203;5R3-&#8203;6R1-&#8203;6L2-&#8203;7R2-&#8203;8L1-&#8203;8R1-&#8203;9L1-&#8203;10L1-&#8203;11L3-&#8203;11R1-&#8203;12R3-&#8203;12L2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Kreuz 3D v2</p><a href="#3dviewer" data="1R1-2L1-3L1-2R2-3R3-4R1-5L1-6L3-6R1-7L2-5R2-7R3-8L1-11L1-10R3-9R3-9L3-8R2-12R1-12L1-11R2" title="Kreuz 3D v2" class="fancybox"><img src="img/figures/hard/cross3dv2.png" alt="Kreuz 3D v2"></a>
-        <p class="notation">1R1-&#8203;2L1-&#8203;3L1-&#8203;2R2-&#8203;3R3-&#8203;4R1-&#8203;5L1-&#8203;6L3-&#8203;6R1-&#8203;7L2-&#8203;5R2-&#8203;7R3-&#8203;8L1-&#8203;11L1-&#8203;10R3-&#8203;9R3-&#8203;9L3-&#8203;8R2-&#8203;12R1-&#8203;12L1-&#8203;11R2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Fantasie</p><a href="#3dviewer" data="1R3-2L1-2R1-3L2-4L3-5L1-6L1-5R2-7L3-8L3-7R2-6R2-9L1-10L2-10R3-11R1-12R2-12L3-11L3" title="Fantasie" class="fancybox"><img src="img/figures/hard/fantasy.png" alt="Fantasie"></a>
-        <p class="notation">1R3-&#8203;2L1-&#8203;2R1-&#8203;3L2-&#8203;4L3-&#8203;5L1-&#8203;6L1-&#8203;5R2-&#8203;7L3-&#8203;8L3-&#8203;7R2-&#8203;6R2-&#8203;9L1-&#8203;10L2-&#8203;10R3-&#8203;11R1-&#8203;12R2-&#8203;12L3-&#8203;11L3</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Kogge</p><a href="#3dviewer" data="12R2-12L2-11L1-10L1-9L3-8L1-9R2-7L1-6R1-6L3-5R1-5L3-3R3-4L1-4R2-3L1-2R3-1R2-2L3" title="Kogge" class="fancybox"><img src="img/figures/hard/ship.png" alt="Kogge"></a>
-        <p class="notation">12R2-&#8203;12L2-&#8203;11L1-&#8203;10L1-&#8203;9L3-&#8203;8L1-&#8203;9R2-&#8203;7L1-&#8203;6R1-&#8203;6L3-&#8203;5R1-&#8203;5L3-&#8203;3R3-&#8203;4L1-&#8203;4R2-&#8203;3L1-&#8203;2R3-&#8203;1R2-&#8203;2L3</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Dreifach</p><a href="#3dviewer" data="1R2-3L1-2R2-4L3-5L3-4R2-3R2-5R2-7L1-6R2-7R2-8L3-8R2-10L1-9R2-11L1-10R2-12R2-12L3-11R2" title="Dreifach" class="fancybox"><img src="img/figures/hard/tripple.png" alt="Dreifach"></a>
-        <p class="notation">1R2-&#8203;3L1-&#8203;2R2-&#8203;4L3-&#8203;5L3-&#8203;4R2-&#8203;3R2-&#8203;5R2-&#8203;7L1-&#8203;6R2-&#8203;7R2-&#8203;8L3-&#8203;8R2-&#8203;10L1-&#8203;9R2-&#8203;11L1-&#8203;10R2-&#8203;12R2-&#8203;12L3-&#8203;11R2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Links wie Rechts</p><a href="#3dviewer" data="1R1-2R3-2L2-3R3-4R1-5L1-6L3-6R1-5R2-3L3-7R3-7L2-8L1-9L3-9R3-10R1-8R2-11L1-11R1-12R3-12L2" title="Links wie Rechts" class="fancybox"><img src="img/figures/hard/leftasright.png" alt="Links wie Rechts"></a>
-        <p class="notation">1R1-&#8203;2R3-&#8203;2L2-&#8203;3R3-&#8203;4R1-&#8203;5L1-&#8203;6L3-&#8203;6R1-&#8203;5R2-&#8203;3L3-&#8203;7R3-&#8203;7L2-&#8203;8L1-&#8203;9L3-&#8203;9R3-&#8203;10R1-&#8203;8R2-&#8203;11L1-&#8203;11R1-&#8203;12R3-&#8203;12L2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Dächer</p><a href="#3dviewer" data="5R3-6R3-6L2-7R1-7L2-4R1-5L2-3R3-4L2-2R1-1R2-2L2-8R1-8L2-9R3-9L2-11R3-10R1-10L2-12R2-12L2" title="Dächer" class="fancybox"><img src="img/figures/hard/roofs.png" alt="Dächer"></a>
-        <p class="notation">5R3-&#8203;6R3-&#8203;6L2-&#8203;7R1-&#8203;7L2-&#8203;4R1-&#8203;5L2-&#8203;3R3-&#8203;4L2-&#8203;2R1-&#8203;1R2-&#8203;2L2-&#8203;8R1-&#8203;8L2-&#8203;9R3-&#8203;9L2-&#8203;11R3-&#8203;10R1-&#8203;10L2-&#8203;12R2-&#8203;12L2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Berührung</p><a href="#3dviewer" data="1R2-3R3-3L2-4L1-5L1-4R2-6L3-5R1-7L1-7R3-6R2-8L3-9L3-9R1-8R2-10L2-11R2-12R2-12L3" title="Berührung" class="fancybox"><img src="img/figures/hard/contact.png" alt="Berührung"></a>
-        <p class="notation">1R2-&#8203;3R3-&#8203;3L2-&#8203;4L1-&#8203;5L1-&#8203;4R2-&#8203;6L3-&#8203;5R1-&#8203;7L1-&#8203;7R3-&#8203;6R2-&#8203;8L3-&#8203;9L3-&#8203;9R1-&#8203;8R2-&#8203;10L2-&#8203;11R2-&#8203;12R2-&#8203;12L3</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Noch 'ne Figur</p><a href="#3dviewer" data="11R3-12L2-10R1-11L3-9R3-10L2-9L3-8L2-7L1-6R1-5R3-5L1-4R1-6L2-4L2-2R1-1R3-2L2" title="Noch 'ne Figur" class="fancybox"><img src="img/figures/hard/anotherfigure.png" alt="Noch 'ne Figur"></a>
-        <p class="notation">11R3-&#8203;12L2-&#8203;10R1-&#8203;11L3-&#8203;9R3-&#8203;10L2-&#8203;9L3-&#8203;8L2-&#8203;7L1-&#8203;6R1-&#8203;5R3-&#8203;5L1-&#8203;4R1-&#8203;6L2-&#8203;4L2-&#8203;2R1-&#8203;1R3-&#8203;2L2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Mondlandefähre</p><a href="#3dviewer" data="1R2-2L1-2R3-3L3-3R3-4R1-4L3-5R1-6R3-6L1-7L3-7R3-8R1-8L3-9R3-9L2-10L3-11L3-11R3-5L1-12R3" title="Mondlandefähre" class="fancybox"><img src="img/figures/hard/lunamodule.png" alt="Mondlandefähre"></a>
-        <p class="notation">1R2-&#8203;2L1-&#8203;2R3-&#8203;3L3-&#8203;3R3-&#8203;4R1-&#8203;4L3-&#8203;5R1-&#8203;6R3-&#8203;6L1-&#8203;7L3-&#8203;7R3-&#8203;8R1-&#8203;8L3-&#8203;9R3-&#8203;9L2-&#8203;10L3-&#8203;11L3-&#8203;11R3-&#8203;5L1-&#8203;12R3</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Hund</p><a href="#3dviewer" data="1R1-2L3-2R3-3L3-4L1-3R3-4R3-5L3-5R1-6L1-6R1-7R3-7L1-8L3-9L3-8R1-9R3-10L3-12R1-12L1-11L1-10R3" title="Hund" class="fancybox"><img src="img/figures/hard/dog.png" alt="Hund"></a>
-        <p class="notation">1R1-&#8203;2L3-&#8203;2R3-&#8203;3L3-&#8203;4L1-&#8203;3R3-&#8203;4R3-&#8203;5L3-&#8203;5R1-&#8203;6L1-&#8203;6R1-&#8203;7R3-&#8203;7L1-&#8203;8L3-&#8203;9L3-&#8203;8R1-&#8203;9R3-&#8203;10L3-&#8203;12R1-&#8203;12L1-&#8203;11L1-&#8203;10R3</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Loch mittendurch</p><a href="#3dviewer" data="2L1-2R1-3R3-4L1-3L2-5L3-4R2-5R3-6R3-7L3-8L3-8R3-11L1-10L3-9R1-9L2-10R2-12R1-11R1" title="Loch mittendurch" class="fancybox"><img src="img/figures/hard/holeinthemiddle.png" alt="Loch mittendurch"></a>
-        <p class="notation">2L1-&#8203;2R1-&#8203;3R3-&#8203;4L1-&#8203;3L2-&#8203;5L3-&#8203;4R2-&#8203;5R3-&#8203;6R3-&#8203;7L3-&#8203;8L3-&#8203;8R3-&#8203;11L1-&#8203;10L3-&#8203;9R1-&#8203;9L2-&#8203;10R2-&#8203;12R1-&#8203;11R1</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Vorn' über</p><a href="#3dviewer" data="2R1-2L2-3L1-3R3-4L1-5L3-5R3-4R2-6R2-7L2-8L1-8R3-9L2-10L1-10R1-11R2-12R3" title="Vorn' über" class="fancybox"><img src="img/figures/hard/tothefront.png" alt="Vorn' über"></a>
-        <p class="notation">2R1-&#8203;2L2-&#8203;3L1-&#8203;3R3-&#8203;4L1-&#8203;5L3-&#8203;5R3-&#8203;4R2-&#8203;6R2-&#8203;7L2-&#8203;8L1-&#8203;8R3-&#8203;9L2-&#8203;10L1-&#8203;10R1-&#8203;11R2-&#8203;12R3</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Ästhetik</p><a href="#3dviewer" data="6R3-7R3-7L2-8R1-8L2-5R1-5L2-6L2-4R3-3R1-3L3-1R3-2L1-2R2-9R3-9L2-11L1-12R1-12L3-11R2-10R1" title="Ästhetik" class="fancybox"><img src="img/figures/hard/esthetic.png" alt="Ästhetik"></a>
-        <p class="notation">6R3-&#8203;7R3-&#8203;7L2-&#8203;8R1-&#8203;8L2-&#8203;5R1-&#8203;5L2-&#8203;6L2-&#8203;4R3-&#8203;3R1-&#8203;3L3-&#8203;1R3-&#8203;2L1-&#8203;2R2-&#8203;9R3-&#8203;9L2-&#8203;11L1-&#8203;12R1-&#8203;12L3-&#8203;11R2-&#8203;10R1</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Höhle</p><a href="#3dviewer" data="1R1-3R3-3L2-4R2-5L2-6L3-6R3-8L3-7R1-7L2-8R3-9L1-10R1-10L3-9R2-11L1-11R2" title="Höhle" class="fancybox"><img src="img/figures/hard/cave.png" alt="Höhle"></a>
-        <p class="notation">1R1-&#8203;3R3-&#8203;3L2-&#8203;4R2-&#8203;5L2-&#8203;6L3-&#8203;6R3-&#8203;8L3-&#8203;7R1-&#8203;7L2-&#8203;8R3-&#8203;9L1-&#8203;10R1-&#8203;10L3-&#8203;9R2-&#8203;11L1-&#8203;11R2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Terasse</p><a href="#3dviewer" data="1R1-2L1-3L3-3R3-4R3-4L2-5L1-6L1-5R2-6R1-7R1-7L3-8L1-8R3-9R1-9L1-10R1-10L2-11L3-12R3-12L3-11R2" title="Terasse" class="fancybox"><img src="img/figures/hard/terraces.png" alt="Terasse"></a>
-        <p class="notation">1R1-&#8203;2L1-&#8203;3L3-&#8203;3R3-&#8203;4R3-&#8203;4L2-&#8203;5L1-&#8203;6L1-&#8203;5R2-&#8203;6R1-&#8203;7R1-&#8203;7L3-&#8203;8L1-&#8203;8R3-&#8203;9R1-&#8203;9L1-&#8203;10R1-&#8203;10L2-&#8203;11L3-&#8203;12R3-&#8203;12L3-&#8203;11R2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Loch mittendurch 2</p><a href="#3dviewer" data="2R1-3R1-4L3-5L1-5R1-6R1-7L1-4R2-2L1-8L1-8R1-10L3-9R1-11L1-10R2-12R1-11R1" title="Loch mittendurch 2" class="fancybox"><img src="img/figures/hard/holeinthemiddle2.png" alt="Loch mittendurch 2"></a>
-        <p class="notation">2R1-&#8203;3R1-&#8203;4L3-&#8203;5L1-&#8203;5R1-&#8203;6R1-&#8203;7L1-&#8203;4R2-&#8203;2L1-&#8203;8L1-&#8203;8R1-&#8203;10L3-&#8203;9R1-&#8203;11L1-&#8203;10R2-&#8203;12R1-&#8203;11R1</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Zugang</p><a href="#3dviewer" data="1R3-2L1-2R1-3L3-3R1-4L1-4R3-5L3-6L3-6R1-7L3-5R3-7R3-8L1-8R3-12R1-12L1-11R3-11L1-10R1-10L3-9R3-9L3" title="Zugang" class="fancybox"><img src="img/figures/hard/entrance.png" alt="Zugang"></a>
-        <p class="notation">1R3-&#8203;2L1-&#8203;2R1-&#8203;3L3-&#8203;3R1-&#8203;4L1-&#8203;4R3-&#8203;5L3-&#8203;6L3-&#8203;6R1-&#8203;7L3-&#8203;5R3-&#8203;7R3-&#8203;8L1-&#8203;8R3-&#8203;12R1-&#8203;12L1-&#8203;11R3-&#8203;11L1-&#8203;10R1-&#8203;10L3-&#8203;9R3-&#8203;9L3</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Bühne</p><a href="#3dviewer" data="1R1-2R3-4L3-5L3-4R2-6L3-7L3-6R2-5R3-3R3-3L2-7R3-8R3-8L2-9L3-9R3-10R3-10L2-11L3-12L3-11R2" title="Bühne" class="fancybox"><img src="img/figures/hard/stage.png" alt="Bühne"></a>
-        <p class="notation">1R1-&#8203;2R3-&#8203;4L3-&#8203;5L3-&#8203;4R2-&#8203;6L3-&#8203;7L3-&#8203;6R2-&#8203;5R3-&#8203;3R3-&#8203;3L2-&#8203;7R3-&#8203;8R3-&#8203;8L2-&#8203;9L3-&#8203;9R3-&#8203;10R3-&#8203;10L2-&#8203;11L3-&#8203;12L3-&#8203;11R2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Fliege</p><a href="#3dviewer" data="2L1-3L3-2R2-4L2-4R3-5R3-5L2-6L3-7L3-8L3-7R2-6R2-9L1-10L1-9R2-8R2-12R1-11R1-12L2-11L1-10R2" title="Fliege" class="fancybox"><img src="img/figures/hard/fly.png" alt="Fliege"></a>
-        <p class="notation">2L1-&#8203;3L3-&#8203;2R2-&#8203;4L2-&#8203;4R3-&#8203;5R3-&#8203;5L2-&#8203;6L3-&#8203;7L3-&#8203;8L3-&#8203;7R2-&#8203;6R2-&#8203;9L1-&#8203;10L1-&#8203;9R2-&#8203;8R2-&#8203;12R1-&#8203;11R1-&#8203;12L2-&#8203;11L1-&#8203;10R2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Gesicht</p><a href="#3dviewer" data="2L3-3L3-2R2-3R3-4R3-5L1-4L2-6L3-5R2-6R1-7R1-7L2-8L1-9L1-8R2-10L1-9R2-11L1-10R2-11R1-12R1-12L2" title="Gesicht" class="fancybox"><img src="img/figures/hard/face.png" alt="Gesicht"></a>
-        <p class="notation">2L3-&#8203;3L3-&#8203;2R2-&#8203;3R3-&#8203;4R3-&#8203;5L1-&#8203;4L2-&#8203;6L3-&#8203;5R2-&#8203;6R1-&#8203;7R1-&#8203;7L2-&#8203;8L1-&#8203;9L1-&#8203;8R2-&#8203;10L1-&#8203;9R2-&#8203;11L1-&#8203;10R2-&#8203;11R1-&#8203;12R1-&#8203;12L2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Doppelspitze</p><a href="#3dviewer" data="1R3-3L2-4R3-5L3-5R3-6R2-8L3-7R1-8R3-9R3-9L2-10L1-11L3-11R1-10R2-12R3-12L2" title="Doppelspitze" class="fancybox"><img src="img/figures/hard/doublepeak.png" alt="Doppelspitze"></a>
-        <p class="notation">1R3-&#8203;3L2-&#8203;4R3-&#8203;5L3-&#8203;5R3-&#8203;6R2-&#8203;8L3-&#8203;7R1-&#8203;8R3-&#8203;9R3-&#8203;9L2-&#8203;10L1-&#8203;11L3-&#8203;11R1-&#8203;10R2-&#8203;12R3-&#8203;12L2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Angeschmiegt</p><a href="#3dviewer" data="12R3-12L1-11R3-11L3-9R1-10L3-10R3-8R3-9L2-8L3-7L1-6L3-6R2-4L3-4R1-5L2-3R3-3L1-1R3-2R2" title="Angeschmiegt" class="fancybox"><img src="img/figures/hard/nestledagainst.png" alt="Angeschmiegt"></a>
-        <p class="notation">12R3-&#8203;12L1-&#8203;11R3-&#8203;11L3-&#8203;9R1-&#8203;10L3-&#8203;10R3-&#8203;8R3-&#8203;9L2-&#8203;8L3-&#8203;7L1-&#8203;6L3-&#8203;6R2-&#8203;4L3-&#8203;4R1-&#8203;5L2-&#8203;3R3-&#8203;3L1-&#8203;1R3-&#8203;2R2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Nur Quadrate</p><a href="#3dviewer" data="1R1-2L3-2R3-3R3-3L2-4R1-5R1-5L2-4L2-6L1-6R3-7R1-8L3-8R3-9R3-9L2-10R1-11R1-11L2-10L2-12L1-12R3-7L2" title="Nur Quadrate" class="fancybox"><img src="img/figures/hard/justsquares.png" alt="Nur Quadrate"></a>
-        <p class="notation">1R1-&#8203;2L3-&#8203;2R3-&#8203;3R3-&#8203;3L2-&#8203;4R1-&#8203;5R1-&#8203;5L2-&#8203;4L2-&#8203;6L1-&#8203;6R3-&#8203;7R1-&#8203;8L3-&#8203;8R3-&#8203;9R3-&#8203;9L2-&#8203;10R1-&#8203;11R1-&#8203;11L2-&#8203;10L2-&#8203;12L1-&#8203;12R3-&#8203;7L2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Tischfeuerwerk</p><a href="#3dviewer" data="2L3-2R3-4L3-3R1-4R1-3L2-5R3-5L2-7L3-6L3-7R3-9L3-8R1-8L2-9R1-11L1-10R1-10L2-12R2-12L3" title="Tischfeuerwerk" class="fancybox"><img src="img/figures/hard/tablefireworks.png" alt="Tischfeuerwerk"></a>
-        <p class="notation">2L3-&#8203;2R3-&#8203;4L3-&#8203;3R1-&#8203;4R1-&#8203;3L2-&#8203;5R3-&#8203;5L2-&#8203;7L3-&#8203;6L3-&#8203;7R3-&#8203;9L3-&#8203;8R1-&#8203;8L2-&#8203;9R1-&#8203;11L1-&#8203;10R1-&#8203;10L2-&#8203;12R2-&#8203;12L3</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Teufelskopf</p><a href="#3dviewer" data="1R2-2R1-3R1-4R3-5R1-4L2-6R1-6L2-7L1-8L1-8R3-7R2-9R1-9L2-10L3-11L3-10R2-11R3" title="Teufelskopf" class="fancybox"><img src="img/figures/hard/headofdevil.png" alt="Teufelskopf"></a>
-        <p class="notation">1R2-&#8203;2R1-&#8203;3R1-&#8203;4R3-&#8203;5R1-&#8203;4L2-&#8203;6R1-&#8203;6L2-&#8203;7L1-&#8203;8L1-&#8203;8R3-&#8203;7R2-&#8203;9R1-&#8203;9L2-&#8203;10L3-&#8203;11L3-&#8203;10R2-&#8203;11R3</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Miss Piggy</p><a href="#3dviewer" data="2L1-2R3-3R1-3L2-4R1-5L3-6R3-6L1-5R2-7L3-7R1-9L1-8R3-8L2-10L1-11L3-12R1-11R1-10R2" title="Miss Piggy" class="fancybox"><img src="img/figures/hard/misspiggy.png" alt="Miss Piggy"></a>
-        <p class="notation">2L1-&#8203;2R3-&#8203;3R1-&#8203;3L2-&#8203;4R1-&#8203;5L3-&#8203;6R3-&#8203;6L1-&#8203;5R2-&#8203;7L3-&#8203;7R1-&#8203;9L1-&#8203;8R3-&#8203;8L2-&#8203;10L1-&#8203;11L3-&#8203;12R1-&#8203;11R1-&#8203;10R2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Doppeldach</p><a href="#3dviewer" data="2L1-2R3-3L3-3R1-4L1-4R1-5R3-5L1-6L3-6R3-7R1-8L1-8R3-9R3-12R1-11R3-11L1-10L3-10R2-12L2-7L3" title="Doppeldach" class="fancybox"><img src="img/figures/hard/doubleroof.png" alt="Doppeldach"></a>
-        <p class="notation">2L1-&#8203;2R3-&#8203;3L3-&#8203;3R1-&#8203;4L1-&#8203;4R1-&#8203;5R3-&#8203;5L1-&#8203;6L3-&#8203;6R3-&#8203;7R1-&#8203;8L1-&#8203;8R3-&#8203;9R3-&#8203;12R1-&#8203;11R3-&#8203;11L1-&#8203;10L3-&#8203;10R2-&#8203;12L2-&#8203;7L3</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Wiege</p><a href="#3dviewer" data="3R3-3L2-4R3-4L3-2L1-1R3-5L1-5R1-6L1-7L3-6R1-7R3-8L3-8R2-9R1-10L3-10R3-11L1-12R1" title="Wiege" class="fancybox"><img src="img/figures/hard/cradle.png" alt="Wiege"></a>
-        <p class="notation">3R3-&#8203;3L2-&#8203;4R3-&#8203;4L3-&#8203;2L1-&#8203;1R3-&#8203;5L1-&#8203;5R1-&#8203;6L1-&#8203;7L3-&#8203;6R1-&#8203;7R3-&#8203;8L3-&#8203;8R2-&#8203;9R1-&#8203;10L3-&#8203;10R3-&#8203;11L1-&#8203;12R1</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Spinne</p><a href="#3dviewer" data="3R3-4R3-5L2-4L3-1R1-2L3-6L1-7L2-7R2-8R1-10L3-9R2-10R3-11L3-12R3" title="Spinne" class="fancybox"><img src="img/figures/hard/spider.png" alt="Spinne"></a>
-        <p class="notation">3R3-&#8203;4R3-&#8203;5L2-&#8203;4L3-&#8203;1R1-&#8203;2L3-&#8203;6L1-&#8203;7L2-&#8203;7R2-&#8203;8R1-&#8203;10L3-&#8203;9R2-&#8203;10R3-&#8203;11L3-&#8203;12R3</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Faserpistole</p><a href="#3dviewer" data="9L3-8L3-8R2-7R3-6R3-7L2-6L3-5L3-5R2-4L3-10L3-11L3-10R2-3L3-3R2-11R1-12R2-2R3" title="Faserpistole" class="fancybox"><img src="img/figures/hard/fasergun.png" alt="Faserpistole"></a>
-        <p class="notation">9L3-&#8203;8L3-&#8203;8R2-&#8203;7R3-&#8203;6R3-&#8203;7L2-&#8203;6L3-&#8203;5L3-&#8203;5R2-&#8203;4L3-&#8203;10L3-&#8203;11L3-&#8203;10R2-&#8203;3L3-&#8203;3R2-&#8203;11R1-&#8203;12R2-&#8203;2R3</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Springbrunnen</p><a href="#3dviewer" data="3L3-3R1-4R3-4L2-5R3-5L2-6L3-6R1-7R3-7L2-8R1-8L1-9L3-10R3-10L1-9R2-11L3-12L3-12R2-11R2-1R3-2L3-2R3" title="Springbrunnen" class="fancybox"><img src="img/figures/hard/fountain.png" alt="Springbrunnen"></a>
-        <p class="notation">3L3-&#8203;3R1-&#8203;4R3-&#8203;4L2-&#8203;5R3-&#8203;5L2-&#8203;6L3-&#8203;6R1-&#8203;7R3-&#8203;7L2-&#8203;8R1-&#8203;8L1-&#8203;9L3-&#8203;10R3-&#8203;10L1-&#8203;9R2-&#8203;11L3-&#8203;12L3-&#8203;12R2-&#8203;11R2-&#8203;1R3-&#8203;2L3-&#8203;2R3</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">X</p><a href="#3dviewer" data="1R3-3R3-3L2-4L3-4R1-5R3-5L2-6L3-7L2-7R2-8R3-9L3-10L1-10R3-9R2-11L3-11R2" title="X" class="fancybox"><img src="img/figures/hard/x.png" alt="X"></a>
-        <p class="notation">1R3-&#8203;3R3-&#8203;3L2-&#8203;4L3-&#8203;4R1-&#8203;5R3-&#8203;5L2-&#8203;6L3-&#8203;7L2-&#8203;7R2-&#8203;8R3-&#8203;9L3-&#8203;10L1-&#8203;10R3-&#8203;9R2-&#8203;11L3-&#8203;11R2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Kamel</p><a href="#3dviewer" data="9L3-8L3-8R2-7R3-6R3-7L2-6L3-5L3-5R2-4L3-10L3-11L3-10R2-3L3-3R2-2R2-1R1-12R3" title="Kamel" class="fancybox"><img src="img/figures/hard/camel.png" alt="Kamel"></a>
-        <p class="notation">9L3-&#8203;8L3-&#8203;8R2-&#8203;7R3-&#8203;6R3-&#8203;7L2-&#8203;6L3-&#8203;5L3-&#8203;5R2-&#8203;4L3-&#8203;10L3-&#8203;11L3-&#8203;10R2-&#8203;3L3-&#8203;3R2-&#8203;2R2-&#8203;1R1-&#8203;12R3</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Käfer</p><a href="#3dviewer" data="7L3-7R3-8L1-8R1-9L1-10L3-9R1-11L1-11R1-12R1-12L2-5R1-6L3-6R3-5L1-4R1-2R1-3R3-4L1-1R2-2L1" title="Käfer" class="fancybox"><img src="img/figures/hard/beetle2.png" alt="Käfer"></a>
-        <p class="notation">7L3-&#8203;7R3-&#8203;8L1-&#8203;8R1-&#8203;9L1-&#8203;10L3-&#8203;9R1-&#8203;11L1-&#8203;11R1-&#8203;12R1-&#8203;12L2-&#8203;5R1-&#8203;6L3-&#8203;6R3-&#8203;5L1-&#8203;4R1-&#8203;2R1-&#8203;3R3-&#8203;4L1-&#8203;1R2-&#8203;2L1</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Knoten</p><a href="#3dviewer" data="1R3-2L1-3L1-2R2-5L1-6L1-5R2-4R1-4L1-6R3-7L3-7R1-8R1-8L2-9L1-10R1-11R1-11L2-9R1-12L3-12R3" title="Knoten" class="fancybox"><img src="img/figures/hard/knot.png" alt="Knoten"></a>
-        <p class="notation">1R3-&#8203;2L1-&#8203;3L1-&#8203;2R2-&#8203;5L1-&#8203;6L1-&#8203;5R2-&#8203;4R1-&#8203;4L1-&#8203;6R3-&#8203;7L3-&#8203;7R1-&#8203;8R1-&#8203;8L2-&#8203;9L1-&#8203;10R1-&#8203;11R1-&#8203;11L2-&#8203;9R1-&#8203;12L3-&#8203;12R3</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Berge</p><a href="#3dviewer" data="5R1-6R1-6L2-4R1-5L2-4L1-3L1-3R2-2L2-7R3-8R3-8L2-7L2-9R3-9L2-10L3-11L3-10R2-12L2" title="Berge" class="fancybox"><img src="img/figures/hard/mountains.png" alt="Berge"></a>
-        <p class="notation">5R1-&#8203;6R1-&#8203;6L2-&#8203;4R1-&#8203;5L2-&#8203;4L1-&#8203;3L1-&#8203;3R2-&#8203;2L2-&#8203;7R3-&#8203;8R3-&#8203;8L2-&#8203;7L2-&#8203;9R3-&#8203;9L2-&#8203;10L3-&#8203;11L3-&#8203;10R2-&#8203;12L2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">USS Enterprice</p><a href="#3dviewer" data="1R3-2R1-2L2-3R1-3L2-4L1-5L2-5R2-6R1-7L1-8L2-10L1-9R1-8R2-11L1-10R2-12L3-11R2" title="USS Enterprice" class="fancybox"><img src="img/figures/hard/ussenterprice.png" alt="USS Enterprice"></a>
-        <p class="notation">1R3-&#8203;2R1-&#8203;2L2-&#8203;3R1-&#8203;3L2-&#8203;4L1-&#8203;5L2-&#8203;5R2-&#8203;6R1-&#8203;7L1-&#8203;8L2-&#8203;10L1-&#8203;9R1-&#8203;8R2-&#8203;11L1-&#8203;10R2-&#8203;12L3-&#8203;11R2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Pyramide</p><a href="#3dviewer" data="2L1-3L3-2R2-4L1-5L3-4R2-6L1-7L3-6R2-8L2-8R1-9R3-9L1-10L1-11L3-11R1-10R2-12L3-12R3" title="Pyramide" class="fancybox"><img src="img/figures/hard/pyramid.png" alt="Pyramide"></a>
-        <p class="notation">2L1-&#8203;3L3-&#8203;2R2-&#8203;4L1-&#8203;5L3-&#8203;4R2-&#8203;6L1-&#8203;7L3-&#8203;6R2-&#8203;8L2-&#8203;8R1-&#8203;9R3-&#8203;9L1-&#8203;10L1-&#8203;11L3-&#8203;11R1-&#8203;10R2-&#8203;12L3-&#8203;12R3</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Engel</p><a href="#3dviewer" data="2L3-2R3-3R1-4L3-3L2-4R1-5L1-5R3-6L3-7R1-7L3-6R3-8L1-9L1-8R3-10L3-9R2-12R3-12L3-10R3" title="Engel" class="fancybox"><img src="img/figures/hard/angel.png" alt="Engel"></a>
-        <p class="notation">2L3-&#8203;2R3-&#8203;3R1-&#8203;4L3-&#8203;3L2-&#8203;4R1-&#8203;5L1-&#8203;5R3-&#8203;6L3-&#8203;7R1-&#8203;7L3-&#8203;6R3-&#8203;8L1-&#8203;9L1-&#8203;8R3-&#8203;10L3-&#8203;9R2-&#8203;12R3-&#8203;12L3-&#8203;10R3</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Globus</p><a href="#3dviewer" data="3R3-4L1-4R1-5L3-5R3-7L1-6R3-6L3-7R1-3L2-2L1-1R1-8L1-9L3-8R1-9R3-10L3-10R2-11R1-12L1" title="Globus" class="fancybox"><img src="img/figures/hard/globus.png" alt="Globus"></a>
-        <p class="notation">3R3-&#8203;4L1-&#8203;4R1-&#8203;5L3-&#8203;5R3-&#8203;7L1-&#8203;6R3-&#8203;6L3-&#8203;7R1-&#8203;3L2-&#8203;2L1-&#8203;1R1-&#8203;8L1-&#8203;9L3-&#8203;8R1-&#8203;9R3-&#8203;10L3-&#8203;10R2-&#8203;11R1-&#8203;12L1</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Knospe</p><a href="#3dviewer" data="1R3-2L1-3L3-3R3-4R1-5L3-4L2-6L3-5R2-6R3-7R3-7L2-8L3-9L3-8R2-9R1-10R1-10L2-12R1-12L3-11L1" title="Knospe" class="fancybox"><img src="img/figures/hard/bud.png" alt="Knospe"></a>
-        <p class="notation">1R3-&#8203;2L1-&#8203;3L3-&#8203;3R3-&#8203;4R1-&#8203;5L3-&#8203;4L2-&#8203;6L3-&#8203;5R2-&#8203;6R3-&#8203;7R3-&#8203;7L2-&#8203;8L3-&#8203;9L3-&#8203;8R2-&#8203;9R1-&#8203;10R1-&#8203;10L2-&#8203;12R1-&#8203;12L3-&#8203;11L1</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Schwan 2</p><a href="#3dviewer" data="1R2-3L3-2R2-3R1-4L3-4R3-5L3-6L1-5R3-6R1-7L1-8L3-7R1-8R1-9L2-12R2-12L2" title="Schwan 2" class="fancybox"><img src="img/figures/hard/swan2.png" alt="Schwan 2"></a>
-        <p class="notation">1R2-&#8203;3L3-&#8203;2R2-&#8203;3R1-&#8203;4L3-&#8203;4R3-&#8203;5L3-&#8203;6L1-&#8203;5R3-&#8203;6R1-&#8203;7L1-&#8203;8L3-&#8203;7R1-&#8203;8R1-&#8203;9L2-&#8203;12R2-&#8203;12L2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Wanze</p><a href="#3dviewer" data="1R1-2L1-2R1-3L1-3R3-4L1-4R1-5L1-6L3-5R1-6R1-7L1-8R3-8L1-7R1-9L1-9R3-10R1-10L3-11L1-12R1-12L3-11R3" title="Wanze" class="fancybox"><img src="img/figures/hard/bug.png" alt="Wanze"></a>
-        <p class="notation">1R1-&#8203;2L1-&#8203;2R1-&#8203;3L1-&#8203;3R3-&#8203;4L1-&#8203;4R1-&#8203;5L1-&#8203;6L3-&#8203;5R1-&#8203;6R1-&#8203;7L1-&#8203;8R3-&#8203;8L1-&#8203;7R1-&#8203;9L1-&#8203;9R3-&#8203;10R1-&#8203;10L3-&#8203;11L1-&#8203;12R1-&#8203;12L3-&#8203;11R3</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Blüte 2</p><a href="#3dviewer" data="1R3-2L1-3L3-3R1-2R2-4L2-5L1-6L3-5R2-7R3-7L2-8L1-9L3-9R1-8R2-10L2-11L1-12L3-11R2" title="Blüte 2" class="fancybox"><img src="img/figures/hard/blossom2.png" alt="Blüte 2"></a>
-        <p class="notation">1R3-&#8203;2L1-&#8203;3L3-&#8203;3R1-&#8203;2R2-&#8203;4L2-&#8203;5L1-&#8203;6L3-&#8203;5R2-&#8203;7R3-&#8203;7L2-&#8203;8L1-&#8203;9L3-&#8203;9R1-&#8203;8R2-&#8203;10L2-&#8203;11L1-&#8203;12L3-&#8203;11R2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Hut</p><a href="#3dviewer" data="2L3-3L1-2R2-4L3-4R3-5L3-6L3-6R1-7R2-8L2-10L3-9R1-11L3-11R3" title="Hut" class="fancybox"><img src="img/figures/hard/hat.png" alt="Hut"></a>
-        <p class="notation">2L3-&#8203;3L1-&#8203;2R2-&#8203;4L3-&#8203;4R3-&#8203;5L3-&#8203;6L3-&#8203;6R1-&#8203;7R2-&#8203;8L2-&#8203;10L3-&#8203;9R1-&#8203;11L3-&#8203;11R3</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Krone 2</p><a href="#3dviewer" data="1R1-2R2-3L2-4L3-4R3-6L3-5R1-5L2-6R1-8L1-7R3-7L2-8R3-12R3-11R2-11L2-10L1-9R1-9L2" title="Krone 2" class="fancybox"><img src="img/figures/hard/crown2.png" alt="Krone 2"></a>
-        <p class="notation">1R1-&#8203;2R2-&#8203;3L2-&#8203;4L3-&#8203;4R3-&#8203;6L3-&#8203;5R1-&#8203;5L2-&#8203;6R1-&#8203;8L1-&#8203;7R3-&#8203;7L2-&#8203;8R3-&#8203;12R3-&#8203;11R2-&#8203;11L2-&#8203;10L1-&#8203;9R1-&#8203;9L2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Thron</p><a href="#3dviewer" data="2R3-2L2-3L1-4L1-3R2-5R1-6L1-7L1-6R2-5L1-7R1-8R1-8L2-9L1-9R1-10R1-11R1-11L2-12L3-12R2" title="Thron" class="fancybox"><img src="img/figures/hard/throne.png" alt="Thron"></a>
-        <p class="notation">2R3-&#8203;2L2-&#8203;3L1-&#8203;4L1-&#8203;3R2-&#8203;5R1-&#8203;6L1-&#8203;7L1-&#8203;6R2-&#8203;5L1-&#8203;7R1-&#8203;8R1-&#8203;8L2-&#8203;9L1-&#8203;9R1-&#8203;10R1-&#8203;11R1-&#8203;11L2-&#8203;12L3-&#8203;12R2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Juwel</p><a href="#3dviewer" data="1R1-2L1-3L3-4L3-3R2-4R3-6L1-5R3-5L2-6R1-7L1-8L3-7R1-8R2-9L3-9R3-10R3-10L2-11R1-12L1" title="Juwel" class="fancybox"><img src="img/figures/hard/jewel.png" alt="Juwel"></a>
-        <p class="notation">1R1-&#8203;2L1-&#8203;3L3-&#8203;4L3-&#8203;3R2-&#8203;4R3-&#8203;6L1-&#8203;5R3-&#8203;5L2-&#8203;6R1-&#8203;7L1-&#8203;8L3-&#8203;7R1-&#8203;8R2-&#8203;9L3-&#8203;9R3-&#8203;10R3-&#8203;10L2-&#8203;11R1-&#8203;12L1</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Schleife 2</p><a href="#3dviewer" data="1R1-2R1-2L2-3R3-4L1-4R1-5L1-6L3-6R1-5R1-7R3-7L2-8L1-11R1-10R1-11L2-10L3-9R3-9L3-8R3-12R1-12L2" title="Schleife 2" class="fancybox"><img src="img/figures/hard/bow2.png" alt="Schleife 2"></a>
-        <p class="notation">1R1-&#8203;2R1-&#8203;2L2-&#8203;3R3-&#8203;4L1-&#8203;4R1-&#8203;5L1-&#8203;6L3-&#8203;6R1-&#8203;5R1-&#8203;7R3-&#8203;7L2-&#8203;8L1-&#8203;11R1-&#8203;10R1-&#8203;11L2-&#8203;10L3-&#8203;9R3-&#8203;9L3-&#8203;8R3-&#8203;12R1-&#8203;12L2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Runter</p><a href="#3dviewer" data="2L1-3L3-3R2-2R2-4R1-5L1-6L3-6R1-5R2-7R3-7L2-8L1-9L3-8R2-9R3-10R2-11L1-12L3-11R2" title="Runter" class="fancybox"><img src="img/figures/hard/downwards2.png" alt="Runter"></a>
-        <p class="notation">2L1-&#8203;3L3-&#8203;3R2-&#8203;2R2-&#8203;4R1-&#8203;5L1-&#8203;6L3-&#8203;6R1-&#8203;5R2-&#8203;7R3-&#8203;7L2-&#8203;8L1-&#8203;9L3-&#8203;8R2-&#8203;9R3-&#8203;10R2-&#8203;11L1-&#8203;12L3-&#8203;11R2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">USS Enterprice 2</p><a href="#3dviewer" data="2L3-3L1-2R2-4L3-3R2-5R2-7L1-6L2-7R1-8R2-10R3-9L2-11R1-11L2-12R3-12L2" title="USS Enterprice 2" class="fancybox"><img src="img/figures/hard/ussenterprice2.png" alt="USS Enterprice 2"></a>
-        <p class="notation">2L3-&#8203;3L1-&#8203;2R2-&#8203;4L3-&#8203;3R2-&#8203;5R2-&#8203;7L1-&#8203;6L2-&#8203;7R1-&#8203;8R2-&#8203;10R3-&#8203;9L2-&#8203;11R1-&#8203;11L2-&#8203;12R3-&#8203;12L2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Maus</p><a href="#3dviewer" data="12R1-12L3-11R1-11L3-10R1-9R1-9L1-8R3-7R3-10L1-6L3-5R1-5L1-3L1-3R3-4R1-4L1-7L3-2L1-1R1-2R3" title="Maus" class="fancybox"><img src="img/figures/hard/mouse.png" alt="Maus"></a>
-        <p class="notation">12R1-&#8203;12L3-&#8203;11R1-&#8203;11L3-&#8203;10R1-&#8203;9R1-&#8203;9L1-&#8203;8R3-&#8203;7R3-&#8203;10L1-&#8203;6L3-&#8203;5R1-&#8203;5L1-&#8203;3L1-&#8203;3R3-&#8203;4R1-&#8203;4L1-&#8203;7L3-&#8203;2L1-&#8203;1R1-&#8203;2R3</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Knoten auf Füßen</p><a href="#3dviewer" data="1R2-2L2-3L1-3R3-4R1-4L2-6L3-5R2-7R3-7L1-6R3-8L3-8R2-9R1-11L1-10R3-10L2-12R2-12L2" title="Knoten auf Füßen" class="fancybox"><img src="img/figures/hard/knotonlegs.png" alt="Knoten auf Füßen"></a>
-        <p class="notation">1R2-&#8203;2L2-&#8203;3L1-&#8203;3R3-&#8203;4R1-&#8203;4L2-&#8203;6L3-&#8203;5R2-&#8203;7R3-&#8203;7L1-&#8203;6R3-&#8203;8L3-&#8203;8R2-&#8203;9R1-&#8203;11L1-&#8203;10R3-&#8203;10L2-&#8203;12R2-&#8203;12L2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Denkmal</p><a href="#3dviewer" data="1R2-2R3-4L2-5R3-4R2-6L3-7L3-6R2-7R3-8R3-8L2-9L3-12L3-10L2-10R2" title="Denkmal" class="fancybox"><img src="img/figures/hard/memorial.png" alt="Denkmal"></a>
-        <p class="notation">1R2-&#8203;2R3-&#8203;4L2-&#8203;5R3-&#8203;4R2-&#8203;6L3-&#8203;7L3-&#8203;6R2-&#8203;7R3-&#8203;8R3-&#8203;8L2-&#8203;9L3-&#8203;12L3-&#8203;10L2-&#8203;10R2</p>
-      </div>
-      <div class="figure"> 
-        <p class="title">Knospen</p><a href="#3dviewer" data="1R3-2R3-2L2-3L1-4L3-3R2-4R1-6L1-5R3-5L2-7L1-6R2-7R1-9L3-8R1-8L2-10R3-10L1-9R2-12L3-11R1-11L2-12R2" title="Knospen" class="fancybox"><img src="img/figures/hard/buds.png" alt="Knospen"></a>
-        <p class="notation">1R3-&#8203;2R3-&#8203;2L2-&#8203;3L1-&#8203;4L3-&#8203;3R2-&#8203;4R1-&#8203;6L1-&#8203;5R3-&#8203;5L2-&#8203;7L1-&#8203;6R2-&#8203;7R1-&#8203;9L3-&#8203;8R1-&#8203;8L2-&#8203;10R3-&#8203;10L1-&#8203;9R2-&#8203;12L3-&#8203;11R1-&#8203;11L2-&#8203;12R2</p>
-      </div>
+    <div id="header-wrap">
+      <header id="site-header"><a href="/" id="site-link">
+          <h1 id="site-logo">thomas-wolter.de</h1></a>
+        <nav id="main-nav"><a href="/" class="main-nav-item ">HOME</a><a href="rubik_notation_de.html" class="main-nav-item selected">RUBIK'S SNAKE</a><a href="atom_de.html" class="main-nav-item ">ATOMPUZZLE</a>
+        </nav>
+      </header>
+    </div>
+    <div id="sub-nav-wrap">
+      <nav id="sub-nav"><a href="rubik_notation_de.html" class="sub-nav-item ">notation</a>|<a href="rubik_easy_de.html" class="sub-nav-item ">einfache figuren</a>|<a href="rubik_hard_de.html" class="sub-nav-item selected">schwere figuren</a>|<a href="rubik_manuals_de.html" class="sub-nav-item ">aus anleitungen</a>|<a href="rubik_fansfriends_de.html" class="sub-nav-item ">fans & friends</a>|<a href="rubik_victorsworld_de.html" class="sub-nav-item ">victor's welt</a>|<a href="rubik_player_de.html" class="sub-nav-item ">player</a></nav>
+    </div>
+    <div id="content" role="main">
+      <figure><a href="#3dviewer" data="1R2-2L1-3L3-3R1-4L1-4R2-5R3-7L3-6R1-6L2-8L1-8R3-7R2-9R1-9L2-12L1-11R3-11L3-10R2" title="Spitzbergen" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/spitzbergen.png" alt="Spitzbergen" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Spitzbergen</h2>
+          <p class="figure-notation">1R2-<wbr>2L1-<wbr>3L3-<wbr>3R1-<wbr>4L1-<wbr>4R2-<wbr>5R3-<wbr>7L3-<wbr>6R1-<wbr>6L2-<wbr>8L1-<wbr>8R3-<wbr>7R2-<wbr>9R1-<wbr>9L2-<wbr>12L1-<wbr>11R3-<wbr>11L3-<wbr>10R2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R1-2R2-3L2-4L1-5L2-5R3-6L1-4R1-6R1-7L3-7R2-12R2-12L3-11R1-11L1-10R3-10L2-9R1-9L3-8R3-8L1" title="Teelichthalter" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/tealightstick.png" alt="Teelichthalter" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Teelichthalter</h2>
+          <p class="figure-notation">1R1-<wbr>2R2-<wbr>3L2-<wbr>4L1-<wbr>5L2-<wbr>5R3-<wbr>6L1-<wbr>4R1-<wbr>6R1-<wbr>7L3-<wbr>7R2-<wbr>12R2-<wbr>12L3-<wbr>11R1-<wbr>11L1-<wbr>10R3-<wbr>10L2-<wbr>9R1-<wbr>9L3-<wbr>8R3-<wbr>8L1</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="6R1-6L3-5R2-5L3-4R2-4L1-1R1-3L3-3R2-7L2-7R3-8L1-8R2-9L1-9R2-10L3-12R3-11L1-10R2" title="Three Peaks" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/threepeaks.png" alt="Three Peaks" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Three Peaks</h2>
+          <p class="figure-notation">6R1-<wbr>6L3-<wbr>5R2-<wbr>5L3-<wbr>4R2-<wbr>4L1-<wbr>1R1-<wbr>3L3-<wbr>3R2-<wbr>7L2-<wbr>7R3-<wbr>8L1-<wbr>8R2-<wbr>9L1-<wbr>9R2-<wbr>10L3-<wbr>12R3-<wbr>11L1-<wbr>10R2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="2L3-3L1-2R2-4L3-3R2-5L3-4R2-5R3-6L3-7L2-8L1-8R1-9L1-10L1-9R2-10R2-11L3-12L1-11R2" title="Talkessel" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/valley.png" alt="Talkessel" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Talkessel</h2>
+          <p class="figure-notation">2L3-<wbr>3L1-<wbr>2R2-<wbr>4L3-<wbr>3R2-<wbr>5L3-<wbr>4R2-<wbr>5R3-<wbr>6L3-<wbr>7L2-<wbr>8L1-<wbr>8R1-<wbr>9L1-<wbr>10L1-<wbr>9R2-<wbr>10R2-<wbr>11L3-<wbr>12L1-<wbr>11R2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R2-2R1-3R3-3L2-4R1-5R1-5L2-4L2-6L2-6R3-7R1-7L2-8R2-9L3-10L3-9R2-10R3-12R2-12L3-11R3-11L2" title="Kreuz 3D" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/cross3d.png" alt="Kreuz 3D" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Kreuz 3D</h2>
+          <p class="figure-notation">1R2-<wbr>2R1-<wbr>3R3-<wbr>3L2-<wbr>4R1-<wbr>5R1-<wbr>5L2-<wbr>4L2-<wbr>6L2-<wbr>6R3-<wbr>7R1-<wbr>7L2-<wbr>8R2-<wbr>9L3-<wbr>10L3-<wbr>9R2-<wbr>10R3-<wbr>12R2-<wbr>12L3-<wbr>11R3-<wbr>11L2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="2L3-3R3-3L1-2R2-4L1-5L1-6R1-6L3-5R2-7L2-7R3-8L1-8R2-9L3-11L3-10L3-10R1-12L1-11R2" title="Keine Ahnung" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/noclue.png" alt="Keine Ahnung" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Keine Ahnung</h2>
+          <p class="figure-notation">2L3-<wbr>3R3-<wbr>3L1-<wbr>2R2-<wbr>4L1-<wbr>5L1-<wbr>6R1-<wbr>6L3-<wbr>5R2-<wbr>7L2-<wbr>7R3-<wbr>8L1-<wbr>8R2-<wbr>9L3-<wbr>11L3-<wbr>10L3-<wbr>10R1-<wbr>12L1-<wbr>11R2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R3-2L1-3L3-2R2-4L2-5L1-6R1-6L3-5R2-7L2-7R3-8L1-9L3-8R2-10L2-11L1-12R1-12L3-11R2" title="Revolution" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/revolution.png" alt="Revolution" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Revolution</h2>
+          <p class="figure-notation">1R3-<wbr>2L1-<wbr>3L3-<wbr>2R2-<wbr>4L2-<wbr>5L1-<wbr>6R1-<wbr>6L3-<wbr>5R2-<wbr>7L2-<wbr>7R3-<wbr>8L1-<wbr>9L3-<wbr>8R2-<wbr>10L2-<wbr>11L1-<wbr>12R1-<wbr>12L3-<wbr>11R2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R3-2R3-2L2-3R1-4R3-4L2-5R1-6R1-6L2-7R3-8R3-8L2-9R1-10R3-10L2-11R1-12R1-12L2-7L2" title="Kerzenhalter" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/candlestick.png" alt="Kerzenhalter" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Kerzenhalter</h2>
+          <p class="figure-notation">1R3-<wbr>2R3-<wbr>2L2-<wbr>3R1-<wbr>4R3-<wbr>4L2-<wbr>5R1-<wbr>6R1-<wbr>6L2-<wbr>7R3-<wbr>8R3-<wbr>8L2-<wbr>9R1-<wbr>10R3-<wbr>10L2-<wbr>11R1-<wbr>12R1-<wbr>12L2-<wbr>7L2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R1-2L3-2R1-3R3-3L2-4R3-4L2-5R1-5L2-6L3-6R1-7R3-8L1-8R3-9R1-10L2-9L2-7L2-10R1-12R3-12L1-11R3-11L2" title="Küken" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/chick.png" alt="Küken" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Küken</h2>
+          <p class="figure-notation">1R1-<wbr>2L3-<wbr>2R1-<wbr>3R3-<wbr>3L2-<wbr>4R3-<wbr>4L2-<wbr>5R1-<wbr>5L2-<wbr>6L3-<wbr>6R1-<wbr>7R3-<wbr>8L1-<wbr>8R3-<wbr>9R1-<wbr>10L2-<wbr>9L2-<wbr>7L2-<wbr>10R1-<wbr>12R3-<wbr>12L1-<wbr>11R3-<wbr>11L2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R3-2R3-2L2-3R3-3L2-4R1-4L2-5R1-5L2-6R1-6L2-7R3-8R3-8L2-9R3-9L2-10R1-10L2-11R1-11L2-12R1-12L2-7L2" title="Haus an Haus" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/housebyhouse.png" alt="Haus an Haus" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Haus an Haus</h2>
+          <p class="figure-notation">1R3-<wbr>2R3-<wbr>2L2-<wbr>3R3-<wbr>3L2-<wbr>4R1-<wbr>4L2-<wbr>5R1-<wbr>5L2-<wbr>6R1-<wbr>6L2-<wbr>7R3-<wbr>8R3-<wbr>8L2-<wbr>9R3-<wbr>9L2-<wbr>10R1-<wbr>10L2-<wbr>11R1-<wbr>11L2-<wbr>12R1-<wbr>12L2-<wbr>7L2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="2L3-2R3-4R3-5L3-6L2-8R1-8L1-7L1-6R1-9L1-10L1-9R2-10R1-11L1-12R1-12L1" title="Endloses Band" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/endlessbelt.png" alt="Endloses Band" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Endloses Band</h2>
+          <p class="figure-notation">2L3-<wbr>2R3-<wbr>4R3-<wbr>5L3-<wbr>6L2-<wbr>8R1-<wbr>8L1-<wbr>7L1-<wbr>6R1-<wbr>9L1-<wbr>10L1-<wbr>9R2-<wbr>10R1-<wbr>11L1-<wbr>12R1-<wbr>12L1</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="12R2-11R2-11L2-10L1-9L3-9R2-8R1-8L2-7R3-6R2-5R1-4R3-4L1-5L2-3L3-3R2-1R2-2L2" title="Windschutz" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/windshield.png" alt="Windschutz" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Windschutz</h2>
+          <p class="figure-notation">12R2-<wbr>11R2-<wbr>11L2-<wbr>10L1-<wbr>9L3-<wbr>9R2-<wbr>8R1-<wbr>8L2-<wbr>7R3-<wbr>6R2-<wbr>5R1-<wbr>4R3-<wbr>4L1-<wbr>5L2-<wbr>3L3-<wbr>3R2-<wbr>1R2-<wbr>2L2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="12L2-11R2-10R3-9R1-10L2-9L2-8R3-7R3-8L2-6R2-5R1-5L2-4R1-4L2-3R3-2R3-3L2-1R2" title="Hochgeschlagen" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/longnecked.png" alt="Hochgeschlagen" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Hochgeschlagen</h2>
+          <p class="figure-notation">12L2-<wbr>11R2-<wbr>10R3-<wbr>9R1-<wbr>10L2-<wbr>9L2-<wbr>8R3-<wbr>7R3-<wbr>8L2-<wbr>6R2-<wbr>5R1-<wbr>5L2-<wbr>4R1-<wbr>4L2-<wbr>3R3-<wbr>2R3-<wbr>3L2-<wbr>1R2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="12R3-12L3-11R3-11L1-10R3-10L1-9R3-9L3-8R3-7R1-8L3-7L3-6L3-6R1-5R3-5L3-3R1-4L1-4R3-3L3-1R1-2L1-2R3" title="Schaf" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/sheep.png" alt="Schaf" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Schaf</h2>
+          <p class="figure-notation">12R3-<wbr>12L3-<wbr>11R3-<wbr>11L1-<wbr>10R3-<wbr>10L1-<wbr>9R3-<wbr>9L3-<wbr>8R3-<wbr>7R1-<wbr>8L3-<wbr>7L3-<wbr>6L3-<wbr>6R1-<wbr>5R3-<wbr>5L3-<wbr>3R1-<wbr>4L1-<wbr>4R3-<wbr>3L3-<wbr>1R1-<wbr>2L1-<wbr>2R3</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="2L3-3L1-3R2-2R2-4L3-5R1-6R3-6L2-7L1-7R1-10R3-9L1-8L3-8R2-11R1-12R3-12L2-11L2" title="Durchblick" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/view.png" alt="Durchblick" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Durchblick</h2>
+          <p class="figure-notation">2L3-<wbr>3L1-<wbr>3R2-<wbr>2R2-<wbr>4L3-<wbr>5R1-<wbr>6R3-<wbr>6L2-<wbr>7L1-<wbr>7R1-<wbr>10R3-<wbr>9L1-<wbr>8L3-<wbr>8R2-<wbr>11R1-<wbr>12R3-<wbr>12L2-<wbr>11L2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="12R2-12L3-11R1-11L1-10R1-9R3-10L1-8R1-9L2-8L3-7R3-6R3-6L1-5R2-7L3-5L3-3L2-4L1-4R2-1R2-2L3" title="Quelle" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/source.png" alt="Quelle" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Quelle</h2>
+          <p class="figure-notation">12R2-<wbr>12L3-<wbr>11R1-<wbr>11L1-<wbr>10R1-<wbr>9R3-<wbr>10L1-<wbr>8R1-<wbr>9L2-<wbr>8L3-<wbr>7R3-<wbr>6R3-<wbr>6L1-<wbr>5R2-<wbr>7L3-<wbr>5L3-<wbr>3L2-<wbr>4L1-<wbr>4R2-<wbr>1R2-<wbr>2L3</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R2-2L3-2R2-3L3-3R1-4R3-4L2-5L1-5R2-6R2-7L3-8L1-7R2-8R2-9R2-10L3-10R1-12R2-12L1-11R3-11L2" title="Ohne Namen" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/withoutname.png" alt="Ohne Namen" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Ohne Namen</h2>
+          <p class="figure-notation">1R2-<wbr>2L3-<wbr>2R2-<wbr>3L3-<wbr>3R1-<wbr>4R3-<wbr>4L2-<wbr>5L1-<wbr>5R2-<wbr>6R2-<wbr>7L3-<wbr>8L1-<wbr>7R2-<wbr>8R2-<wbr>9R2-<wbr>10L3-<wbr>10R1-<wbr>12R2-<wbr>12L1-<wbr>11R3-<wbr>11L2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="2L3-3L3-3R3-4L3-4R2-5R3-6R1-6L2-7R2-8L1-8R1-9L1-10L1-11L3-11R1-12R3-12L2" title="Maulwurf" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/mole.png" alt="Maulwurf" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Maulwurf</h2>
+          <p class="figure-notation">2L3-<wbr>3L3-<wbr>3R3-<wbr>4L3-<wbr>4R2-<wbr>5R3-<wbr>6R1-<wbr>6L2-<wbr>7R2-<wbr>8L1-<wbr>8R1-<wbr>9L1-<wbr>10L1-<wbr>11L3-<wbr>11R1-<wbr>12R3-<wbr>12L2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R1-2L1-3L1-2R2-3R3-4R1-5L1-6L3-6R1-7L2-5R2-7R3-8L1-11L1-10R3-9R3-9L3-8R2-12R1-12L1-11R2" title="Kreuz 3D v2" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/cross3dv2.png" alt="Kreuz 3D v2" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Kreuz 3D v2</h2>
+          <p class="figure-notation">1R1-<wbr>2L1-<wbr>3L1-<wbr>2R2-<wbr>3R3-<wbr>4R1-<wbr>5L1-<wbr>6L3-<wbr>6R1-<wbr>7L2-<wbr>5R2-<wbr>7R3-<wbr>8L1-<wbr>11L1-<wbr>10R3-<wbr>9R3-<wbr>9L3-<wbr>8R2-<wbr>12R1-<wbr>12L1-<wbr>11R2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R3-2L1-2R1-3L2-4L3-5L1-6L1-5R2-7L3-8L3-7R2-6R2-9L1-10L2-10R3-11R1-12R2-12L3-11L3" title="Fantasie" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/fantasy.png" alt="Fantasie" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Fantasie</h2>
+          <p class="figure-notation">1R3-<wbr>2L1-<wbr>2R1-<wbr>3L2-<wbr>4L3-<wbr>5L1-<wbr>6L1-<wbr>5R2-<wbr>7L3-<wbr>8L3-<wbr>7R2-<wbr>6R2-<wbr>9L1-<wbr>10L2-<wbr>10R3-<wbr>11R1-<wbr>12R2-<wbr>12L3-<wbr>11L3</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="12R2-12L2-11L1-10L1-9L3-8L1-9R2-7L1-6R1-6L3-5R1-5L3-3R3-4L1-4R2-3L1-2R3-1R2-2L3" title="Kogge" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/ship.png" alt="Kogge" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Kogge</h2>
+          <p class="figure-notation">12R2-<wbr>12L2-<wbr>11L1-<wbr>10L1-<wbr>9L3-<wbr>8L1-<wbr>9R2-<wbr>7L1-<wbr>6R1-<wbr>6L3-<wbr>5R1-<wbr>5L3-<wbr>3R3-<wbr>4L1-<wbr>4R2-<wbr>3L1-<wbr>2R3-<wbr>1R2-<wbr>2L3</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R2-3L1-2R2-4L3-5L3-4R2-3R2-5R2-7L1-6R2-7R2-8L3-8R2-10L1-9R2-11L1-10R2-12R2-12L3-11R2" title="Dreifach" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/tripple.png" alt="Dreifach" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Dreifach</h2>
+          <p class="figure-notation">1R2-<wbr>3L1-<wbr>2R2-<wbr>4L3-<wbr>5L3-<wbr>4R2-<wbr>3R2-<wbr>5R2-<wbr>7L1-<wbr>6R2-<wbr>7R2-<wbr>8L3-<wbr>8R2-<wbr>10L1-<wbr>9R2-<wbr>11L1-<wbr>10R2-<wbr>12R2-<wbr>12L3-<wbr>11R2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R1-2R3-2L2-3R3-4R1-5L1-6L3-6R1-5R2-3L3-7R3-7L2-8L1-9L3-9R3-10R1-8R2-11L1-11R1-12R3-12L2" title="Links wie Rechts" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/leftasright.png" alt="Links wie Rechts" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Links wie Rechts</h2>
+          <p class="figure-notation">1R1-<wbr>2R3-<wbr>2L2-<wbr>3R3-<wbr>4R1-<wbr>5L1-<wbr>6L3-<wbr>6R1-<wbr>5R2-<wbr>3L3-<wbr>7R3-<wbr>7L2-<wbr>8L1-<wbr>9L3-<wbr>9R3-<wbr>10R1-<wbr>8R2-<wbr>11L1-<wbr>11R1-<wbr>12R3-<wbr>12L2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="5R3-6R3-6L2-7R1-7L2-4R1-5L2-3R3-4L2-2R1-1R2-2L2-8R1-8L2-9R3-9L2-11R3-10R1-10L2-12R2-12L2" title="Dächer" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/roofs.png" alt="Dächer" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Dächer</h2>
+          <p class="figure-notation">5R3-<wbr>6R3-<wbr>6L2-<wbr>7R1-<wbr>7L2-<wbr>4R1-<wbr>5L2-<wbr>3R3-<wbr>4L2-<wbr>2R1-<wbr>1R2-<wbr>2L2-<wbr>8R1-<wbr>8L2-<wbr>9R3-<wbr>9L2-<wbr>11R3-<wbr>10R1-<wbr>10L2-<wbr>12R2-<wbr>12L2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R2-3R3-3L2-4L1-5L1-4R2-6L3-5R1-7L1-7R3-6R2-8L3-9L3-9R1-8R2-10L2-11R2-12R2-12L3" title="Berührung" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/contact.png" alt="Berührung" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Berührung</h2>
+          <p class="figure-notation">1R2-<wbr>3R3-<wbr>3L2-<wbr>4L1-<wbr>5L1-<wbr>4R2-<wbr>6L3-<wbr>5R1-<wbr>7L1-<wbr>7R3-<wbr>6R2-<wbr>8L3-<wbr>9L3-<wbr>9R1-<wbr>8R2-<wbr>10L2-<wbr>11R2-<wbr>12R2-<wbr>12L3</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="11R3-12L2-10R1-11L3-9R3-10L2-9L3-8L2-7L1-6R1-5R3-5L1-4R1-6L2-4L2-2R1-1R3-2L2" title="Noch 'ne Figur" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/anotherfigure.png" alt="Noch 'ne Figur" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Noch 'ne Figur</h2>
+          <p class="figure-notation">11R3-<wbr>12L2-<wbr>10R1-<wbr>11L3-<wbr>9R3-<wbr>10L2-<wbr>9L3-<wbr>8L2-<wbr>7L1-<wbr>6R1-<wbr>5R3-<wbr>5L1-<wbr>4R1-<wbr>6L2-<wbr>4L2-<wbr>2R1-<wbr>1R3-<wbr>2L2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R2-2L1-2R3-3L3-3R3-4R1-4L3-5R1-6R3-6L1-7L3-7R3-8R1-8L3-9R3-9L2-10L3-11L3-11R3-5L1-12R3" title="Mondlandefähre" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/lunamodule.png" alt="Mondlandefähre" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Mondlandefähre</h2>
+          <p class="figure-notation">1R2-<wbr>2L1-<wbr>2R3-<wbr>3L3-<wbr>3R3-<wbr>4R1-<wbr>4L3-<wbr>5R1-<wbr>6R3-<wbr>6L1-<wbr>7L3-<wbr>7R3-<wbr>8R1-<wbr>8L3-<wbr>9R3-<wbr>9L2-<wbr>10L3-<wbr>11L3-<wbr>11R3-<wbr>5L1-<wbr>12R3</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R1-2L3-2R3-3L3-4L1-3R3-4R3-5L3-5R1-6L1-6R1-7R3-7L1-8L3-9L3-8R1-9R3-10L3-12R1-12L1-11L1-10R3" title="Hund" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/dog.png" alt="Hund" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Hund</h2>
+          <p class="figure-notation">1R1-<wbr>2L3-<wbr>2R3-<wbr>3L3-<wbr>4L1-<wbr>3R3-<wbr>4R3-<wbr>5L3-<wbr>5R1-<wbr>6L1-<wbr>6R1-<wbr>7R3-<wbr>7L1-<wbr>8L3-<wbr>9L3-<wbr>8R1-<wbr>9R3-<wbr>10L3-<wbr>12R1-<wbr>12L1-<wbr>11L1-<wbr>10R3</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="2L1-2R1-3R3-4L1-3L2-5L3-4R2-5R3-6R3-7L3-8L3-8R3-11L1-10L3-9R1-9L2-10R2-12R1-11R1" title="Loch mittendurch" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/holeinthemiddle.png" alt="Loch mittendurch" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Loch mittendurch</h2>
+          <p class="figure-notation">2L1-<wbr>2R1-<wbr>3R3-<wbr>4L1-<wbr>3L2-<wbr>5L3-<wbr>4R2-<wbr>5R3-<wbr>6R3-<wbr>7L3-<wbr>8L3-<wbr>8R3-<wbr>11L1-<wbr>10L3-<wbr>9R1-<wbr>9L2-<wbr>10R2-<wbr>12R1-<wbr>11R1</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="2R1-2L2-3L1-3R3-4L1-5L3-5R3-4R2-6R2-7L2-8L1-8R3-9L2-10L1-10R1-11R2-12R3" title="Vorn' über" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/tothefront.png" alt="Vorn' über" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Vorn' über</h2>
+          <p class="figure-notation">2R1-<wbr>2L2-<wbr>3L1-<wbr>3R3-<wbr>4L1-<wbr>5L3-<wbr>5R3-<wbr>4R2-<wbr>6R2-<wbr>7L2-<wbr>8L1-<wbr>8R3-<wbr>9L2-<wbr>10L1-<wbr>10R1-<wbr>11R2-<wbr>12R3</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="6R3-7R3-7L2-8R1-8L2-5R1-5L2-6L2-4R3-3R1-3L3-1R3-2L1-2R2-9R3-9L2-11L1-12R1-12L3-11R2-10R1" title="Ästhetik" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/esthetic.png" alt="Ästhetik" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Ästhetik</h2>
+          <p class="figure-notation">6R3-<wbr>7R3-<wbr>7L2-<wbr>8R1-<wbr>8L2-<wbr>5R1-<wbr>5L2-<wbr>6L2-<wbr>4R3-<wbr>3R1-<wbr>3L3-<wbr>1R3-<wbr>2L1-<wbr>2R2-<wbr>9R3-<wbr>9L2-<wbr>11L1-<wbr>12R1-<wbr>12L3-<wbr>11R2-<wbr>10R1</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R1-3R3-3L2-4R2-5L2-6L3-6R3-8L3-7R1-7L2-8R3-9L1-10R1-10L3-9R2-11L1-11R2" title="Höhle" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/cave.png" alt="Höhle" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Höhle</h2>
+          <p class="figure-notation">1R1-<wbr>3R3-<wbr>3L2-<wbr>4R2-<wbr>5L2-<wbr>6L3-<wbr>6R3-<wbr>8L3-<wbr>7R1-<wbr>7L2-<wbr>8R3-<wbr>9L1-<wbr>10R1-<wbr>10L3-<wbr>9R2-<wbr>11L1-<wbr>11R2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R1-2L1-3L3-3R3-4R3-4L2-5L1-6L1-5R2-6R1-7R1-7L3-8L1-8R3-9R1-9L1-10R1-10L2-11L3-12R3-12L3-11R2" title="Terasse" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/terraces.png" alt="Terasse" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Terasse</h2>
+          <p class="figure-notation">1R1-<wbr>2L1-<wbr>3L3-<wbr>3R3-<wbr>4R3-<wbr>4L2-<wbr>5L1-<wbr>6L1-<wbr>5R2-<wbr>6R1-<wbr>7R1-<wbr>7L3-<wbr>8L1-<wbr>8R3-<wbr>9R1-<wbr>9L1-<wbr>10R1-<wbr>10L2-<wbr>11L3-<wbr>12R3-<wbr>12L3-<wbr>11R2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="2R1-3R1-4L3-5L1-5R1-6R1-7L1-4R2-2L1-8L1-8R1-10L3-9R1-11L1-10R2-12R1-11R1" title="Loch mittendurch 2" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/holeinthemiddle2.png" alt="Loch mittendurch 2" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Loch mittendurch 2</h2>
+          <p class="figure-notation">2R1-<wbr>3R1-<wbr>4L3-<wbr>5L1-<wbr>5R1-<wbr>6R1-<wbr>7L1-<wbr>4R2-<wbr>2L1-<wbr>8L1-<wbr>8R1-<wbr>10L3-<wbr>9R1-<wbr>11L1-<wbr>10R2-<wbr>12R1-<wbr>11R1</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R3-2L1-2R1-3L3-3R1-4L1-4R3-5L3-6L3-6R1-7L3-5R3-7R3-8L1-8R3-12R1-12L1-11R3-11L1-10R1-10L3-9R3-9L3" title="Zugang" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/entrance.png" alt="Zugang" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Zugang</h2>
+          <p class="figure-notation">1R3-<wbr>2L1-<wbr>2R1-<wbr>3L3-<wbr>3R1-<wbr>4L1-<wbr>4R3-<wbr>5L3-<wbr>6L3-<wbr>6R1-<wbr>7L3-<wbr>5R3-<wbr>7R3-<wbr>8L1-<wbr>8R3-<wbr>12R1-<wbr>12L1-<wbr>11R3-<wbr>11L1-<wbr>10R1-<wbr>10L3-<wbr>9R3-<wbr>9L3</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R1-2R3-4L3-5L3-4R2-6L3-7L3-6R2-5R3-3R3-3L2-7R3-8R3-8L2-9L3-9R3-10R3-10L2-11L3-12L3-11R2" title="Bühne" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/stage.png" alt="Bühne" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Bühne</h2>
+          <p class="figure-notation">1R1-<wbr>2R3-<wbr>4L3-<wbr>5L3-<wbr>4R2-<wbr>6L3-<wbr>7L3-<wbr>6R2-<wbr>5R3-<wbr>3R3-<wbr>3L2-<wbr>7R3-<wbr>8R3-<wbr>8L2-<wbr>9L3-<wbr>9R3-<wbr>10R3-<wbr>10L2-<wbr>11L3-<wbr>12L3-<wbr>11R2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="2L1-3L3-2R2-4L2-4R3-5R3-5L2-6L3-7L3-8L3-7R2-6R2-9L1-10L1-9R2-8R2-12R1-11R1-12L2-11L1-10R2" title="Fliege" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/fly.png" alt="Fliege" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Fliege</h2>
+          <p class="figure-notation">2L1-<wbr>3L3-<wbr>2R2-<wbr>4L2-<wbr>4R3-<wbr>5R3-<wbr>5L2-<wbr>6L3-<wbr>7L3-<wbr>8L3-<wbr>7R2-<wbr>6R2-<wbr>9L1-<wbr>10L1-<wbr>9R2-<wbr>8R2-<wbr>12R1-<wbr>11R1-<wbr>12L2-<wbr>11L1-<wbr>10R2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="2L3-3L3-2R2-3R3-4R3-5L1-4L2-6L3-5R2-6R1-7R1-7L2-8L1-9L1-8R2-10L1-9R2-11L1-10R2-11R1-12R1-12L2" title="Gesicht" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/face.png" alt="Gesicht" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Gesicht</h2>
+          <p class="figure-notation">2L3-<wbr>3L3-<wbr>2R2-<wbr>3R3-<wbr>4R3-<wbr>5L1-<wbr>4L2-<wbr>6L3-<wbr>5R2-<wbr>6R1-<wbr>7R1-<wbr>7L2-<wbr>8L1-<wbr>9L1-<wbr>8R2-<wbr>10L1-<wbr>9R2-<wbr>11L1-<wbr>10R2-<wbr>11R1-<wbr>12R1-<wbr>12L2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R3-3L2-4R3-5L3-5R3-6R2-8L3-7R1-8R3-9R3-9L2-10L1-11L3-11R1-10R2-12R3-12L2" title="Doppelspitze" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/doublepeak.png" alt="Doppelspitze" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Doppelspitze</h2>
+          <p class="figure-notation">1R3-<wbr>3L2-<wbr>4R3-<wbr>5L3-<wbr>5R3-<wbr>6R2-<wbr>8L3-<wbr>7R1-<wbr>8R3-<wbr>9R3-<wbr>9L2-<wbr>10L1-<wbr>11L3-<wbr>11R1-<wbr>10R2-<wbr>12R3-<wbr>12L2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="12R3-12L1-11R3-11L3-9R1-10L3-10R3-8R3-9L2-8L3-7L1-6L3-6R2-4L3-4R1-5L2-3R3-3L1-1R3-2R2" title="Angeschmiegt" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/nestledagainst.png" alt="Angeschmiegt" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Angeschmiegt</h2>
+          <p class="figure-notation">12R3-<wbr>12L1-<wbr>11R3-<wbr>11L3-<wbr>9R1-<wbr>10L3-<wbr>10R3-<wbr>8R3-<wbr>9L2-<wbr>8L3-<wbr>7L1-<wbr>6L3-<wbr>6R2-<wbr>4L3-<wbr>4R1-<wbr>5L2-<wbr>3R3-<wbr>3L1-<wbr>1R3-<wbr>2R2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R1-2L3-2R3-3R3-3L2-4R1-5R1-5L2-4L2-6L1-6R3-7R1-8L3-8R3-9R3-9L2-10R1-11R1-11L2-10L2-12L1-12R3-7L2" title="Nur Quadrate" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/justsquares.png" alt="Nur Quadrate" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Nur Quadrate</h2>
+          <p class="figure-notation">1R1-<wbr>2L3-<wbr>2R3-<wbr>3R3-<wbr>3L2-<wbr>4R1-<wbr>5R1-<wbr>5L2-<wbr>4L2-<wbr>6L1-<wbr>6R3-<wbr>7R1-<wbr>8L3-<wbr>8R3-<wbr>9R3-<wbr>9L2-<wbr>10R1-<wbr>11R1-<wbr>11L2-<wbr>10L2-<wbr>12L1-<wbr>12R3-<wbr>7L2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="2L3-2R3-4L3-3R1-4R1-3L2-5R3-5L2-7L3-6L3-7R3-9L3-8R1-8L2-9R1-11L1-10R1-10L2-12R2-12L3" title="Tischfeuerwerk" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/tablefireworks.png" alt="Tischfeuerwerk" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Tischfeuerwerk</h2>
+          <p class="figure-notation">2L3-<wbr>2R3-<wbr>4L3-<wbr>3R1-<wbr>4R1-<wbr>3L2-<wbr>5R3-<wbr>5L2-<wbr>7L3-<wbr>6L3-<wbr>7R3-<wbr>9L3-<wbr>8R1-<wbr>8L2-<wbr>9R1-<wbr>11L1-<wbr>10R1-<wbr>10L2-<wbr>12R2-<wbr>12L3</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R2-2R1-3R1-4R3-5R1-4L2-6R1-6L2-7L1-8L1-8R3-7R2-9R1-9L2-10L3-11L3-10R2-11R3" title="Teufelskopf" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/headofdevil.png" alt="Teufelskopf" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Teufelskopf</h2>
+          <p class="figure-notation">1R2-<wbr>2R1-<wbr>3R1-<wbr>4R3-<wbr>5R1-<wbr>4L2-<wbr>6R1-<wbr>6L2-<wbr>7L1-<wbr>8L1-<wbr>8R3-<wbr>7R2-<wbr>9R1-<wbr>9L2-<wbr>10L3-<wbr>11L3-<wbr>10R2-<wbr>11R3</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="2L1-2R3-3R1-3L2-4R1-5L3-6R3-6L1-5R2-7L3-7R1-9L1-8R3-8L2-10L1-11L3-12R1-11R1-10R2" title="Miss Piggy" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/misspiggy.png" alt="Miss Piggy" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Miss Piggy</h2>
+          <p class="figure-notation">2L1-<wbr>2R3-<wbr>3R1-<wbr>3L2-<wbr>4R1-<wbr>5L3-<wbr>6R3-<wbr>6L1-<wbr>5R2-<wbr>7L3-<wbr>7R1-<wbr>9L1-<wbr>8R3-<wbr>8L2-<wbr>10L1-<wbr>11L3-<wbr>12R1-<wbr>11R1-<wbr>10R2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="2L1-2R3-3L3-3R1-4L1-4R1-5R3-5L1-6L3-6R3-7R1-8L1-8R3-9R3-12R1-11R3-11L1-10L3-10R2-12L2-7L3" title="Doppeldach" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/doubleroof.png" alt="Doppeldach" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Doppeldach</h2>
+          <p class="figure-notation">2L1-<wbr>2R3-<wbr>3L3-<wbr>3R1-<wbr>4L1-<wbr>4R1-<wbr>5R3-<wbr>5L1-<wbr>6L3-<wbr>6R3-<wbr>7R1-<wbr>8L1-<wbr>8R3-<wbr>9R3-<wbr>12R1-<wbr>11R3-<wbr>11L1-<wbr>10L3-<wbr>10R2-<wbr>12L2-<wbr>7L3</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="3R3-3L2-4R3-4L3-2L1-1R3-5L1-5R1-6L1-7L3-6R1-7R3-8L3-8R2-9R1-10L3-10R3-11L1-12R1" title="Wiege" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/cradle.png" alt="Wiege" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Wiege</h2>
+          <p class="figure-notation">3R3-<wbr>3L2-<wbr>4R3-<wbr>4L3-<wbr>2L1-<wbr>1R3-<wbr>5L1-<wbr>5R1-<wbr>6L1-<wbr>7L3-<wbr>6R1-<wbr>7R3-<wbr>8L3-<wbr>8R2-<wbr>9R1-<wbr>10L3-<wbr>10R3-<wbr>11L1-<wbr>12R1</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="3R3-4R3-5L2-4L3-1R1-2L3-6L1-7L2-7R2-8R1-10L3-9R2-10R3-11L3-12R3" title="Spinne" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/spider.png" alt="Spinne" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Spinne</h2>
+          <p class="figure-notation">3R3-<wbr>4R3-<wbr>5L2-<wbr>4L3-<wbr>1R1-<wbr>2L3-<wbr>6L1-<wbr>7L2-<wbr>7R2-<wbr>8R1-<wbr>10L3-<wbr>9R2-<wbr>10R3-<wbr>11L3-<wbr>12R3</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="9L3-8L3-8R2-7R3-6R3-7L2-6L3-5L3-5R2-4L3-10L3-11L3-10R2-3L3-3R2-11R1-12R2-2R3" title="Faserpistole" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/fasergun.png" alt="Faserpistole" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Faserpistole</h2>
+          <p class="figure-notation">9L3-<wbr>8L3-<wbr>8R2-<wbr>7R3-<wbr>6R3-<wbr>7L2-<wbr>6L3-<wbr>5L3-<wbr>5R2-<wbr>4L3-<wbr>10L3-<wbr>11L3-<wbr>10R2-<wbr>3L3-<wbr>3R2-<wbr>11R1-<wbr>12R2-<wbr>2R3</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="3L3-3R1-4R3-4L2-5R3-5L2-6L3-6R1-7R3-7L2-8R1-8L1-9L3-10R3-10L1-9R2-11L3-12L3-12R2-11R2-1R3-2L3-2R3" title="Springbrunnen" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/fountain.png" alt="Springbrunnen" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Springbrunnen</h2>
+          <p class="figure-notation">3L3-<wbr>3R1-<wbr>4R3-<wbr>4L2-<wbr>5R3-<wbr>5L2-<wbr>6L3-<wbr>6R1-<wbr>7R3-<wbr>7L2-<wbr>8R1-<wbr>8L1-<wbr>9L3-<wbr>10R3-<wbr>10L1-<wbr>9R2-<wbr>11L3-<wbr>12L3-<wbr>12R2-<wbr>11R2-<wbr>1R3-<wbr>2L3-<wbr>2R3</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R3-3R3-3L2-4L3-4R1-5R3-5L2-6L3-7L2-7R2-8R3-9L3-10L1-10R3-9R2-11L3-11R2" title="X" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/x.png" alt="X" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">X</h2>
+          <p class="figure-notation">1R3-<wbr>3R3-<wbr>3L2-<wbr>4L3-<wbr>4R1-<wbr>5R3-<wbr>5L2-<wbr>6L3-<wbr>7L2-<wbr>7R2-<wbr>8R3-<wbr>9L3-<wbr>10L1-<wbr>10R3-<wbr>9R2-<wbr>11L3-<wbr>11R2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="9L3-8L3-8R2-7R3-6R3-7L2-6L3-5L3-5R2-4L3-10L3-11L3-10R2-3L3-3R2-2R2-1R1-12R3" title="Kamel" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/camel.png" alt="Kamel" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Kamel</h2>
+          <p class="figure-notation">9L3-<wbr>8L3-<wbr>8R2-<wbr>7R3-<wbr>6R3-<wbr>7L2-<wbr>6L3-<wbr>5L3-<wbr>5R2-<wbr>4L3-<wbr>10L3-<wbr>11L3-<wbr>10R2-<wbr>3L3-<wbr>3R2-<wbr>2R2-<wbr>1R1-<wbr>12R3</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="7L3-7R3-8L1-8R1-9L1-10L3-9R1-11L1-11R1-12R1-12L2-5R1-6L3-6R3-5L1-4R1-2R1-3R3-4L1-1R2-2L1" title="Käfer" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/beetle2.png" alt="Käfer" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Käfer</h2>
+          <p class="figure-notation">7L3-<wbr>7R3-<wbr>8L1-<wbr>8R1-<wbr>9L1-<wbr>10L3-<wbr>9R1-<wbr>11L1-<wbr>11R1-<wbr>12R1-<wbr>12L2-<wbr>5R1-<wbr>6L3-<wbr>6R3-<wbr>5L1-<wbr>4R1-<wbr>2R1-<wbr>3R3-<wbr>4L1-<wbr>1R2-<wbr>2L1</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R3-2L1-3L1-2R2-5L1-6L1-5R2-4R1-4L1-6R3-7L3-7R1-8R1-8L2-9L1-10R1-11R1-11L2-9R1-12L3-12R3" title="Knoten" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/knot.png" alt="Knoten" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Knoten</h2>
+          <p class="figure-notation">1R3-<wbr>2L1-<wbr>3L1-<wbr>2R2-<wbr>5L1-<wbr>6L1-<wbr>5R2-<wbr>4R1-<wbr>4L1-<wbr>6R3-<wbr>7L3-<wbr>7R1-<wbr>8R1-<wbr>8L2-<wbr>9L1-<wbr>10R1-<wbr>11R1-<wbr>11L2-<wbr>9R1-<wbr>12L3-<wbr>12R3</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="5R1-6R1-6L2-4R1-5L2-4L1-3L1-3R2-2L2-7R3-8R3-8L2-7L2-9R3-9L2-10L3-11L3-10R2-12L2" title="Berge" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/mountains.png" alt="Berge" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Berge</h2>
+          <p class="figure-notation">5R1-<wbr>6R1-<wbr>6L2-<wbr>4R1-<wbr>5L2-<wbr>4L1-<wbr>3L1-<wbr>3R2-<wbr>2L2-<wbr>7R3-<wbr>8R3-<wbr>8L2-<wbr>7L2-<wbr>9R3-<wbr>9L2-<wbr>10L3-<wbr>11L3-<wbr>10R2-<wbr>12L2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R3-2R1-2L2-3R1-3L2-4L1-5L2-5R2-6R1-7L1-8L2-10L1-9R1-8R2-11L1-10R2-12L3-11R2" title="USS Enterprice" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/ussenterprice.png" alt="USS Enterprice" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">USS Enterprice</h2>
+          <p class="figure-notation">1R3-<wbr>2R1-<wbr>2L2-<wbr>3R1-<wbr>3L2-<wbr>4L1-<wbr>5L2-<wbr>5R2-<wbr>6R1-<wbr>7L1-<wbr>8L2-<wbr>10L1-<wbr>9R1-<wbr>8R2-<wbr>11L1-<wbr>10R2-<wbr>12L3-<wbr>11R2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="2L1-3L3-2R2-4L1-5L3-4R2-6L1-7L3-6R2-8L2-8R1-9R3-9L1-10L1-11L3-11R1-10R2-12L3-12R3" title="Pyramide" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/pyramid.png" alt="Pyramide" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Pyramide</h2>
+          <p class="figure-notation">2L1-<wbr>3L3-<wbr>2R2-<wbr>4L1-<wbr>5L3-<wbr>4R2-<wbr>6L1-<wbr>7L3-<wbr>6R2-<wbr>8L2-<wbr>8R1-<wbr>9R3-<wbr>9L1-<wbr>10L1-<wbr>11L3-<wbr>11R1-<wbr>10R2-<wbr>12L3-<wbr>12R3</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="2L3-2R3-3R1-4L3-3L2-4R1-5L1-5R3-6L3-7R1-7L3-6R3-8L1-9L1-8R3-10L3-9R2-12R3-12L3-10R3" title="Engel" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/angel.png" alt="Engel" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Engel</h2>
+          <p class="figure-notation">2L3-<wbr>2R3-<wbr>3R1-<wbr>4L3-<wbr>3L2-<wbr>4R1-<wbr>5L1-<wbr>5R3-<wbr>6L3-<wbr>7R1-<wbr>7L3-<wbr>6R3-<wbr>8L1-<wbr>9L1-<wbr>8R3-<wbr>10L3-<wbr>9R2-<wbr>12R3-<wbr>12L3-<wbr>10R3</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="3R3-4L1-4R1-5L3-5R3-7L1-6R3-6L3-7R1-3L2-2L1-1R1-8L1-9L3-8R1-9R3-10L3-10R2-11R1-12L1" title="Globus" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/globus.png" alt="Globus" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Globus</h2>
+          <p class="figure-notation">3R3-<wbr>4L1-<wbr>4R1-<wbr>5L3-<wbr>5R3-<wbr>7L1-<wbr>6R3-<wbr>6L3-<wbr>7R1-<wbr>3L2-<wbr>2L1-<wbr>1R1-<wbr>8L1-<wbr>9L3-<wbr>8R1-<wbr>9R3-<wbr>10L3-<wbr>10R2-<wbr>11R1-<wbr>12L1</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R3-2L1-3L3-3R3-4R1-5L3-4L2-6L3-5R2-6R3-7R3-7L2-8L3-9L3-8R2-9R1-10R1-10L2-12R1-12L3-11L1" title="Knospe" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/bud.png" alt="Knospe" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Knospe</h2>
+          <p class="figure-notation">1R3-<wbr>2L1-<wbr>3L3-<wbr>3R3-<wbr>4R1-<wbr>5L3-<wbr>4L2-<wbr>6L3-<wbr>5R2-<wbr>6R3-<wbr>7R3-<wbr>7L2-<wbr>8L3-<wbr>9L3-<wbr>8R2-<wbr>9R1-<wbr>10R1-<wbr>10L2-<wbr>12R1-<wbr>12L3-<wbr>11L1</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R2-3L3-2R2-3R1-4L3-4R3-5L3-6L1-5R3-6R1-7L1-8L3-7R1-8R1-9L2-12R2-12L2" title="Schwan 2" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/swan2.png" alt="Schwan 2" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Schwan 2</h2>
+          <p class="figure-notation">1R2-<wbr>3L3-<wbr>2R2-<wbr>3R1-<wbr>4L3-<wbr>4R3-<wbr>5L3-<wbr>6L1-<wbr>5R3-<wbr>6R1-<wbr>7L1-<wbr>8L3-<wbr>7R1-<wbr>8R1-<wbr>9L2-<wbr>12R2-<wbr>12L2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R1-2L1-2R1-3L1-3R3-4L1-4R1-5L1-6L3-5R1-6R1-7L1-8R3-8L1-7R1-9L1-9R3-10R1-10L3-11L1-12R1-12L3-11R3" title="Wanze" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/bug.png" alt="Wanze" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Wanze</h2>
+          <p class="figure-notation">1R1-<wbr>2L1-<wbr>2R1-<wbr>3L1-<wbr>3R3-<wbr>4L1-<wbr>4R1-<wbr>5L1-<wbr>6L3-<wbr>5R1-<wbr>6R1-<wbr>7L1-<wbr>8R3-<wbr>8L1-<wbr>7R1-<wbr>9L1-<wbr>9R3-<wbr>10R1-<wbr>10L3-<wbr>11L1-<wbr>12R1-<wbr>12L3-<wbr>11R3</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R3-2L1-3L3-3R1-2R2-4L2-5L1-6L3-5R2-7R3-7L2-8L1-9L3-9R1-8R2-10L2-11L1-12L3-11R2" title="Blüte 2" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/blossom2.png" alt="Blüte 2" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Blüte 2</h2>
+          <p class="figure-notation">1R3-<wbr>2L1-<wbr>3L3-<wbr>3R1-<wbr>2R2-<wbr>4L2-<wbr>5L1-<wbr>6L3-<wbr>5R2-<wbr>7R3-<wbr>7L2-<wbr>8L1-<wbr>9L3-<wbr>9R1-<wbr>8R2-<wbr>10L2-<wbr>11L1-<wbr>12L3-<wbr>11R2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="2L3-3L1-2R2-4L3-4R3-5L3-6L3-6R1-7R2-8L2-10L3-9R1-11L3-11R3" title="Hut" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/hat.png" alt="Hut" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Hut</h2>
+          <p class="figure-notation">2L3-<wbr>3L1-<wbr>2R2-<wbr>4L3-<wbr>4R3-<wbr>5L3-<wbr>6L3-<wbr>6R1-<wbr>7R2-<wbr>8L2-<wbr>10L3-<wbr>9R1-<wbr>11L3-<wbr>11R3</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R1-2R2-3L2-4L3-4R3-6L3-5R1-5L2-6R1-8L1-7R3-7L2-8R3-12R3-11R2-11L2-10L1-9R1-9L2" title="Krone 2" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/crown2.png" alt="Krone 2" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Krone 2</h2>
+          <p class="figure-notation">1R1-<wbr>2R2-<wbr>3L2-<wbr>4L3-<wbr>4R3-<wbr>6L3-<wbr>5R1-<wbr>5L2-<wbr>6R1-<wbr>8L1-<wbr>7R3-<wbr>7L2-<wbr>8R3-<wbr>12R3-<wbr>11R2-<wbr>11L2-<wbr>10L1-<wbr>9R1-<wbr>9L2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="2R3-2L2-3L1-4L1-3R2-5R1-6L1-7L1-6R2-5L1-7R1-8R1-8L2-9L1-9R1-10R1-11R1-11L2-12L3-12R2" title="Thron" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/throne.png" alt="Thron" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Thron</h2>
+          <p class="figure-notation">2R3-<wbr>2L2-<wbr>3L1-<wbr>4L1-<wbr>3R2-<wbr>5R1-<wbr>6L1-<wbr>7L1-<wbr>6R2-<wbr>5L1-<wbr>7R1-<wbr>8R1-<wbr>8L2-<wbr>9L1-<wbr>9R1-<wbr>10R1-<wbr>11R1-<wbr>11L2-<wbr>12L3-<wbr>12R2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R1-2L1-3L3-4L3-3R2-4R3-6L1-5R3-5L2-6R1-7L1-8L3-7R1-8R2-9L3-9R3-10R3-10L2-11R1-12L1" title="Juwel" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/jewel.png" alt="Juwel" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Juwel</h2>
+          <p class="figure-notation">1R1-<wbr>2L1-<wbr>3L3-<wbr>4L3-<wbr>3R2-<wbr>4R3-<wbr>6L1-<wbr>5R3-<wbr>5L2-<wbr>6R1-<wbr>7L1-<wbr>8L3-<wbr>7R1-<wbr>8R2-<wbr>9L3-<wbr>9R3-<wbr>10R3-<wbr>10L2-<wbr>11R1-<wbr>12L1</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R1-2R1-2L2-3R3-4L1-4R1-5L1-6L3-6R1-5R1-7R3-7L2-8L1-11R1-10R1-11L2-10L3-9R3-9L3-8R3-12R1-12L2" title="Schleife 2" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/bow2.png" alt="Schleife 2" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Schleife 2</h2>
+          <p class="figure-notation">1R1-<wbr>2R1-<wbr>2L2-<wbr>3R3-<wbr>4L1-<wbr>4R1-<wbr>5L1-<wbr>6L3-<wbr>6R1-<wbr>5R1-<wbr>7R3-<wbr>7L2-<wbr>8L1-<wbr>11R1-<wbr>10R1-<wbr>11L2-<wbr>10L3-<wbr>9R3-<wbr>9L3-<wbr>8R3-<wbr>12R1-<wbr>12L2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="2L1-3L3-3R2-2R2-4R1-5L1-6L3-6R1-5R2-7R3-7L2-8L1-9L3-8R2-9R3-10R2-11L1-12L3-11R2" title="Runter" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/downwards2.png" alt="Runter" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Runter</h2>
+          <p class="figure-notation">2L1-<wbr>3L3-<wbr>3R2-<wbr>2R2-<wbr>4R1-<wbr>5L1-<wbr>6L3-<wbr>6R1-<wbr>5R2-<wbr>7R3-<wbr>7L2-<wbr>8L1-<wbr>9L3-<wbr>8R2-<wbr>9R3-<wbr>10R2-<wbr>11L1-<wbr>12L3-<wbr>11R2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="2L3-3L1-2R2-4L3-3R2-5R2-7L1-6L2-7R1-8R2-10R3-9L2-11R1-11L2-12R3-12L2" title="USS Enterprice 2" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/ussenterprice2.png" alt="USS Enterprice 2" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">USS Enterprice 2</h2>
+          <p class="figure-notation">2L3-<wbr>3L1-<wbr>2R2-<wbr>4L3-<wbr>3R2-<wbr>5R2-<wbr>7L1-<wbr>6L2-<wbr>7R1-<wbr>8R2-<wbr>10R3-<wbr>9L2-<wbr>11R1-<wbr>11L2-<wbr>12R3-<wbr>12L2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="12R1-12L3-11R1-11L3-10R1-9R1-9L1-8R3-7R3-10L1-6L3-5R1-5L1-3L1-3R3-4R1-4L1-7L3-2L1-1R1-2R3" title="Maus" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/mouse.png" alt="Maus" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Maus</h2>
+          <p class="figure-notation">12R1-<wbr>12L3-<wbr>11R1-<wbr>11L3-<wbr>10R1-<wbr>9R1-<wbr>9L1-<wbr>8R3-<wbr>7R3-<wbr>10L1-<wbr>6L3-<wbr>5R1-<wbr>5L1-<wbr>3L1-<wbr>3R3-<wbr>4R1-<wbr>4L1-<wbr>7L3-<wbr>2L1-<wbr>1R1-<wbr>2R3</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R2-2L2-3L1-3R3-4R1-4L2-6L3-5R2-7R3-7L1-6R3-8L3-8R2-9R1-11L1-10R3-10L2-12R2-12L2" title="Knoten auf Füßen" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/knotonlegs.png" alt="Knoten auf Füßen" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Knoten auf Füßen</h2>
+          <p class="figure-notation">1R2-<wbr>2L2-<wbr>3L1-<wbr>3R3-<wbr>4R1-<wbr>4L2-<wbr>6L3-<wbr>5R2-<wbr>7R3-<wbr>7L1-<wbr>6R3-<wbr>8L3-<wbr>8R2-<wbr>9R1-<wbr>11L1-<wbr>10R3-<wbr>10L2-<wbr>12R2-<wbr>12L2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R2-2R3-4L2-5R3-4R2-6L3-7L3-6R2-7R3-8R3-8L2-9L3-12L3-10L2-10R2" title="Denkmal" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/memorial.png" alt="Denkmal" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Denkmal</h2>
+          <p class="figure-notation">1R2-<wbr>2R3-<wbr>4L2-<wbr>5R3-<wbr>4R2-<wbr>6L3-<wbr>7L3-<wbr>6R2-<wbr>7R3-<wbr>8R3-<wbr>8L2-<wbr>9L3-<wbr>12L3-<wbr>10L2-<wbr>10R2</p>
+        </figcaption>
+      </figure>
+      <figure><a href="#3dviewer" data="1R3-2R3-2L2-3L1-4L3-3R2-4R1-6L1-5R3-5L2-7L1-6R2-7R1-9L3-8R1-8L2-10R3-10L1-9R2-12L3-11R1-11L2-12R2" title="Knospen" class="fancybox"><img src="img/sand.gif" data-original="img/figures/hard/buds.png" alt="Knospen" class="figure-thumb"></a>
+        <figcaption>
+          <h2 class="figure-title">Knospen</h2>
+          <p class="figure-notation">1R3-<wbr>2R3-<wbr>2L2-<wbr>3L1-<wbr>4L3-<wbr>3R2-<wbr>4R1-<wbr>6L1-<wbr>5R3-<wbr>5L2-<wbr>7L1-<wbr>6R2-<wbr>7R1-<wbr>9L3-<wbr>8R1-<wbr>8L2-<wbr>10R3-<wbr>10L1-<wbr>9R2-<wbr>12L3-<wbr>11R1-<wbr>11L2-<wbr>12R2</p>
+        </figcaption>
+      </figure>
       <div id="3dviewer"></div>
     </div>
     <div class="clear"></div>
-    <footer>
-      <div class="inner">
-        <p>&copy; 2013 Thomas Wolter</p>
-      </div>
-    </footer>
   </body>
 </html>

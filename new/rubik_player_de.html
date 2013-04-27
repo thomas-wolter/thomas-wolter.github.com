@@ -8,41 +8,35 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/jquery.fancybox.css">
-    <script src="http://use.edgefonts.net/droid-sans.js"></script>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic">
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.fancybox.pack.js"></script>
     <script src="js/jquery.touchmouse.js"></script>
+    <script src="js/jquery.lazyload.js"></script>
     <script src="js/three.min.js"></script>
     <script src="js/snake.js"></script>
     <script src="js/player.js"></script>
   </head>
   <body>
-    <header>
-      <div class="inner"><a href="/"><img src="img/logo3.png">
-          <h1>thomas-wolter.de</h1></a></div>
-      <nav class="bottom-seperator">
-        <div class="main-navigation"><a href="/" class="">HOME</a><a href="rubik_notation_de.html" class="selected">RUBIK'S SNAKE</a><a href="atom_de.html" class="">ATOMPUZZLE</a>
-          <div id="language-selector"><a href="rubik_player_en.html"><img src="img/flag_en.png" class="flag"></a></div>
-        </div>
-      </nav>
-      <nav>
-        <div class="sub-navigation"><a href="rubik_notation_de.html" class="">notation</a><a href="rubik_easy_de.html" class="">einfache figuren</a><a href="rubik_hard_de.html" class="">schwere figuren</a><a href="rubik_manuals_de.html" class="">aus anleitungen</a><a href="rubik_fansfriends_de.html" class="">fans & friends</a><a href="rubik_victorsworld_de.html" class="">victor's welt</a><a href="rubik_player_de.html" class="selected">player</a></div>
-      </nav>
-    </header>
-    <div id="content">
+    <div id="header-wrap">
+      <header id="site-header"><a href="/" id="site-link">
+          <h1 id="site-logo">thomas-wolter.de</h1></a>
+        <nav id="main-nav"><a href="/" class="main-nav-item ">HOME</a><a href="rubik_notation_de.html" class="main-nav-item selected">RUBIK'S SNAKE</a><a href="atom_de.html" class="main-nav-item ">ATOMPUZZLE</a>
+        </nav>
+      </header>
+    </div>
+    <div id="sub-nav-wrap">
+      <nav id="sub-nav"><a href="rubik_notation_de.html" class="sub-nav-item ">notation</a>|<a href="rubik_easy_de.html" class="sub-nav-item ">einfache figuren</a>|<a href="rubik_hard_de.html" class="sub-nav-item ">schwere figuren</a>|<a href="rubik_manuals_de.html" class="sub-nav-item ">aus anleitungen</a>|<a href="rubik_fansfriends_de.html" class="sub-nav-item ">fans & friends</a>|<a href="rubik_victorsworld_de.html" class="sub-nav-item ">victor's welt</a>|<a href="rubik_player_de.html" class="sub-nav-item selected">player</a></nav>
+    </div>
+    <div id="content" role="main">
       <h2>Player</h2>
       <p>Geben Sie unten im Eingabefeld eine gültige Notation ein und lassen Sie sich das Ergebnis im Vorschaufenster anzeigen. </p>
       <p>Die Anzeige kann bei gedrückter Maustaste durch das Bewegen der Maus gedreht werden.</p>
       <div id="3dviewer"></div>
-      <p>Eingabefeld für die Notation:</p>
+      <h3>Eingabefeld für die Notation:</h3>
       <textarea id="instructions" style="width: 500px;height: 75px"></textarea>
       <div class="clear"></div>
     </div>
     <div class="clear"></div>
-    <footer>
-      <div class="inner">
-        <p>&copy; 2013 Thomas Wolter</p>
-      </div>
-    </footer>
   </body>
 </html>
