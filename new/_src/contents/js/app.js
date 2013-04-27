@@ -22,22 +22,24 @@ $(document).ready(function() {
 
 		switch(ev.which) {
 			case 'W'.charCodeAt():
-				snake.rotateCamera(Math.PI/180,0,0);
+				snake.rotate(Math.PI/180,0,0);
 				break;
 			case 'A'.charCodeAt():
-				snake.rotateCamera(0,Math.PI/180,0);
+				snake.rotate(0,Math.PI/180,0);
 				break;
 			case 'S'.charCodeAt():
-				snake.rotateCamera(-Math.PI/180,0,0);
+				snake.rotate(-Math.PI/180,0,0);
 				break;
 			case 'D'.charCodeAt():
-				snake.rotateCamera(0,-Math.PI/180,0);
+				snake.rotate(0,-Math.PI/180,0);
 				break;
 			case 'Q'.charCodeAt():
-				snake.rotateCamera(0,0,-Math.PI/180);
+        // snake.arcball(, 1);
+				snake.rotate(0,0,-Math.PI/180);
 				break;
 			case 'E'.charCodeAt():
-				snake.rotateCamera(0,0,Math.PI/180);
+        // snake.arcball(0, 1);
+				snake.rotate(0,0,Math.PI/180);
 				break;
 		}
 	});

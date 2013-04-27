@@ -1,9 +1,9 @@
 extends rubik
 
 block scripts
-    script(src="js/app.js?v=2")
+  script(src="js/app.js")
 
 block content
-    each figure in page.metadata.figures
-      include includes/figure_card
-    #3dviewer
+  each figure in page.metadata.figures
+    include includes/figure_card
+  #3dviewer
