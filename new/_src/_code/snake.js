@@ -1,11 +1,11 @@
 /*global require, exports */
-
 (function(exports) {
 
   var THREE = require('three');
+  var useFirstColor = false;
 
   var renderer, scene, camera;
-  var geometryEven, geometryOdd, materialEven, materialOdd;
+  var geometryEven, geometryOdd, materialEven, materialOdd, materialFirst;
   var prisms = [];
   var figure;
 
@@ -243,6 +243,16 @@
     new THREE.MeshBasicMaterial({
       color: 0x5770b7
     })];
+    materialFirst = [
+    new THREE.MeshBasicMaterial({
+      color: 0x000000,
+      shading: THREE.FlatShading,
+      wireframe: true,
+      transparent: false
+    }),
+    new THREE.MeshBasicMaterial({
+      color: 0x3d4f80
+    })];
 
     renderer = new THREE.CanvasRenderer();
     renderer.setSize(width, height);
@@ -275,7 +285,11 @@
       if (i % 2) {
         mesh = THREE.SceneUtils.createMultiMaterialObject(geometryOdd, materialOdd);
       } else {
-        mesh = THREE.SceneUtils.createMultiMaterialObject(geometryEven, materialEven);
+        if (useFirstColor === true && i === 0) {
+          mesh = THREE.SceneUtils.createMultiMaterialObject(geometryEven, materialFirst);
+        } else {
+          mesh = THREE.SceneUtils.createMultiMaterialObject(geometryEven, materialEven);
+        }
       }
       mesh.useQuaternion = true;
       figure.add(mesh);
@@ -315,12 +329,12 @@
     invQ.copy(q);
     invQ.inverse();
 
-    up.applyMatrix4(invQ);
+    up.applyQuaternion(invQ);
     var upQ = new THREE.Quaternion();
     upQ.setFromAxisAngle(up, 0.0005 * dx * 180 / Math.PI);
     q.multiply(q, upQ);
 
-    right.applyMatrix4(invQ);
+    right.applyQuaternion(invQ);
     var rightQ = new THREE.Quaternion();
     rightQ.setFromAxisAngle(right, 0.0005 * dy * 180 / Math.PI);
     q.multiply(q, rightQ);
@@ -339,4 +353,48 @@
     camera.updateProjectionMatrix();
     renderer.render(scene, camera);
   };
+
+  exports.rotate = function(rotationX, rotationY, rotationZ) {
+
+    var right = new THREE.Vector3(1, 0, 0);
+    var up = new THREE.Vector3(0, 1, 0);
+    var front = new THREE.Vector3(0, 0, 1);
+
+    var q = new THREE.Quaternion();
+    q.copy(figure.quaternion);
+    var invQ = new THREE.Quaternion();
+    invQ.copy(q);
+    invQ.inverse();
+
+    right.applyQuaternion(invQ);
+    var rightQ = new THREE.Quaternion();
+    rightQ.setFromAxisAngle(right, rotationX);
+    q.multiply(q, rightQ);
+
+    up.applyQuaternion(invQ);
+    var upQ = new THREE.Quaternion();
+    upQ.setFromAxisAngle(up, rotationY);
+    q.multiply(q, upQ);
+
+    front.applyQuaternion(invQ);
+    var frontQ = new THREE.Quaternion();
+    frontQ.setFromAxisAngle(front, rotationZ);
+    q.multiply(q, frontQ);
+
+    figure.quaternion = q;
+    figure.updateMatrix();
+
+    renderer.render(scene, camera);
+  };
+
+  exports.currentEulerAngles = function() {
+
+    var q = figure.quaternion;
+    var rotationX = Math.round(Math.atan2(2 * (q.x * q.w - q.y * q.z), q.w * q.w - q.x * q.x - q.y * q.y + q.z * q.z) * (180 / Math.PI));
+    var rotationY = Math.round(Math.asin(2 * (q.x * q.z + q.y * q.w)) * (180 / Math.PI));
+    var rotationZ = Math.round(Math.atan2(2 * (q.z * q.w - q.x * q.y), q.w * q.w + q.x * q.x - q.y * q.y - q.z * q.z) * (180 / Math.PI));
+
+    return [rotationX, rotationY, rotationZ];
+  };
+
 })(typeof exports === 'undefined' ? this.snake = {} : exports);
