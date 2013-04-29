@@ -1,7 +1,7 @@
 {
   "name": "snake",
   "version": "0.0.1",
-  "devDependencies": {
+  "dependencies": {
     "async": "*",
     "canvas": "*",
     "jsdom": "*",
