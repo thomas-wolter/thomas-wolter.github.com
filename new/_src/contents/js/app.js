@@ -40,7 +40,8 @@ $(document).ready(function() {
         snake.rotate(0, 0, -Math.PI / 180);
         break;
       case 'R'.charCodeAt():
-        window.prompt('Copy to clipboard: Ctrl+C, Enter', JSON.stringify(snake.currentEulerAngles()));
+        var text = JSON.stringify(snake.currentEulerAngles());
+        window.prompt('Copy to clipboard: Ctrl+C, Enter', text.slice(1, text.length - 1));
         break;
     }
   });
