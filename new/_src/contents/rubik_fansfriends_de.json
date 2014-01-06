@@ -67,6 +67,10 @@
         {"filename": "house.png", "title": "Haus - Natalia T.", "data":"6L3-6R3-7R3-7L2-8L3-5L3-5R2-9L3-8R2-4L3-10L3-3L3-3R2-11L3-10R2-1R2-2L3-12R2-12L3", "rotation": "[-67,5,-19]"},
         {"filename": "stairway.png", "title": "Treppe - Fabian K.", "data":"1R2-2R2-3R2-4R2-5R2-6R2-7R2-8R2-9R2-10R2-11R2-12R2", "rotation": "[-156,-35,-129]"},
         {"filename": "spiral2d.png", "title": "Spirale 2D - Fabian K.", "data":"12R2-12L2-10R2-9L2-6R2-4L2", "rotation": "[0,0,135]"},
-        {"filename": "spiral3d.png", "title": "Spirale 3D - Fabian K.", "data":"1R1-2L3-2R3-3L3-3R1-4L1-4R1-5L3-5R3-6L3-6R1-7L1-7R1-8L3-8R3-9L3-9R1-10L1-10R1-11L3-11R3-12L3-12R1", "rotation": "[76,-45,-173]"}
+        {"filename": "spiral3d.png", "title": "Spirale 3D - Fabian K.", "data":"1R1-2L3-2R3-3L3-3R1-4L1-4R1-5L3-5R3-6L3-6R1-7L1-7R1-8L3-8R3-9L3-9R1-10L1-10R1-11L3-11R3-12L3-12R1", "rotation": "[76,-45,-173]"},
+	{"filename": "sculpture2.png", "title": "Skulptur - Eric", "data":"1R2-3R3-4R1-4L2-6L3-6R1-7L1-7R1-8R3-8L1-10L1-11L3-10R2", "rotation": "[6,-24,-44]"},
+	{"filename": "gemstone.png", "title": "Schmuckstein - Eric", "data":"1R1-2L1-3L3-4L3-3R2-6L1-5R3-5L2-4R3-6R1-7L1-8L3-8R2-7R1-9L3-9R3-10R3-10L2-11R1-12L1", "rotation": "[-126,8,137]"},
+	{"filename": "mask3.png", "title": "Maske - Tine", "data":"1R1-2R2-3R3-4L1-4R3-5L3-6L3-6R1-5R3-8R2-7R3-9R1-10R3-11L1-11R1-12R1-12L1", "rotation": "[29,1,-90]"},
+	{"filename": "barbecue.png", "title": "Grill - Tine", "data":"2L1-3L1-3R1-4R1-5L1-6R1-6L3-5R2-7R3-8L1-7L2-10R3-9R3-9L3-8R2-11L3-12L3", "rotation": "[17,-33,132]"}
     ]
 }
