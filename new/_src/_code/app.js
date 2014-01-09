@@ -34,9 +34,9 @@
 
   var figure_pages = fs.readdirSync(contents_path);
   figure_pages = figure_pages.filter(function(figure_page) {
-    return figure_page.indexOf('rubik') != -1;
+    return /^rubik.*_de\.json$/.test(figure_page);
   });
-
+  console.log(figure_pages);
   var render = function(output_path, figure, retina, callback) {
     var size = 356;
     var output;
