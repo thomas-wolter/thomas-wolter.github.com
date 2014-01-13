@@ -1,0 +1,41 @@
+{
+  "template": "figures_list_manuals.jade",
+  "img_root": "figures/manuals/",
+  "figures_de": [
+	{"filename": "cat.png", "title": "Cat", "data":"9R2-9L2-8L2-7R2-6R2-6L2-5L3-4L2-3R2-2R2-2L2", "rotation": "[-60, 45, 0]"},
+	{"filename": "wolf.png", "title": "Wolf", "data":"2R2-3L2-4L2-5R2-6R2-7L2-8L2-10L2-10R2-12R2", "rotation": "[180, 0, 45]"},
+	{"filename": "cook.png", "title": "Cook", "data":"2R2-3L2-4L3-5L3-5R3-7R2-8L2-9L1-6R3-6L2-10L1-9R2-10R1-11R1-12R2", "rotation": "[17,-17,45]"},
+	{"filename": "terrier.png", "title": "Terrier", "data":"1R2-2R2-3L2-4L2-6L2-6R2-7R2-9L2-10L2-10R2", "rotation": "[180,0,45]"},
+	{"filename": "swan.png", "title": "Swan", "data":"2L2-3L2-3R3-4L1-5L1-4R2-6L3-7L3-6R2-5R2-7R3-10L3-9L3-9R2-10R2-8R3-8L2-11L1-12R1-12L1-11R2", "rotation": "[-169,28,133]"},
+	{"filename": "hexagon.png", "title": "Hexagon", "data":"3R3-5L3-7R3-9L3-11R3", "rotation": "[45,1,-45]"},
+	{"filename": "triangle.png", "title": "Triangle", "data":"4R1-5L1-8R1-9L1-12R1", "rotation": "[-120,0,135]"},
+	{"filename": "parrot.png", "title": "Parrot", "data":"3R1-4L3-5L1-6L3-5R2-7L3-8L3-9L3-11L3-10L1-9R2-11R3-12R2", "rotation": "[9,-41,52]"},
+	{"filename": "frog.png", "title": "Frog", "data":"6R3-5R1-6L2-4R3-5L2-3R3-4L2-3L3-2L1-2R1-1R3-7R1-8R1-10R1-9R3-9L2-11L3-11R3-12L3-12R1", "rotation": "[17,-55,85]"},
+	{"filename": "bow.png", "title": "Bow", "data":"1R3-2L1-2R3-3L3-4R1-4L3-3R3-5L3-5R3-6L1-6R3-9L3-8R1-8L3-7R3-7L3-9R3-10L1-12R1-12L3-11R3-11L3-10R3", "rotation": "[139,-45,0]"},
+	{"filename": "seal.png", "title": "Seal", "data":"12R3-11R2-11L2-10L1-9R1-9L2-8L1-8R3-7R3-6R1-5R3-4R1-6L2-4L3-3R1-1R3-2L1-2R3-3L2", "rotation": "[-163,51,129]"},
+	{"filename": "ball.png", "title": "Ball", "data":"1R1-2L3-2R3-3L1-3R1-4L1-4R1-5L3-5R3-12R3-12L3-11R3-11L3-10R1-10L1-9R1-9L1-8R3-8L3-7R1-6R3-6L3-7L1", "rotation": "[-72,17,50]"},
+	{"filename": "snowflake.png", "title": "Snowflake", "data":"1R3-2L1-2R3-3L3-3R1-4L3-4R1-5L1-5R3-6L1-6R3-7L3-7R1-8L3-8R1-9L1-9R3-10L1-10R3-12L3-11R1-11L3-12R", "rotation": "[-136,32,160]"},
+	{"filename": "propeller.png", "title": "Propeller", "data":"3L3-4L1-4R1-5L1-7L3-8L1-8R1-11L3-9L1-12L1-12R1", "rotation": "[-136,32,160]"},
+	{"filename": "turtle.png", "title": "Turtle", "data":"1R1-2L3-2R1-3L1-5L1-4R3-4L1-3R1-6R3-6L1-5R2-7L3-8L3-8R1-9L2-7R3-9R3-10L3-11R3-12L3", "rotation": "[-51,0,135]"}
+    ],
+  "figures_dk": [
+	{"filename": "duck.png", "title": "Duck", "data":"1R2-3R1-4R1-6L1-8R1-7L3-6R2-9R3-9L2-11L3-12L3", "rotation": "[-156,-20,-44]"},
+	{"filename": "telephone.png", "title": "Telephone", "data":"4R1-5L3-5R3-7L1-6R3-6L3-10R1-11L3-11R3-12R3-12L3", "rotation": "[-14,-34,26]"},
+	{"filename": "flyingboat.png", "title": "Flying boat", "data":"1R1-2R3-3R1-4R3-6R1-7R3-7L2-9R1-10R3-11R1-12R3", "rotation": "[-131,13,141]"},
+	{"filename": "penguin.png", "title": "Penguin", "data":"2L2-2R2-3R2-4L2-5L1-6L1-5R2-6R3-7L1-9L3-8R1-8L1-7R1-9R3-11L1-10R3-10L3-11R1-12R2", "rotation": "[-71,0,55]"},
+	{"filename": "frog3.png", "title": "Frog", "data":"1R3-2R3-2L2-3L3-3R3-4L1-4R3-5L3-5R1-6L3-6R1-8L1-7R3-7L2-8R3-9L1-10L3-10R1-9R1-11L1-11R1-12R1-12L2", "rotation": "[-153,-52,-86]"},
+	{"filename": "turtle2.png", "title": "Turtle", "data":"1R3-2L3-2R3-3L3-3R1-4L1-4R1-5R3-5L1-6R1-6L2-7L3-8L1-7R2-9R1-8R1-10L1-11R1-11L3-10R2-12L3", "rotation": "[116,-7,120]"},
+	{"filename": "giantcobra.png", "title": "Giant cobra", "data":"2L1-3L2-3R2-4R2-5L2-6L1-8R1-8L2-9L3-10L3-9R2-11L2-12L2", "rotation": "[24,60,-91]"},
+	{"filename": "dog2.png", "title": "Dog", "data":"1R2-2L1-2R3-3L1-4R3-4L3-3R2-5R3-6L3-7R3-7L1-6R2-8L1-9L1-10L2-10R2-11R2-12L2", "rotation": "[-169,50,43]"},
+	{"filename": "cat2.png", "title": "Cat", "data":"1R3-2L1-2R3-3R1-3L2-4L1-5L1-5R1-7L1-6R3-6L2-8L3-8R1-9L1-9R1-11L3-10R3-10L1-12R1-12L3-11R3", "rotation": "[-174,42,133]"},
+	{"filename": "ostrich3.png", "title": "Ostrich", "data":"1R2-3L1-2R2-3R3-4L1-4R1-5L1-6L3-5R1-6R3-7L3-8L1-7R3-8R1-9L2-10L2-12R2", "rotation": "[-171,41,-46]"},
+	{"filename": "airplane.png", "title": "Airplane", "data":"1R2-3R1-5R2-6L2-8L2-11R1-11L2-10L2-9R2", "rotation": "[-147,8,-81]"},
+	{"filename": "desk.png", "title": "Desk", "data":"1R1-2L3-3R3-3L1-2R2-4L3-4R1-5R3-5L2-7L2-6L3-7R2-8R3-9L3-10R3-10L1-9R2-11L3-11R1-12R3-12L2", "rotation": "[132,0,-45]"},
+	{"filename": "turkey.png", "title": "Turkey", "data":"1R2-6L1-5R2-6R3-7L1-8R3-8L3-7R2-9R3-10L3-12L1-11R3-11L1-10R2-12L1", "rotation": "[-176,-21,-45]"},
+	{"filename": "bird.png", "title": "Bird", "data":"1R2-2R2-3L2-5L3-5R1-6L3-7L1-6R2-7R1-8R1-9L1-10R1-10L3-9R2-11L3-11R2", "rotation": "[26,28,-45]"},
+	{"filename": "robot.png", "title": "Robot", "data":"2L3-3L1-3R1-4L3-4R1-5L1-5R3-6L1-6R3-8L3-7R1-7L2-9L3-8R1-10R3-10L1-9R3-11L3-12L1", "rotation": "[145,-90,-160]"},
+	{"filename": "giraffe.png", "title": "Giraffe", "data":"2R1-3L3-3R1-4R3-5L3-4L2-6L3-6R3-8R1-8L3-7R1-7L2-12R2", "rotation": "[-170,-45,135]"},
+	{"filename": "rocket2.png", "title": "Rocket", "data":"1R2-3L1-4L3-6R1-7R3-7L2-10L1-11L3-12R2", "rotation": "[-160,-90,155]"},
+	{"filename": "toad.png", "title": "Toad", "data":"1R3-2L2-3L2-3R3-4L1-5L3-4R2-6L1-6R3-7R1-7L2-8L3-9L1-10L3-11L2-10R1-9R2-12R1-12L2", "rotation": "[137,79,-30]"}
+    ]  
+}

@@ -1,0 +1,16 @@
+extends rubik
+
+block scripts
+  script(src="js/player.js")
+
+block content
+  #3dviewer(style='width: 500px; float:left')
+  #description(style='margin-left: 512px;margin-right:12px')
+    h2 Player
+    p NOCH ÜBERSETZEN !!! ENGLSIH !!!
+    p Geben Sie unten im Eingabefeld eine gültige Notation ein und lassen Sie sich das Ergebnis im Vorschaufenster anzeigen. 
+    p Die Anzeige kann bei gedrückter Maustaste durch das Bewegen der Maus gedreht werden.
+      
+    h3 Eingabefeld für die Notation:
+    textarea#instructions(style='width: 100%;height: 75px')
+  .clear
