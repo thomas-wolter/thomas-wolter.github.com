@@ -23,7 +23,7 @@ html(lang=cur_lang())
   body
     #header-wrap
       header#site-header
-        a(href='/')#site-link
+        a(href=get_home())#site-link
           h1#site-logo thomas-wolter.de
         a(href=switch_page_name_language())
           - if (cur_lang() === 'en')
@@ -47,7 +47,7 @@ html(lang=cur_lang())
         | _gaq.push(['_setDomainName', 'thomas-wolter.de']);
         | _gaq.push(['_trackPageview']);
         | (function() {
-        |    var ga = document.createElement('script'); 
+        |    var ga = document.createElement('script');
         |    ga.type = 'text/javascript'; ga.async = true;
         |   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         |   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
