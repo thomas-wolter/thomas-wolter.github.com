@@ -1,0 +1,23 @@
+06.04.2015
+Offene Punkte:
+
+#1 bei wb kommen mehrfach folgende Fehler: 
+tom@tom-VirtualBox:~/thomas-wolter.github.com/new/_src$ wp
+  starting preview server
+  using config file: /home/tom/thomas-wolter.github.com/new/_src/config.json
+  server running on: http://localhost:8080/
+Warning: missing space before text for line 5 of jade file.
+Warning: missing space before text for line 7 of jade file.
+Warning: missing space before text for line 9 of jade file.
+Warning: missing space before text for line 11 of jade file.
+Warning: missing space before text for line 13 of jade file.
+Warning: missing space before text for line 15 of jade file.
+Die sechs Zeilen wiederholen sich mehrfach.
+
+Hängt vermutlich mit den pipes || zusammen, finde ich nicht.
+Konsequenz beim Testen mit localhost: wb bringt die Fehler, wp muss mit Ctrl-C abgebrochen und dann wieder wb und wp ausgeführt werden,
+bevor die Anzeige im Browser aktualisiert wird.
+
+#2 Ist man auf den Englischen Seiten und drückt man Home oder thomas-wolter.de, dann ist man auf den dt. Seiten.
+
+#3 Wie lässt sich das eMail-Fenste recapcha in Englisch erstellen?
