@@ -1,5 +1,5 @@
 {
-  "template": "figures_list_manuals.jade",
+  "template": "figures_list_manuals_de.jade",
   "img_root": "figures/manuals/",
   "figures_de": [
         {"filename": "cat.png", "title": "Katze", "data":"9R2-9L2-8L2-7R2-6R2-6L2-5L3-4L2-3R2-2R2-2L2", "rotation": "[-60, 45, 0]"},

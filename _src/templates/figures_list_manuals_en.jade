@@ -1,0 +1,17 @@
+extends rubik
+
+block scripts
+    script(src="js/app.js")
+
+block content
+    h3 Figures from manual bought in GERMANY
+    each figure in page.metadata.figures_de
+      include includes/figure_card
+    
+    .clear 
+       
+    h3 Figures from manual bought in DENMARK
+    each figure in page.metadata.figures_dk
+      include includes/figure_card
+
+    #3dviewer
