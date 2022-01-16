@@ -1,0 +1,5 @@
+{
+    "devDependencies": {
+        "wintersmith": "~2.4.0"
+    }
+}
