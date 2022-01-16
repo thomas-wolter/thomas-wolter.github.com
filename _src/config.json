@@ -1,9 +1,9 @@
 {
-	"output": "./../",
-	"locals": {
-		"url": "http://localhost:8080",
-		"owner": "Thomas Wolter",
-		"name": "thomas-wolter.de",
+  "output": "./../",
+  "locals": {
+    "url": "http://localhost:8080",
+    "owner": "Thomas Wolter",
+    "name": "thomas-wolter.de",
     "texts": {
       "de": {
         "main_nav_home": "HOME",
@@ -16,7 +16,7 @@
         "sub_nav_rubik_fansfriends": "fans & friends",
         "sub_nav_rubik_victorsworld": "victor's welt",
         "sub_nav_rubik_player": "player"
-        },
+      },
       "en": {
         "main_nav_home": "HOME",
         "main_nav_rubik": "RUBIK'S SNAKE",
@@ -30,5 +30,5 @@
         "sub_nav_rubik_player": "player"
       }
     }
-	}
+  }
 }
