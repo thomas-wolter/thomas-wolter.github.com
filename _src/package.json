@@ -1,5 +1,14 @@
 {
-    "devDependencies": {
-        "wintersmith": "~2.4.0"
-    }
+  "devDependencies": {
+    "grunt": "^1.4.1",
+    "grunt-contrib-coffee": "^1.0.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "wintersmith": "~2.4.0",
+    "async": "^1.0.0",
+    "jsdom": "^7.0.0",
+    "canvas": "^1.0.0",
+    "mkdirp": "^0.5.5",
+    "node-spritesheet": "^0.4.2",
+    "three": "~0.58.10"
+  }
 }
