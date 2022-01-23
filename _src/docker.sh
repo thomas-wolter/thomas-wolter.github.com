@@ -5,6 +5,6 @@
 
 docker build --platform linux/amd64 -t thomaswolter.de .
 docker create --name thomaswolter-build thomaswolter.de
-docker cp thomaswolter-build:/dist/ ../
+docker cp thomaswolter-build:/dist/. ../.
 docker rm thomaswolter-build
 docker rmi thomaswolter.de
