@@ -1,7 +1,0 @@
-figure
-  a.fancybox(href="#3dviewer",data=figure.data,rotation=figure.rotation,title=figure.title)
-    img.figure-thumb(src='img/sand.gif', data-original='img/'+page.metadata.img_root+figure.filename,alt=figure.title)
-  figcaption
-    h2.figure-title #{figure.title}
-    - var breakable = figure.data.replace(/-/g,'-<wbr>')
-    p.figure-notation !{breakable}

@@ -1,0 +1,420 @@
+{
+	"template": "figures_list.jade",
+	"img_root": "figures/fansfriends/",
+	"figures": [
+		{
+			"filename": "cobra.png",
+			"title": "Cobra - by Ryan A.",
+			"data": "2L3-2R3-3L1-3R1-4L1-5L3-4R1-5R3-6L3-7L1-6R3-7R3-8L1-9L1-9R1-11L2-12R1",
+			"rotation": "[8,61,-71]"
+		},
+		{
+			"filename": "doubletoboggan.png",
+			"title": "Double toboggan - Moti",
+			"data": "3L3-4L1-3R2-6L2-6R2-9L1-9R2-10L3-12R2",
+			"rotation": "[29,7,140]"
+		},
+		{
+			"filename": "dumblingspoon.png",
+			"title": "Dumbling spoon - Jürgen",
+			"data": "1R2-5L1-6R3-7L3-8R3-10R1-9L3-2L2",
+			"rotation": "[3,-29,34]"
+		},
+		{
+			"filename": "pairofglasses.png",
+			"title": "Pair of glasses - Jürgen",
+			"data": "2L2-3R2-5L2-6L1-7L2-8L3-9L2-10R2-12L2",
+			"rotation": "[-180,0,0]"
+		},
+		{
+			"filename": "upsidedown.png",
+			"title": "Upside down - Jürgen",
+			"data": "1R2-3R2-4L2-5L3-5R1-6L1-7L2-6R3-7R1-8R3-8L3-9L1-10L2-10R2-12R2",
+			"rotation": "[7,55,-42]"
+		},
+		{
+			"filename": "magnifyingglass.png",
+			"title": "Magnifying glass - Moti",
+			"data": "2R2-3R3-6R1-4R2-5L2-7R3-10R1-9R2-9L2-7L2-11R2",
+			"rotation": "[0,0,180]"
+		},
+		{
+			"filename": "prawn.png",
+			"title": "Prawn - Moti",
+			"data": "1R1-2L2-3R1-3L2-4R2-5L2-6R3-7R1-7L2-9L2-10R3-9R2-11L2-12R3-12L2",
+			"rotation": "[-156,-71,-155]"
+		},
+		{
+			"filename": "bronchosaurian.png",
+			"title": "Bronchosaurian - Moti",
+			"data": "2L2-3L2-3R2-4R2-6L2-7L2-7R2-12R2",
+			"rotation": "[0,0,-45]"
+		},
+		{
+			"filename": "mousewithouttail.png",
+			"title": "Mouse without tail - Moti",
+			"data": "7L2-9L2-9R2-10R1-12L2-11R2-7R3-5L2-6R1-4R2-3R3-2R2-2L2",
+			"rotation": "[73,28,-44]"
+		},
+		{
+			"filename": "fantasy2.png",
+			"title": "Fantasy - Moti",
+			"data": "3R2-3L2-4R2-1R2-5L3-5R3-6L3-6R1-7R3-7L2-8L1-8R1-9L1-9R2-10R2-11L2-12R2",
+			"rotation": "[33,27,-13]"
+		},
+		{
+			"filename": "plait.png",
+			"title": "Plait - Moti",
+			"data": "1R3-2L1-2R3-3L1-3R3-4L1-4R3-5L1-5R3-6L1-7L1-7R1-8L3-8R1-9L3-9R1-10L3-10R1-11L3-11R1-12L3-12R3-6R1",
+			"rotation": "[177,-47,-135]"
+		},
+		{
+			"filename": "heart2.png",
+			"title": "Heart - Lee F.",
+			"data": "7L2-9R1-4R3-3R3-10R1-12L2-2L2",
+			"rotation": "[0,0,0]"
+		},
+		{
+			"filename": "necklace.png",
+			"title": "Necklace - Lee F.",
+			"data": "7L2-9R1-4R3-11R1-2R3",
+			"rotation": "[180,0,0]"
+		},
+		{
+			"filename": "snakereadytostrike.png",
+			"title": "Snake ready to strike - Ryan A.",
+			"data": "1R3-2R3-3R3-4R3-5L3-6L3-7L3-8L1-10L2-12R3",
+			"rotation": "[0,0,-45]"
+		},
+		{
+			"filename": "ufo.png",
+			"title": "UFO - Ryan A.",
+			"data": "1R3-2L1-2R1-3L1-4L3-3R1-4R3-5L3-6L1-5R3-12R3-12L1-11R1-11L1-10L3-10R1-9R3-9L3-8L1-8R3-7R3-6R3-7L2",
+			"rotation": "[121,-4,16]"
+		},
+		{
+			"filename": "quarterbacktilted.png",
+			"title": "Quarterback tilted - Lee F.",
+			"data": "1R2-2R1-3L3-3R3-4L3-5L3-5R3-4R2-6L3-7L2-8L1-8R1-10L1-9R2-10R1-11R3-11L1-12R2-9L1",
+			"rotation": "[25,-52,-41]"
+		},
+		{
+			"filename": "alanh.png",
+			"title": ". - Alan H.",
+			"data": "10L3-9L1-9R1-8L3-8R3-7R3-6R1-7L3-6L2-5R3-5L3-3R3-3L3-1R3-2L3-10R1-11L2-11R1-12R2-12L1",
+			"rotation": "[-67,0,45]"
+		},
+		{
+			"filename": "alanh2.png",
+			"title": ". - Alan H.",
+			"data": "10L3-9L1-9R1-8L3-8R3-7R3-6R1-7L3-6L2-5R3-5L3-3R3-3L3-1R3-2L3-10R3-11L1-11R1-12L1-12R1",
+			"rotation": "[-67,0,45]"
+		},
+		{
+			"filename": "alanh3.png",
+			"title": ". - Alan H.",
+			"data": "10L3-9L1-9R1-8L3-8R3-7R3-6R1-7L3-6L2-5R3-5L3-3R3-3L3-1R3-2L3-12R2-12L3-11R3-10R3-11L2",
+			"rotation": "[-67,0,45]"
+		},
+		{
+			"filename": "alanh4.png",
+			"title": ". - Alan H.",
+			"data": "7L2-6L3-5R3-5L3-4L1-3R1-3L1-2R2-11L3-11R2-10R3-10L3-9L1-8R1-8L1",
+			"rotation": "[-152,21,178]"
+		},
+		{
+			"filename": "fzeroxcar.png",
+			"title": "F-Zero X car - Alan H.",
+			"data": "1R1-2L3-2R3-3L3-4L1-3R3-5L3-4R2-5R3-7L3-7R3-9L1-9R1-10R1-10L2-11L1-12L1-12R1-11R2",
+			"rotation": "[87,-23,67]"
+		},
+		{
+			"filename": "cobra2.png",
+			"title": "Cobra 2 - Ryan A.",
+			"data": "1R3-2R2-3R2-4L1-5L2-6L1-6R3-7L2-7R1-8L3-9L2-10L3-10R2-11R2-12R1",
+			"rotation": "[101,14,59]"
+		},
+		{
+			"filename": "rattlesnake.png",
+			"title": "Rattlesnake - Ryan A.",
+			"data": "1R3-2R3-3R3-4R3-5L1-6L1-7L1-8L1-8R1-9R2-10L3-10R1-11L3-11R1-12L3-12R",
+			"rotation": "[-180,1,-25]"
+		},
+		{
+			"filename": "symmetry2.png",
+			"title": "Symmetry - Patrick W.",
+			"data": "2R3-2L2-3L1-3R2-5L1-6L3-5R2-7L1-7R3-6R2-8R1-9L3-8L2-10L1-10R3-9R2-11R1-11L2-12R3-12L2",
+			"rotation": "[139,47,-26]"
+		},
+		{
+			"filename": "flamingo.png",
+			"title": "Flamingo - Felix W.",
+			"data": "1R2-3R2-4R2-5L2-6L2-7L2-8R2-7R2-9L2-11L2-11R2-12R2",
+			"rotation": "[0,0,-45]"
+		},
+		{
+			"filename": "felixw.png",
+			"title": ". - Felix W.",
+			"data": "2L3-3R3-3L2-4R3-5L3-6R1-7R3-7L2-9L1-9R1-10R1-12L1-11L2",
+			"rotation": "[-167,-73,-108]"
+		},
+		{
+			"filename": "cobra3.png",
+			"title": "Cobra - Michael W.",
+			"data": "2L1-3L2-3R2-4R2-5L2-6L3-7L2-8R3-10R2-12R3",
+			"rotation": "[-165,37,104]"
+		},
+		{
+			"filename": "sculpture.png",
+			"title": "Sculpture - Bill A.",
+			"data": "1R3-2L3-2R2-4R1-4L2-5L1-5R1-7R2-8L3-8R3-9L3-9R1-10L1-10R1-11L2",
+			"rotation": "[-116,25,-116]"
+		},
+		{
+			"filename": "cross3.png",
+			"title": "Cross - Stig E.",
+			"data": "2R2-3L2-4L1-6L2-7L3-5R2-9L2-10L1-11R2-12L2-8R2",
+			"rotation": "[-158,54,87]"
+		},
+		{
+			"filename": "bone.png",
+			"title": "Bone - Stig E.",
+			"data": "5L3-4L2-3R2-2R1-1R2-2L2-9L1-10L2-10R2-11R3-12R2-12L2",
+			"rotation": "[-135,5,-35]"
+		},
+		{
+			"filename": "penis.png",
+			"title": "Penis - Stig E.",
+			"data": "1R2-2R3-2L2-3R2-4L2-5L2-6R3-7R1-7L2-9L2-10L2-10R2-11R1-12R2-12L2",
+			"rotation": "[17,55,180]"
+		},
+		{
+			"filename": "square.png",
+			"title": "Square - Stig E.",
+			"data": "2R3-3L1-4L3-3R2-4R1-6L1-6R3-7R1-7L2-8L3-9R3-10L1-11R1-11L3-10R2",
+			"rotation": "[0,0,90]"
+		},
+		{
+			"filename": "monk.png",
+			"title": "Monk - Stig E.",
+			"data": "2R3-3R2-4L2-5L1-5R1-6L1-6R3-7L3-7R3-8R1-8L3-9L1-9R1-10R2-12L3-11L2-1R2",
+			"rotation": "[28,0,-45]"
+		},
+		{
+			"filename": "ostrich2.png",
+			"title": "Ostrich - Stig E.",
+			"data": "1R2-2L2-3R3-3L2-4L1-4R3-5L3-5R3-6R1-6L3-7L1-7R1-8R3-8L1-9L3-9R2-10R2-12L2",
+			"rotation": "[-159,13,-136]"
+		},
+		{
+			"filename": "tent.png",
+			"title": "Tent - Stig E.",
+			"data": "1R1-3L3-3R3-7L1-5L3-5R3-7R1-9L3-9R3-11L3-11R3",
+			"rotation": "[111,-8,-35]"
+		},
+		{
+			"filename": "diamond.png",
+			"title": "Diamond - Stig E.",
+			"data": "2L3-3R3-5L3-6L1-6R3-7L3-7R3-5R2-8R1-8L3-9R3-9L2-11L3-12R3",
+			"rotation": "[133,0,-45]"
+		},
+		{
+			"filename": "mirror.png",
+			"title": "Mirror - Stig E.",
+			"data": "1R2-2L3-2R3-3R2-4L2-5R3-6L3-12L2-11R2-9R1-10R1-10L2-9L1-7R2",
+			"rotation": "[0,-45,0]"
+		},
+		{
+			"filename": "compact5.png",
+			"title": "Compact - Stig E.",
+			"data": "1R3-2R3-3R1-3L2-4R3-4L2-5R3-5L2-6R1-6L2-7R1-7L2-8R3-8L2-10R1-11R1-11L2-12R3-12L2-9R1-9L2",
+			"rotation": "[-122,-90,-122]"
+		},
+		{
+			"filename": "houseboat.png",
+			"title": "Houseboat - Stig E.",
+			"data": "1R1-2L3-3L1-2R2-3R3-4L1-4R2-5L3-5R1-6L3-6R2-7R1-8R3-9R1-9L2-10L2-10R3-11R3-12L3-11L2-7L1-12R2",
+			"rotation": "[-151,0,0]"
+		},
+		{
+			"filename": "shpongle.png",
+			"title": "Shpongle - Stig E.",
+			"data": "1R3-2L3-3L3-3R3-4L3-5L3-5R3-6L3-7L3-7R3-8L3-9L3-9R3-10L3-11L3-11R3-12L3",
+			"rotation": "[-45,-38,11]"
+		},
+		{
+			"filename": "integral.png",
+			"title": "Integral - Stig E.",
+			"data": "1R1-2L3-2R1-3L3-3R1-4L1-4R3-5L3-5R3-6R1-6L3-7L1-8L1-7R3-8R3-9L1-9R3-10L3-10R1-11L1-11R1-12L1-12R3",
+			"rotation": "[56,-42,-95]"
+		},
+		{
+			"filename": "pokemon.png",
+			"title": "Pokemon - Stig E.",
+			"data": "1R3-2L1-2R1-3L1-4L3-3R1-4R3-5L1-5R3-6L3-6R3-7R1-7L3-8L1-8R3-9L3-9R1-10L1-11L3-11R3-12L3-12R1-10R3",
+			"rotation": "[64,-26,59]"
+		},
+		{
+			"filename": "swan3.png",
+			"title": "Swan - Stig E.",
+			"data": "1R2-2L2-4L3-5L3-6R3-9L3-12R1-11R1-10L1-7R1-7L2-9R2",
+			"rotation": "[8,-19,42]"
+		},
+		{
+			"filename": "iron.png",
+			"title": "Iron - Stig E.",
+			"data": "4L3-3R2-5L3-6R3-7R1-9L3-10L1-9R2-11R1-12R1-7L2",
+			"rotation": "[11,25,134]"
+		},
+		{
+			"filename": "seal2.png",
+			"title": "Seal - Stig E.",
+			"data": "1R1-2L2-3L1-3R3-4L1-4R1-5L1-6R1-6L3-5R1-8L3-7R1-7L2-9L1-8R2-9R1-11L1-11R1",
+			"rotation": "[-128,-25,-31]"
+		},
+		{
+			"filename": "basket.png",
+			"title": "Basket - Stig E.",
+			"data": "1R3-2R3-3L1-4L3-3R2-5R3-4R3-6L3-7L1-7R3-6R2-8R3-9L3-10L3-10R1-12L3-11R1",
+			"rotation": "[-155,45,88]"
+		},
+		{
+			"filename": "chair.png",
+			"title": "Chair - Stig E.",
+			"data": "1R3-2L1-2R1-3L1-4R2-6L2-5L2-6R2-7R2-8L2-10L1-10R1-11L3-11R1-12L1-12R1-9R1",
+			"rotation": "[-152,-22,90]"
+		},
+		{
+			"filename": "bra.png",
+			"title": "Bra - Stig E.",
+			"data": "1R1-2L3-2R3-3L1-3R1-4L1-4R1-5L3-5R3-6L1-6R3-7L3-7R1-8L3-8R3-9L1-9R1-10L1-10R1-11L3-11R3-12L1-12R3",
+			"rotation": "[127,45,0]"
+		},
+		{
+			"filename": "stork.png",
+			"title": "Stork - Peter S. N.",
+			"data": "1R2-3R1-4L1-5L3-6L1-7L1-5R2-8L1-9L1-11L1-10L3-9R2-11R1-12R2",
+			"rotation": "[-143,14,-82]"
+		},
+		{
+			"filename": "bunchin.png",
+			"title": "Bunchin - Hitoshi I.",
+			"data": "12R2-11R1-10R3-11L2-9R1-8R1-9L2-10L2-8L1-7L1-7R2-6L3-4R3-3R3-4L2-5L3-6R2-2R1-3L2-1R3-5R2-2L2",
+			"rotation": "[-164,0,90]"
+		},
+		{
+			"filename": "bunchin.png",
+			"title": "Compact - Brian H.",
+			"data": "12R2-11R1-10R3-11L2-9R1-8R1-9L2-10L2-8L1-7L1-7R2-6L3-4R3-3R3-4L2-5L3-6R2-2R1-3L2-1R3-5R2-2L2",
+			"rotation": "[-164,0,90]"
+		},
+		{
+			"filename": "kirkschair.png",
+			"title": "Kirk's chair - Gerry L.",
+			"data": "1R1-2R3-2L2-3R3-3L2-5R1-4R1-5L2-4L2-6R3-7R1-8R3-9R3-9L2-10R1-10L2-11R1-11L2-12R3-12L2-7L2",
+			"rotation": "[-117,16,161]"
+		},
+		{
+			"filename": "compact6.png",
+			"title": "Compact - Xavier C.",
+			"data": "8L2-7R2-6R1-5R2-9R1-10R2-11L2-5L2-4L2-3R2-2R3-1R1-2L2-12L2-12R2",
+			"rotation": "[-53,-3,-112]"
+		},
+		{
+			"filename": "noname2.png",
+			"title": "Noname - Robert B.",
+			"data": "2L3-2R3-4L2-6L3-5R3-4R2-6R1-7L1-7R3-8L3-8R3-9R2-10L2-11R3-12L3",
+			"rotation": "[-61,-38,-88]"
+		},
+		{
+			"filename": "noname3.png",
+			"title": "Noname 2 - Robert B.",
+			"data": "2L3-2R3-4L2-6L3-5R3-4R2-6R3-7R3-7L2-8L3-8R3-9R2-10L2-11R3-12L3",
+			"rotation": "[26,-45,0]"
+		},
+		{
+			"filename": "elephant.png",
+			"title": "Elephant - Saverio C.",
+			"data": "2L1-3L1-3R1-5L1-4R3-4L2-6L3-5R2-6R3-7R3-8R2-9L2-10L2-10R2-11R2-12L2",
+			"rotation": "[-177,27,-135]"
+		},
+		{
+			"filename": "bow3.png",
+			"title": "Bow - Elisa H.",
+			"data": "2L3-3L3-3R2-4R1-5L3-6L3-6R1-7R1-8L3-9L3-9R1-11L3-10R2-12L3",
+			"rotation": "[-39,7,150]"
+		},
+		{
+			"filename": "deepspacenine.png",
+			"title": "Deep Space Nine - Matjaz E.",
+			"data": "1R3-3L3-4L3-3R2-5R3-6R3-6L2-8L3-9L1-10L2-8R2-12R1-11R2",
+			"rotation": "[54,25,-100]"
+		},
+		{
+			"filename": "spiralstaircase.png",
+			"title": "Spiral staircase - Brady S.",
+			"data": "1L3-2L3-1R2-3L3-4L3-3R2-5L3-6L3-5R2-7L3-8L3-7R2-9L3-10L3-9R2-11L3-12L3-11R2",
+			"rotation": "[-65,14,-10]"
+		},
+		{
+			"filename": "swan4.png",
+			"title": "Swan - Taunya B.",
+			"data": "1R2-2L2-3L2-3R1-4L1-5L3-5R2-6L1-7L1-8L1-9L1-9R2-11L1-10L3-11R1-12R2-12L2",
+			"rotation": "[-148,16,-90]"
+		},
+		{
+			"filename": "doggeir.png",
+			"title": "Dog - Geir Erik Ö.",
+			"data": "1R1-2L2-3L2-3R2-5L2-6L2-6R1-7R3-12R3-12L2-11L2-10R2-9L2-8L2-7L2",
+			"rotation": "[156,9,24]"
+		},
+		{
+			"filename": "supercompact.png",
+			"title": "Supercompact - T.",
+			"data": "1R3-2R3-2L2-3R1-3L2-4R3-4L2-5R3-7R3-6R3-6L2-12R3-11R3-12L2-10R1-11L2-9R3-10L2-8R3-8L2",
+			"rotation": "[-156,38,-178]"
+		},
+		{
+			"filename": "house.png",
+			"title": "House - Natalia T.",
+			"data": "6L3-6R3-7R3-7L2-8L3-5L3-5R2-9L3-8R2-4L3-10L3-3L3-3R2-11L3-10R2-1R2-2L3-12R2-12L3",
+			"rotation": "[-67,5,-19]"
+		},
+		{
+			"filename": "stairway.png",
+			"title": "Stairway - Fabian K.",
+			"data": "1R2-2R2-3R2-4R2-5R2-6R2-7R2-8R2-9R2-10R2-11R2-12R2",
+			"rotation": "[-156,-35,-129]"
+		},
+		{
+			"filename": "spiral2d.png",
+			"title": "Spiral 2D - Fabian K.",
+			"data": "12R2-12L2-10R2-9L2-6R2-4L2",
+			"rotation": "[0,0,135]"
+		},
+		{
+			"filename": "spiral3d.png",
+			"title": "Spiral 3D - Fabian K.",
+			"data": "1R1-2L3-2R3-3L3-3R1-4L1-4R1-5L3-5R3-6L3-6R1-7L1-7R1-8L3-8R3-9L3-9R1-10L1-10R1-11L3-11R3-12L3-12R1",
+			"rotation": "[76,-45,-173]"
+		},
+		{
+			"filename": "sculpture2.png",
+			"title": "Sculpture - Eric",
+			"data": "1R2-3R3-4R1-4L2-6L3-6R1-7L1-7R1-8R3-8L1-10L1-11L3-10R2",
+			"rotation": "[6,-24,-44]"
+		},
+		{
+			"filename": "gemstone.png",
+			"title": "Gemstone - Eric",
+			"data": "1R1-2L1-3L3-4L3-3R2-6L1-5R3-5L2-4R3-6R1-7L1-8L3-8R2-7R1-9L3-9R3-10R3-10L2-11R1-12L1",
+			"rotation": "[-126,8,137]"
+		},
+		{
+			"filename": "mask3.png",
+			"title": "Mask - Tine",
+			"data": "1R1-2R2-3R3-4L1-4R3-5L3-6L3-6R1-5R3-8R2-7R3-9R1-10R3-11L1-11R1-12R1-12L1",
+			"rotation": "[29,1,-90]"
+		}
+	]
+}

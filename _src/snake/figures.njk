@@ -1,0 +1,23 @@
+---
+pagination:
+    data: figures
+    size: 1
+    alias: section
+permalink: "snake/{{ section.name | slugify }}/"
+layout: layouts/main.njk
+eleventyComputed:
+  title: HELLO “{{ section.name }}”
+---
+<div class="card-grid">
+    {%- for figure in section.figures %}
+        <div class="card">
+            <div class="card-media">
+                <img src="/images/figures/{{ section.name }}/{{ figure.filename }}" alt="Figure Image">
+            </div>
+            <div class="card-content">
+                <h2 class="card-heading">{{ figure.title }}</h2>
+                <p class="card-description">{{ figure.data }}</p>
+            </div>
+        </div>
+    {% endfor -%}
+</div>
