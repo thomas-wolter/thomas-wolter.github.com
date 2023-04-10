@@ -1,0 +1,68 @@
+[
+    {
+        "name": "letters",
+        "img_root": "letters",
+        "figures": [
+            {
+                "filename": "_R.png",
+                "title": "_R",
+                "data": "3R1-4L2-5L3-6L3-6R3-7R3-9L2",
+                "rotation": "[-90,45,90]"
+            },
+            {
+                "filename": "_U.png",
+                "title": "_U",
+                "data": "1R2-5R3-6R3-8L3-9L3",
+                "rotation": "[0,0,135]"
+            },
+            {
+                "filename": "_B.png",
+                "title": "_B",
+                "data": "4R2-6L3-7L3-7R3-8R1-9L1-10L3-10R3-11R3",
+                "rotation": "[0,0,-135]"
+            },
+            {
+                "filename": "_I.png",
+                "title": "_I",
+                "data": "6R2-7L2-12R2",
+                "rotation": "[0,0,45]"
+            },
+            {
+                "filename": "_ball.png",
+                "title": "_ball",
+                "data": "1R1-2L3-2R3-3L1-3R1-4L1-4R1-5L3-5R3-12R3-12L3-11R3-11L3-10R1-10L1-9R1-9L1-8R3-8L3-7R1-6R3-6L3-7L1",
+                "rotation": "[0,0,0]"
+            },
+            {
+                "filename": "_K.png",
+                "title": "_K",
+                "data": "3L3-3R2-4R2-5L2-8R2-9L2-11L2-11R3",
+                "rotation": "[-90,45,-180]"
+            },
+            {
+                "filename": "_S.png",
+                "title": "_S",
+                "data": "1R1-3L1-4L1-5R1-6R1-7R1-8R1-10L1-11L1-12R3",
+                "rotation": "[-90,45,-90]"
+            },
+            {
+                "filename": "_N.png",
+                "title": "_N",
+                "data": "4L1-4R1-5L2-6L2-7L2-8L2-9L2-9R1-10L1",
+                "rotation": "[0,0,45]"
+            },
+            {
+                "filename": "_A.png",
+                "title": "_A",
+                "data": "4L3-4R2-5L1-6L3-7R3-8R1-9L2-9R3-12R3",
+                "rotation": "[-45,-45,180]"
+            },
+            {
+                "filename": "_E.png",
+                "title": "_E",
+                "data": "1R1-3L1-4L1-5R2-6R2-7L2-8L2-9R1-10R1-12L1",
+                "rotation": "[-90,-45,90]"
+            }
+        ]
+    }
+]

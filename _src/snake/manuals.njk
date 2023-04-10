@@ -1,0 +1,32 @@
+---
+layout: layouts/main.njk
+title: Manuals - Rubik's Snake - Fansite by Thomas Wolter
+---
+<h2>Figures from Manual bought in Germany</h2>
+<div class="card-grid">
+    {%- for figure in manuals[0].figures %}
+        <div class="card">
+            <div class="card-media">
+                <img src="/images/figures/manuals/{{ figure.filename }}" alt="Figure Image">
+            </div>
+            <div class="card-content">
+                <h2 class="card-heading">{{ figure.title }}</h2>
+                <p class="card-description">{{ figure.data }}</p>
+            </div>
+        </div>
+    {% endfor -%}
+</div>
+<h2>Figures from Manual bought in Denmark</h2>
+<div class="card-grid">
+    {%- for figure in manuals[1].figures %}
+        <div class="card">
+            <div class="card-media">
+                <img src="/images/figures/manuals/{{ figure.filename }}" alt="Figure Image">
+            </div>
+            <div class="card-content">
+                <h2 class="card-heading">{{ figure.title }}</h2>
+                <p class="card-description">{{ figure.data }}</p>
+            </div>
+        </div>
+    {% endfor -%}
+</div>

@@ -1,34 +1,48 @@
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
 @font-face {
     font-family: 'Quicksand';
-    src: url('./fonts/Quicksand-Light.ttf') format('truetype');
+    src: url('/fonts/Quicksand-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Quicksand';
-    src: url('./fonts/Quicksand-Regular.ttf') format('truetype');
+    src: url('/fonts/Quicksand-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Quicksand';
-    src: url('path/to/Quicksand-Medium.ttf') format('truetype');
+    src: url('/fonts/Quicksand-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Quicksand';
-    src: url('./fonts/Quicksand-SemiBold.ttf') format('truetype');
+    src: url('/fonts/Quicksand-SemiBold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Quicksand';
-    src: url('./fonts/Quicksand-Bold.ttf') format('truetype');
+    src: url('/fonts/Quicksand-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
@@ -53,8 +67,8 @@ a,
 a:visited,
 a:hover,
 a:active {
-    color: inherit;
-    text-decoration: none;
+    font-weight: 600;
+    color: var(--secondary-color);
 }
 
 body {
@@ -128,13 +142,17 @@ header nav a+a {
 .logo-slogan {
     color: var(--black-color);
     font-weight: normal;
-    font-size: 1rem;
+    font-size: 0.8rem;
     text-align: center;
 }
 
 header nav a {
-    margin: 0 10px;
+    margin: 0 8px;
     text-decoration: none;
+}
+
+header nav [aria-current] {
+    border-bottom: 2px solid var(--secondary-color);
 }
 
 
@@ -144,7 +162,7 @@ main {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2%;
+    padding: 0 4%;
 }
 
 h1 {
@@ -231,7 +249,7 @@ figure {
 }
 
 figcaption {
-    font-size: 0.88888rem;
+    font-size: 0.8rem;
     margin-top: 8px;
     text-align: center;
 }
@@ -243,8 +261,9 @@ ul {
 }
 
 blockquote {
-    border-left: 4px solid #333;
-    padding: 0 10px;
+    border-left: 2px solid #333;
+    padding: 0 8px;
+    margin: 16px;
 }
 
 

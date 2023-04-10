@@ -35,6 +35,9 @@ const path = require('path');
         if (path.extname(file).toLowerCase() !== '.json') {
             continue;
         }
+        if (file.includes('navigation')) {
+            continue;
+        }
         const json = JSON.parse(await fs.readFile(path.join(contentDir, file)));
 
         for (let i = 0; i < json.length; i++) {

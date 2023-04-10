@@ -12,12 +12,9 @@ layout: layouts/base.njk
                 <div class="logo-slogan">Fansite by Thomas Wolter</div>
             </a>
             <nav class="nav-main">
-                <a href="/snake/notation/">Notation</a>
-                <a href="/snake/manuals/">Manual</a>
-                <a href="/snake/easy/">Easy</a>
-                <a href="/snake/hard/">Hard</a>
-                <a href="/snake/fans-and-friends/">Fans & Friends</a>
-                <a href="/snake/victors-world/">Victor's World</a>
+                {%- for nav in navigation %}
+                    <a href="{{ nav.href }}" {% if page.url == nav.href %} aria-current="page"{% endif %}>{{ nav.text }}</a>
+                {% endfor -%}
             </nav>
             <a role="button" href="/snake/player/" class="button">Playground</a>
         </div>
