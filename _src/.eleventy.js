@@ -1,6 +1,8 @@
 const esbuild = require('esbuild');
 
 module.exports = function(eleventyConfig) {
+    eleventyConfig.ignores.add("_gen/**");
+
     eleventyConfig.addPassthroughCopy("fonts");
     eleventyConfig.addPassthroughCopy("styles");
     eleventyConfig.addPassthroughCopy("scripts");

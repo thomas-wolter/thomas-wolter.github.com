@@ -144,7 +144,7 @@ main {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 2%;
 }
 
 h1 {
@@ -167,6 +167,7 @@ p {
 
 .text-block {
     max-width: 600px;
+    margin: 0 auto;
 }
 
 .card-grid {
@@ -208,6 +209,42 @@ p {
     font-size: 1rem;
     margin: 0;
     min-height: calc(1.5rem * 4);
+}
+
+h3 {
+    text-align: center;
+}
+
+p {
+    text-align: justify;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+figcaption {
+    font-size: 0.88888rem;
+    margin-top: 8px;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+blockquote {
+    border-left: 4px solid #333;
+    padding: 0 10px;
 }
 
 
