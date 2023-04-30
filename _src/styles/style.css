@@ -105,27 +105,45 @@ header {
     background-color: rgba(255, 255, 255, 0.9);
     position: sticky;
     top: 0;
-    z-index: 999;
+    z-index: 10;
 }
 
 .header-container {
     max-width: 1200px;
+    padding: 0 2%;
     margin: 0 auto;
 }
 
 .header-main {
     font-size: 1.125rem;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap: 16px;
 }
 
 header nav {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
 }
 
-header nav a+a {
-    margin-left: 12px;
+@media (max-width: 1200px) {
+    header {
+        position: static;
+    }
+
+    .header-main {
+        flex-direction: column;
+    }
+
+    header nav {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
 }
 
 #logo {
@@ -147,12 +165,61 @@ header nav a+a {
 }
 
 header nav a {
-    margin: 0 8px;
     text-decoration: none;
+    text-align: center;
 }
 
 header nav [aria-current] {
     border-bottom: 2px solid var(--secondary-color);
+}
+
+#lightbox-background {
+    background: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+#lightbox {
+    background-color: white;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    margin: 4%;
+    max-width: 600px;
+    max-height: 600px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#lightbox canvas {
+    width: 100%;
+    height: 100%;
+}
+
+#lightbox button {
+    position: absolute;
+    top: 0.2rem;
+    right: 0.2rem;
+    font-size: 2rem;
+    font-weight: 900;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    margin: auto;
+    line-height: 1rem;
+    padding: 0px;
 }
 
 
@@ -162,7 +229,7 @@ main {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 4%;
+    padding: 32px 4%;
 }
 
 h1 {
@@ -204,6 +271,7 @@ p {
 
 .card-media {
     height: 256px;
+    cursor: pointer;
 }
 
 .card-media img {

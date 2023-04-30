@@ -49,6 +49,7 @@ const path = require('path');
                 const outputFile = path.join(outputDir, figure['filename']);
 
                 await page.evaluate(`
+                    window.snakeCreate();
                     window.snakeUpdate('${figure['data']}', ${figure['rotation']});
                 `);
 

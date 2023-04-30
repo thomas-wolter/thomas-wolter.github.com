@@ -262,39 +262,10 @@ function parseHumanNotation(humanNotation) {
     return parsedMoves;
 }
 
-const renderer = new THREE.WebGLRenderer({
-    antialias: true,
-    canvas: document.getElementById("canvas")
-});
-const width = renderer.domElement.offsetWidth;
-const height = renderer.domElement.offsetHeight;
-renderer.setSize(width, height);
-renderer.setClearColor(0x000000, 0);
-
-const scene = new THREE.Scene();
-const ambLight = new THREE.AmbientLight(0xffffff, 0.8);
-const dirLight = new THREE.DirectionalLight(0xffffff, 0.5);
-dirLight.castShadow = true;
-dirLight.position.set(1, 1, 1);
-
-scene.add(ambLight);
-scene.add(dirLight);
-
-const aspect = width / height;
-const frustumSize = 10;
-const camera = new THREE.OrthographicCamera(frustumSize * aspect / -2, frustumSize * aspect / 2, frustumSize / 2, frustumSize / -2, 0, 1000);
-scene.add(camera);
-
-const controls = new ArcballControls(camera, renderer.domElement, scene);
-controls.enablePan = false;
-controls.addEventListener('change', function() {
-    renderer.render(scene, camera);
-    if (figure) {
-
-        console.log(figure.rotation);
-    }
-});
-controls.setGizmosVisible(false);
+var renderer = null;
+var scene = null;
+var figure = null;
+var camera = null;
 
 const materials = [
     // new THREE.MeshBasicMaterial({ color: 0x93CEBD }),
@@ -303,7 +274,40 @@ const materials = [
     new THREE.MeshLambertMaterial({ color: 0x00C893 }),
 ];
 
-var figure = null;
+window.snakeCreate = () => {
+    renderer = new THREE.WebGLRenderer({
+        antialias: true,
+        canvas: document.getElementById("canvas")
+    });
+    const width = renderer.domElement.clientWidth;
+    const height = renderer.domElement.clientHeight;
+    // renderer.setSize(width, height);
+    renderer.setClearColor(0x000000, 0);
+
+    scene = new THREE.Scene();
+    const ambLight = new THREE.AmbientLight(0xffffff, 0.8);
+    const dirLight = new THREE.DirectionalLight(0xffffff, 0.5);
+    dirLight.castShadow = true;
+    dirLight.position.set(1, 1, 1);
+
+    scene.add(ambLight);
+    scene.add(dirLight);
+
+    const aspect = width / height;
+    const frustumSize = 10;
+    camera = new THREE.OrthographicCamera(frustumSize * aspect / -2, frustumSize * aspect / 2, frustumSize / 2, frustumSize / -2, 0, 1000);
+    scene.add(camera);
+
+    const controls = new ArcballControls(camera, renderer.domElement, scene);
+    controls.enablePan = false;
+    controls.addEventListener('change', function() {
+        renderer.render(scene, camera);
+    });
+    controls.setGizmosVisible(false);
+
+    return scene;
+}
+
 window.snakeUpdate = (humanNotation, euler = [0, 0, 0]) => {
     scene.remove(figure);
     figure = new Figure(materials);
@@ -313,6 +317,10 @@ window.snakeUpdate = (humanNotation, euler = [0, 0, 0]) => {
     const bsphere = new THREE.Sphere();
     bbox.getBoundingSphere(bsphere);
     const viewRadius = bsphere.radius * 2 * 1.02;
+
+    const width = renderer.domElement.clientWidth;
+    const height = renderer.domElement.clientHeight;
+    const aspect = width / height;
 
     const frustumSize = viewRadius;
     camera.left = frustumSize * aspect / -2;
@@ -329,4 +337,39 @@ window.snakeUpdate = (humanNotation, euler = [0, 0, 0]) => {
     renderer.render(scene, camera);
 }
 
-window.snakeUpdate('');
+function resizeCanvasToDisplaySize() {
+    const canvas = renderer.domElement;
+    // look up the size the canvas is being displayed
+    const width = canvas.clientWidth;
+    const height = canvas.clientHeight;
+
+    // adjust displayBuffer size to match
+    if (canvas.width !== width || canvas.height !== height) {
+        // you must pass false here or three.js sadly fights the browser
+        renderer.setSize(width, height, false);
+
+        const bbox = new THREE.Box3().setFromObject(figure);
+        const bsphere = new THREE.Sphere();
+        bbox.getBoundingSphere(bsphere);
+        const viewRadius = bsphere.radius * 2 * 1.02;
+
+        const aspect = width / height;
+        const frustumSize = viewRadius;
+        camera.left = frustumSize * aspect / -2;
+        camera.right = frustumSize * aspect / 2;
+        camera.top = frustumSize / 2
+        camera.bottom = frustumSize / -2
+        camera.updateProjectionMatrix();
+        // update any render target sizes here
+    }
+}
+
+window.snakeAnimate = () => {
+        resizeCanvasToDisplaySize();
+
+        renderer.render(scene, camera);
+        requestAnimationFrame(window.snakeAnimate);
+    }
+    // window.snakeCreate();
+    // window.snakeUpdate('');
+    //requestAnimationFrame(animate);

@@ -11,7 +11,7 @@ eleventyComputed:
 <div class="card-grid">
     {%- for figure in section.figures %}
         <div class="card">
-            <div class="card-media">
+            <div class="card-media" onclick="window.openLightbox(); window.updateLightbox('{{figure.data}}', {{figure.rotation}});">
                 <img src="/images/figures/{{ section.name }}/{{ figure.filename }}" alt="Figure Image">
             </div>
             <div class="card-content">

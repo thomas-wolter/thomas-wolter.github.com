@@ -1,6 +1,15 @@
 ---
 layout: layouts/base.njk
 ---
+<div id="lightbox-background" onclick="">
+    <div id="lightbox" onclick="">
+        <canvas id="canvas" onclick="event.stopPropagation();"></canvas>
+        <button class="lightbox-close-button" onclick="closeLightbox();">&times;</button>
+    </div>
+</div>
+<script type="module" src="/js/player.js"></script>
+<script type="module" src="/js/lightbox.js"></script>
+
 <header>
     <div class="header-container">
         <div class="header-main">
@@ -16,7 +25,7 @@ layout: layouts/base.njk
                     <a href="{{ nav.href }}" {% if page.url == nav.href %} aria-current="page"{% endif %}>{{ nav.text }}</a>
                 {% endfor -%}
             </nav>
-            <a role="button" href="/snake/player/" class="button">Playground</a>
+            <a role="button" href="/snake/playground/" class="button">Playground</a>
         </div>
     </div>
 </header>

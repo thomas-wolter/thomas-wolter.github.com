@@ -1,5 +1,5 @@
 (() => {
-  // ../node_modules/three/build/three.module.js
+  // node_modules/three/build/three.module.js
   var REVISION = "151";
   var CullFaceNone = 0;
   var CullFaceBack = 1;
@@ -1664,16 +1664,16 @@
     }
   };
   var WebGLRenderTarget = class extends EventDispatcher {
-    constructor(width2 = 1, height2 = 1, options = {}) {
+    constructor(width = 1, height = 1, options = {}) {
       super();
       this.isWebGLRenderTarget = true;
-      this.width = width2;
-      this.height = height2;
+      this.width = width;
+      this.height = height;
       this.depth = 1;
-      this.scissor = new Vector4(0, 0, width2, height2);
+      this.scissor = new Vector4(0, 0, width, height);
       this.scissorTest = false;
-      this.viewport = new Vector4(0, 0, width2, height2);
-      const image = { width: width2, height: height2, depth: 1 };
+      this.viewport = new Vector4(0, 0, width, height);
+      const image = { width, height, depth: 1 };
       this.texture = new Texture(image, options.mapping, options.wrapS, options.wrapT, options.magFilter, options.minFilter, options.format, options.type, options.anisotropy, options.encoding);
       this.texture.isRenderTargetTexture = true;
       this.texture.flipY = false;
@@ -1685,18 +1685,18 @@
       this.depthTexture = options.depthTexture !== void 0 ? options.depthTexture : null;
       this.samples = options.samples !== void 0 ? options.samples : 0;
     }
-    setSize(width2, height2, depth = 1) {
-      if (this.width !== width2 || this.height !== height2 || this.depth !== depth) {
-        this.width = width2;
-        this.height = height2;
+    setSize(width, height, depth = 1) {
+      if (this.width !== width || this.height !== height || this.depth !== depth) {
+        this.width = width;
+        this.height = height;
         this.depth = depth;
-        this.texture.image.width = width2;
-        this.texture.image.height = height2;
+        this.texture.image.width = width;
+        this.texture.image.height = height;
         this.texture.image.depth = depth;
         this.dispose();
       }
-      this.viewport.set(0, 0, width2, height2);
-      this.scissor.set(0, 0, width2, height2);
+      this.viewport.set(0, 0, width, height);
+      this.scissor.set(0, 0, width, height);
     }
     clone() {
       return new this.constructor().copy(this);
@@ -1722,10 +1722,10 @@
     }
   };
   var DataArrayTexture = class extends Texture {
-    constructor(data = null, width2 = 1, height2 = 1, depth = 1) {
+    constructor(data = null, width = 1, height = 1, depth = 1) {
       super(null);
       this.isDataArrayTexture = true;
-      this.image = { data, width: width2, height: height2, depth };
+      this.image = { data, width, height, depth };
       this.magFilter = NearestFilter;
       this.minFilter = NearestFilter;
       this.wrapR = ClampToEdgeWrapping;
@@ -1735,10 +1735,10 @@
     }
   };
   var Data3DTexture = class extends Texture {
-    constructor(data = null, width2 = 1, height2 = 1, depth = 1) {
+    constructor(data = null, width = 1, height = 1, depth = 1) {
       super(null);
       this.isData3DTexture = true;
-      this.image = { data, width: width2, height: height2, depth };
+      this.image = { data, width, height, depth };
       this.magFilter = NearestFilter;
       this.minFilter = NearestFilter;
       this.wrapR = ClampToEdgeWrapping;
@@ -6834,12 +6834,12 @@
     return intersection;
   }
   var BoxGeometry = class extends BufferGeometry {
-    constructor(width2 = 1, height2 = 1, depth = 1, widthSegments = 1, heightSegments = 1, depthSegments = 1) {
+    constructor(width = 1, height = 1, depth = 1, widthSegments = 1, heightSegments = 1, depthSegments = 1) {
       super();
       this.type = "BoxGeometry";
       this.parameters = {
-        width: width2,
-        height: height2,
+        width,
+        height,
         depth,
         widthSegments,
         heightSegments,
@@ -6855,21 +6855,21 @@
       const uvs = [];
       let numberOfVertices = 0;
       let groupStart = 0;
-      buildPlane("z", "y", "x", -1, -1, depth, height2, width2, depthSegments, heightSegments, 0);
-      buildPlane("z", "y", "x", 1, -1, depth, height2, -width2, depthSegments, heightSegments, 1);
-      buildPlane("x", "z", "y", 1, 1, width2, depth, height2, widthSegments, depthSegments, 2);
-      buildPlane("x", "z", "y", 1, -1, width2, depth, -height2, widthSegments, depthSegments, 3);
-      buildPlane("x", "y", "z", 1, -1, width2, height2, depth, widthSegments, heightSegments, 4);
-      buildPlane("x", "y", "z", -1, -1, width2, height2, -depth, widthSegments, heightSegments, 5);
+      buildPlane("z", "y", "x", -1, -1, depth, height, width, depthSegments, heightSegments, 0);
+      buildPlane("z", "y", "x", 1, -1, depth, height, -width, depthSegments, heightSegments, 1);
+      buildPlane("x", "z", "y", 1, 1, width, depth, height, widthSegments, depthSegments, 2);
+      buildPlane("x", "z", "y", 1, -1, width, depth, -height, widthSegments, depthSegments, 3);
+      buildPlane("x", "y", "z", 1, -1, width, height, depth, widthSegments, heightSegments, 4);
+      buildPlane("x", "y", "z", -1, -1, width, height, -depth, widthSegments, heightSegments, 5);
       this.setIndex(indices);
       this.setAttribute("position", new Float32BufferAttribute(vertices, 3));
       this.setAttribute("normal", new Float32BufferAttribute(normals, 3));
       this.setAttribute("uv", new Float32BufferAttribute(uvs, 2));
-      function buildPlane(u, v, w, udir, vdir, width3, height3, depth2, gridX, gridY, materialIndex) {
-        const segmentWidth = width3 / gridX;
-        const segmentHeight = height3 / gridY;
-        const widthHalf = width3 / 2;
-        const heightHalf = height3 / 2;
+      function buildPlane(u, v, w, udir, vdir, width2, height2, depth2, gridX, gridY, materialIndex) {
+        const segmentWidth = width2 / gridX;
+        const segmentHeight = height2 / gridY;
+        const widthHalf = width2 / 2;
+        const heightHalf = height2 / 2;
         const depthHalf = depth2 / 2;
         const gridX1 = gridX + 1;
         const gridY1 = gridY + 1;
@@ -7117,7 +7117,7 @@
     }
   };
   var PerspectiveCamera = class extends Camera {
-    constructor(fov2 = 50, aspect3 = 1, near = 0.1, far = 2e3) {
+    constructor(fov2 = 50, aspect2 = 1, near = 0.1, far = 2e3) {
       super();
       this.isPerspectiveCamera = true;
       this.type = "PerspectiveCamera";
@@ -7126,7 +7126,7 @@
       this.near = near;
       this.far = far;
       this.focus = 10;
-      this.aspect = aspect3;
+      this.aspect = aspect2;
       this.view = null;
       this.filmGauge = 35;
       this.filmOffset = 0;
@@ -7211,7 +7211,7 @@
      *
      *   Note there is no reason monitors have to be the same size or in a grid.
      */
-    setViewOffset(fullWidth, fullHeight, x, y, width2, height2) {
+    setViewOffset(fullWidth, fullHeight, x, y, width, height) {
       this.aspect = fullWidth / fullHeight;
       if (this.view === null) {
         this.view = {
@@ -7229,8 +7229,8 @@
       this.view.fullHeight = fullHeight;
       this.view.offsetX = x;
       this.view.offsetY = y;
-      this.view.width = width2;
-      this.view.height = height2;
+      this.view.width = width;
+      this.view.height = height;
       this.updateProjectionMatrix();
     }
     clearViewOffset() {
@@ -7242,21 +7242,21 @@
     updateProjectionMatrix() {
       const near = this.near;
       let top = near * Math.tan(DEG2RAD * 0.5 * this.fov) / this.zoom;
-      let height2 = 2 * top;
-      let width2 = this.aspect * height2;
-      let left = -0.5 * width2;
+      let height = 2 * top;
+      let width = this.aspect * height;
+      let left = -0.5 * width;
       const view = this.view;
       if (this.view !== null && this.view.enabled) {
         const fullWidth = view.fullWidth, fullHeight = view.fullHeight;
-        left += view.offsetX * width2 / fullWidth;
-        top -= view.offsetY * height2 / fullHeight;
-        width2 *= view.width / fullWidth;
-        height2 *= view.height / fullHeight;
+        left += view.offsetX * width / fullWidth;
+        top -= view.offsetY * height / fullHeight;
+        width *= view.width / fullWidth;
+        height *= view.height / fullHeight;
       }
       const skew = this.filmOffset;
       if (skew !== 0)
         left += near * skew / this.getFilmWidth();
-      this.projectionMatrix.makePerspective(left, left + width2, top, top - height2, near, this.far);
+      this.projectionMatrix.makePerspective(left, left + width, top, top - height, near, this.far);
       this.projectionMatrixInverse.copy(this.projectionMatrix).invert();
     }
     toJSON(meta) {
@@ -7794,23 +7794,23 @@
     };
   }
   var PlaneGeometry = class extends BufferGeometry {
-    constructor(width2 = 1, height2 = 1, widthSegments = 1, heightSegments = 1) {
+    constructor(width = 1, height = 1, widthSegments = 1, heightSegments = 1) {
       super();
       this.type = "PlaneGeometry";
       this.parameters = {
-        width: width2,
-        height: height2,
+        width,
+        height,
         widthSegments,
         heightSegments
       };
-      const width_half = width2 / 2;
-      const height_half = height2 / 2;
+      const width_half = width / 2;
+      const height_half = height / 2;
       const gridX = Math.floor(widthSegments);
       const gridY = Math.floor(heightSegments);
       const gridX1 = gridX + 1;
       const gridY1 = gridY + 1;
-      const segment_width = width2 / gridX;
-      const segment_height = height2 / gridY;
+      const segment_width = width / gridX;
+      const segment_height = height / gridY;
       const indices = [];
       const vertices = [];
       const normals = [];
@@ -9309,7 +9309,7 @@
       this.view = source.view === null ? null : Object.assign({}, source.view);
       return this;
     }
-    setViewOffset(fullWidth, fullHeight, x, y, width2, height2) {
+    setViewOffset(fullWidth, fullHeight, x, y, width, height) {
       if (this.view === null) {
         this.view = {
           enabled: true,
@@ -9326,8 +9326,8 @@
       this.view.fullHeight = fullHeight;
       this.view.offsetX = x;
       this.view.offsetY = y;
-      this.view.width = width2;
-      this.view.height = height2;
+      this.view.width = width;
+      this.view.height = height;
       this.updateProjectionMatrix();
     }
     clearViewOffset() {
@@ -9505,8 +9505,8 @@
       return cubeUVRenderTarget;
     }
     _allocateTargets() {
-      const width2 = 3 * Math.max(this._cubeSize, 16 * 7);
-      const height2 = 4 * this._cubeSize;
+      const width = 3 * Math.max(this._cubeSize, 16 * 7);
+      const height = 4 * this._cubeSize;
       const params = {
         magFilter: LinearFilter,
         minFilter: LinearFilter,
@@ -9516,15 +9516,15 @@
         encoding: LinearEncoding,
         depthBuffer: false
       };
-      const cubeUVRenderTarget = _createRenderTarget(width2, height2, params);
-      if (this._pingPongRenderTarget === null || this._pingPongRenderTarget.width !== width2 || this._pingPongRenderTarget.height !== height2) {
+      const cubeUVRenderTarget = _createRenderTarget(width, height, params);
+      if (this._pingPongRenderTarget === null || this._pingPongRenderTarget.width !== width || this._pingPongRenderTarget.height !== height) {
         if (this._pingPongRenderTarget !== null) {
           this._dispose();
         }
-        this._pingPongRenderTarget = _createRenderTarget(width2, height2, params);
+        this._pingPongRenderTarget = _createRenderTarget(width, height, params);
         const { _lodMax } = this;
         ({ sizeLods: this._sizeLods, lodPlanes: this._lodPlanes, sigmas: this._sigmas } = _createPlanes(_lodMax));
-        this._blurMaterial = _getBlurShader(_lodMax, width2, height2);
+        this._blurMaterial = _getBlurShader(_lodMax, width, height);
       }
       return cubeUVRenderTarget;
     }
@@ -9534,8 +9534,8 @@
     }
     _sceneToCubeUV(scene2, near, far, cubeUVRenderTarget) {
       const fov2 = 90;
-      const aspect3 = 1;
-      const cubeCamera = new PerspectiveCamera(fov2, aspect3, near, far);
+      const aspect2 = 1;
+      const cubeCamera = new PerspectiveCamera(fov2, aspect2, near, far);
       const upSign = [1, -1, 1, 1, 1, 1];
       const forwardSign = [1, 1, 1, -1, -1, -1];
       const renderer2 = this._renderer;
@@ -9768,26 +9768,26 @@
     }
     return { lodPlanes, sizeLods, sigmas };
   }
-  function _createRenderTarget(width2, height2, params) {
-    const cubeUVRenderTarget = new WebGLRenderTarget(width2, height2, params);
+  function _createRenderTarget(width, height, params) {
+    const cubeUVRenderTarget = new WebGLRenderTarget(width, height, params);
     cubeUVRenderTarget.texture.mapping = CubeUVReflectionMapping;
     cubeUVRenderTarget.texture.name = "PMREM.cubeUv";
     cubeUVRenderTarget.scissorTest = true;
     return cubeUVRenderTarget;
   }
-  function _setViewport(target, x, y, width2, height2) {
-    target.viewport.set(x, y, width2, height2);
-    target.scissor.set(x, y, width2, height2);
+  function _setViewport(target, x, y, width, height) {
+    target.viewport.set(x, y, width, height);
+    target.scissor.set(x, y, width, height);
   }
-  function _getBlurShader(lodMax, width2, height2) {
+  function _getBlurShader(lodMax, width, height) {
     const weights = new Float32Array(MAX_SAMPLES);
     const poleAxis = new Vector3(0, 1, 0);
     const shaderMaterial = new ShaderMaterial({
       name: "SphericalGaussianBlur",
       defines: {
         "n": MAX_SAMPLES,
-        "CUBEUV_TEXEL_WIDTH": 1 / width2,
-        "CUBEUV_TEXEL_HEIGHT": 1 / height2,
+        "CUBEUV_TEXEL_WIDTH": 1 / width,
+        "CUBEUV_TEXEL_HEIGHT": 1 / height,
         "CUBEUV_MAX_MIP": `${lodMax}.0`
       },
       uniforms: {
@@ -10350,14 +10350,14 @@
             vertexDataCount = 2;
           if (hasMorphColors === true)
             vertexDataCount = 3;
-          let width2 = geometry.attributes.position.count * vertexDataCount;
-          let height2 = 1;
-          if (width2 > capabilities.maxTextureSize) {
-            height2 = Math.ceil(width2 / capabilities.maxTextureSize);
-            width2 = capabilities.maxTextureSize;
+          let width = geometry.attributes.position.count * vertexDataCount;
+          let height = 1;
+          if (width > capabilities.maxTextureSize) {
+            height = Math.ceil(width / capabilities.maxTextureSize);
+            width = capabilities.maxTextureSize;
           }
-          const buffer = new Float32Array(width2 * height2 * 4 * morphTargetsCount);
-          const texture = new DataArrayTexture(buffer, width2, height2, morphTargetsCount);
+          const buffer = new Float32Array(width * height * 4 * morphTargetsCount);
+          const texture = new DataArrayTexture(buffer, width, height, morphTargetsCount);
           texture.type = FloatType;
           texture.needsUpdate = true;
           const vertexDataStride = vertexDataCount * 4;
@@ -10365,7 +10365,7 @@
             const morphTarget = morphTargets[i];
             const morphNormal = morphNormals[i];
             const morphColor = morphColors[i];
-            const offset = width2 * height2 * 4 * i;
+            const offset = width * height * 4 * i;
             for (let j = 0; j < morphTarget.count; j++) {
               const stride = j * vertexDataStride;
               if (hasMorphPosition === true) {
@@ -10394,7 +10394,7 @@
           entry = {
             count: morphTargetsCount,
             texture,
-            size: new Vector2(width2, height2)
+            size: new Vector2(width, height)
           };
           morphTextures.set(geometry, entry);
           geometry.addEventListener("dispose", disposeTexture);
@@ -13485,11 +13485,11 @@
       }
       currentCullFace = cullFace;
     }
-    function setLineWidth(width2) {
-      if (width2 !== currentLineWidth) {
+    function setLineWidth(width) {
+      if (width !== currentLineWidth) {
         if (lineWidthAvailable)
-          gl.lineWidth(width2);
-        currentLineWidth = width2;
+          gl.lineWidth(width);
+        currentLineWidth = width;
       }
     }
     function setPolygonOffset(polygonOffset, factor, units) {
@@ -13766,10 +13766,10 @@
       useOffscreenCanvas = typeof OffscreenCanvas !== "undefined" && new OffscreenCanvas(1, 1).getContext("2d") !== null;
     } catch (err) {
     }
-    function createCanvas(width2, height2) {
+    function createCanvas(width, height) {
       return useOffscreenCanvas ? (
         // eslint-disable-next-line compat/compat
-        new OffscreenCanvas(width2, height2)
+        new OffscreenCanvas(width, height)
       ) : createElementNS("canvas");
     }
     function resizeImage(image, needsPowerOfTwo, needsNewCanvas, maxSize) {
@@ -13780,16 +13780,16 @@
       if (scale < 1 || needsPowerOfTwo === true) {
         if (typeof HTMLImageElement !== "undefined" && image instanceof HTMLImageElement || typeof HTMLCanvasElement !== "undefined" && image instanceof HTMLCanvasElement || typeof ImageBitmap !== "undefined" && image instanceof ImageBitmap) {
           const floor = needsPowerOfTwo ? floorPowerOfTwo : Math.floor;
-          const width2 = floor(scale * image.width);
-          const height2 = floor(scale * image.height);
+          const width = floor(scale * image.width);
+          const height = floor(scale * image.height);
           if (_canvas2 === void 0)
-            _canvas2 = createCanvas(width2, height2);
-          const canvas = needsNewCanvas ? createCanvas(width2, height2) : _canvas2;
-          canvas.width = width2;
-          canvas.height = height2;
+            _canvas2 = createCanvas(width, height);
+          const canvas = needsNewCanvas ? createCanvas(width, height) : _canvas2;
+          canvas.width = width;
+          canvas.height = height;
           const context = canvas.getContext("2d");
-          context.drawImage(image, 0, 0, width2, height2);
-          console.warn("THREE.WebGLRenderer: Texture has been resized from (" + image.width + "x" + image.height + ") to (" + width2 + "x" + height2 + ").");
+          context.drawImage(image, 0, 0, width, height);
+          console.warn("THREE.WebGLRenderer: Texture has been resized from (" + image.width + "x" + image.height + ") to (" + width + "x" + height + ").");
           return canvas;
         } else {
           if ("data" in image) {
@@ -14279,11 +14279,11 @@
             if (useTexStorage) {
               state.texStorage2D(3553, levels, glInternalFormat, image.width, image.height);
             } else {
-              let width2 = image.width, height2 = image.height;
+              let width = image.width, height = image.height;
               for (let i = 0; i < levels; i++) {
-                state.texImage2D(3553, i, glInternalFormat, width2, height2, 0, glFormat, glType, null);
-                width2 >>= 1;
-                height2 >>= 1;
+                state.texImage2D(3553, i, glInternalFormat, width, height, 0, glFormat, glType, null);
+                width >>= 1;
+                height >>= 1;
               }
             }
           }
@@ -14684,8 +14684,8 @@
     function updateMultisampleRenderTarget(renderTarget) {
       if (isWebGL2 && renderTarget.samples > 0 && useMultisampledRTT(renderTarget) === false) {
         const textures = renderTarget.isWebGLMultipleRenderTargets ? renderTarget.texture : [renderTarget.texture];
-        const width2 = renderTarget.width;
-        const height2 = renderTarget.height;
+        const width = renderTarget.width;
+        const height = renderTarget.height;
         let mask = 16384;
         const invalidationArray = [];
         const depthStyle = renderTarget.stencilBuffer ? 33306 : 36096;
@@ -14724,7 +14724,7 @@
             const webglTexture = properties.get(textures[i]).__webglTexture;
             _gl.framebufferTexture2D(36009, 36064, 3553, webglTexture, 0);
           }
-          _gl.blitFramebuffer(0, 0, width2, height2, 0, 0, width2, height2, mask, 9728);
+          _gl.blitFramebuffer(0, 0, width, height, 0, 0, width, height, mask, 9728);
           if (supportsInvalidateFramebuffer) {
             _gl.invalidateFramebuffer(36008, invalidationArray);
           }
@@ -15199,7 +15199,7 @@
     }
   };
   var DepthTexture = class extends Texture {
-    constructor(width2, height2, type, mapping, wrapS, wrapT, magFilter, minFilter, anisotropy, format) {
+    constructor(width, height, type, mapping, wrapS, wrapT, magFilter, minFilter, anisotropy, format) {
       format = format !== void 0 ? format : DepthFormat;
       if (format !== DepthFormat && format !== DepthStencilFormat) {
         throw new Error("DepthTexture format must be either THREE.DepthFormat or THREE.DepthStencilFormat");
@@ -15210,7 +15210,7 @@
         type = UnsignedInt248Type;
       super(null, mapping, wrapS, wrapT, magFilter, minFilter, format, type, anisotropy);
       this.isDepthTexture = true;
-      this.image = { width: width2, height: height2 };
+      this.image = { width, height };
       this.magFilter = magFilter !== void 0 ? magFilter : NearestFilter;
       this.minFilter = minFilter !== void 0 ? minFilter : NearestFilter;
       this.flipY = false;
@@ -15685,7 +15685,7 @@
         uniforms.fogDensity.value = fog.density;
       }
     }
-    function refreshMaterialUniforms(uniforms, material, pixelRatio, height2, transmissionRenderTarget) {
+    function refreshMaterialUniforms(uniforms, material, pixelRatio, height, transmissionRenderTarget) {
       if (material.isMeshBasicMaterial) {
         refreshUniformsCommon(uniforms, material);
       } else if (material.isMeshLambertMaterial) {
@@ -15718,7 +15718,7 @@
           refreshUniformsDash(uniforms, material);
         }
       } else if (material.isPointsMaterial) {
-        refreshUniformsPoints(uniforms, material, pixelRatio, height2);
+        refreshUniformsPoints(uniforms, material, pixelRatio, height);
       } else if (material.isSpriteMaterial) {
         refreshUniformsSprites(uniforms, material);
       } else if (material.isShadowMaterial) {
@@ -15810,11 +15810,11 @@
       uniforms.totalSize.value = material.dashSize + material.gapSize;
       uniforms.scale.value = material.scale;
     }
-    function refreshUniformsPoints(uniforms, material, pixelRatio, height2) {
+    function refreshUniformsPoints(uniforms, material, pixelRatio, height) {
       uniforms.diffuse.value.copy(material.color);
       uniforms.opacity.value = material.opacity;
       uniforms.size.value = material.size * pixelRatio;
-      uniforms.scale.value = height2 * 0.5;
+      uniforms.scale.value = height * 0.5;
       if (material.map) {
         uniforms.map.value = material.map;
         refreshTransformUniform(material.map, uniforms.uvTransform);
@@ -16374,31 +16374,31 @@
       this.getSize = function(target) {
         return target.set(_width, _height);
       };
-      this.setSize = function(width2, height2, updateStyle = true) {
+      this.setSize = function(width, height, updateStyle = true) {
         if (xr.isPresenting) {
           console.warn("THREE.WebGLRenderer: Can't change size while VR device is presenting.");
           return;
         }
-        _width = width2;
-        _height = height2;
-        canvas.width = Math.floor(width2 * _pixelRatio);
-        canvas.height = Math.floor(height2 * _pixelRatio);
+        _width = width;
+        _height = height;
+        canvas.width = Math.floor(width * _pixelRatio);
+        canvas.height = Math.floor(height * _pixelRatio);
         if (updateStyle === true) {
-          canvas.style.width = width2 + "px";
-          canvas.style.height = height2 + "px";
+          canvas.style.width = width + "px";
+          canvas.style.height = height + "px";
         }
-        this.setViewport(0, 0, width2, height2);
+        this.setViewport(0, 0, width, height);
       };
       this.getDrawingBufferSize = function(target) {
         return target.set(_width * _pixelRatio, _height * _pixelRatio).floor();
       };
-      this.setDrawingBufferSize = function(width2, height2, pixelRatio) {
-        _width = width2;
-        _height = height2;
+      this.setDrawingBufferSize = function(width, height, pixelRatio) {
+        _width = width;
+        _height = height;
         _pixelRatio = pixelRatio;
-        canvas.width = Math.floor(width2 * pixelRatio);
-        canvas.height = Math.floor(height2 * pixelRatio);
-        this.setViewport(0, 0, width2, height2);
+        canvas.width = Math.floor(width * pixelRatio);
+        canvas.height = Math.floor(height * pixelRatio);
+        this.setViewport(0, 0, width, height);
       };
       this.getCurrentViewport = function(target) {
         return target.copy(_currentViewport);
@@ -16406,22 +16406,22 @@
       this.getViewport = function(target) {
         return target.copy(_viewport);
       };
-      this.setViewport = function(x, y, width2, height2) {
+      this.setViewport = function(x, y, width, height) {
         if (x.isVector4) {
           _viewport.set(x.x, x.y, x.z, x.w);
         } else {
-          _viewport.set(x, y, width2, height2);
+          _viewport.set(x, y, width, height);
         }
         state.viewport(_currentViewport.copy(_viewport).multiplyScalar(_pixelRatio).floor());
       };
       this.getScissor = function(target) {
         return target.copy(_scissor);
       };
-      this.setScissor = function(x, y, width2, height2) {
+      this.setScissor = function(x, y, width, height) {
         if (x.isVector4) {
           _scissor.set(x.x, x.y, x.z, x.w);
         } else {
-          _scissor.set(x, y, width2, height2);
+          _scissor.set(x, y, width, height);
         }
         state.scissor(_currentScissor.copy(_scissor).multiplyScalar(_pixelRatio).floor());
       };
@@ -17250,7 +17250,7 @@
         }
         _currentMaterialId = -1;
       };
-      this.readRenderTargetPixels = function(renderTarget, x, y, width2, height2, buffer, activeCubeFaceIndex) {
+      this.readRenderTargetPixels = function(renderTarget, x, y, width, height, buffer, activeCubeFaceIndex) {
         if (!(renderTarget && renderTarget.isWebGLRenderTarget)) {
           console.error("THREE.WebGLRenderer.readRenderTargetPixels: renderTarget is not THREE.WebGLRenderTarget.");
           return;
@@ -17276,8 +17276,8 @@
               console.error("THREE.WebGLRenderer.readRenderTargetPixels: renderTarget is not in UnsignedByteType or implementation defined type.");
               return;
             }
-            if (x >= 0 && x <= renderTarget.width - width2 && (y >= 0 && y <= renderTarget.height - height2)) {
-              _gl.readPixels(x, y, width2, height2, utils.convert(textureFormat), utils.convert(textureType), buffer);
+            if (x >= 0 && x <= renderTarget.width - width && (y >= 0 && y <= renderTarget.height - height)) {
+              _gl.readPixels(x, y, width, height, utils.convert(textureFormat), utils.convert(textureType), buffer);
             }
           } finally {
             const framebuffer2 = _currentRenderTarget !== null ? properties.get(_currentRenderTarget).__webglFramebuffer : null;
@@ -17287,15 +17287,15 @@
       };
       this.copyFramebufferToTexture = function(position, texture, level = 0) {
         const levelScale = Math.pow(2, -level);
-        const width2 = Math.floor(texture.image.width * levelScale);
-        const height2 = Math.floor(texture.image.height * levelScale);
+        const width = Math.floor(texture.image.width * levelScale);
+        const height = Math.floor(texture.image.height * levelScale);
         textures.setTexture2D(texture, 0);
-        _gl.copyTexSubImage2D(3553, level, 0, 0, position.x, position.y, width2, height2);
+        _gl.copyTexSubImage2D(3553, level, 0, 0, position.x, position.y, width, height);
         state.unbindTexture();
       };
       this.copyTextureToTexture = function(position, srcTexture, dstTexture, level = 0) {
-        const width2 = srcTexture.image.width;
-        const height2 = srcTexture.image.height;
+        const width = srcTexture.image.width;
+        const height = srcTexture.image.height;
         const glFormat = utils.convert(dstTexture.format);
         const glType = utils.convert(dstTexture.type);
         textures.setTexture2D(dstTexture, 0);
@@ -17303,7 +17303,7 @@
         _gl.pixelStorei(37441, dstTexture.premultiplyAlpha);
         _gl.pixelStorei(3317, dstTexture.unpackAlignment);
         if (srcTexture.isDataTexture) {
-          _gl.texSubImage2D(3553, level, position.x, position.y, width2, height2, glFormat, glType, srcTexture.image.data);
+          _gl.texSubImage2D(3553, level, position.x, position.y, width, height, glFormat, glType, srcTexture.image.data);
         } else {
           if (srcTexture.isCompressedTexture) {
             _gl.compressedTexSubImage2D(3553, level, position.x, position.y, srcTexture.mipmaps[0].width, srcTexture.mipmaps[0].height, glFormat, srcTexture.mipmaps[0].data);
@@ -17320,8 +17320,8 @@
           console.warn("THREE.WebGLRenderer.copyTextureToTexture3D: can only be used with WebGL2.");
           return;
         }
-        const width2 = sourceBox.max.x - sourceBox.min.x + 1;
-        const height2 = sourceBox.max.y - sourceBox.min.y + 1;
+        const width = sourceBox.max.x - sourceBox.min.x + 1;
+        const height = sourceBox.max.y - sourceBox.min.y + 1;
         const depth2 = sourceBox.max.z - sourceBox.min.z + 1;
         const glFormat = utils.convert(dstTexture.format);
         const glType = utils.convert(dstTexture.type);
@@ -17351,13 +17351,13 @@
         _gl.pixelStorei(3315, sourceBox.min.y);
         _gl.pixelStorei(32877, sourceBox.min.z);
         if (srcTexture.isDataTexture || srcTexture.isData3DTexture) {
-          _gl.texSubImage3D(glTarget, level, position.x, position.y, position.z, width2, height2, depth2, glFormat, glType, image.data);
+          _gl.texSubImage3D(glTarget, level, position.x, position.y, position.z, width, height, depth2, glFormat, glType, image.data);
         } else {
           if (srcTexture.isCompressedArrayTexture) {
             console.warn("THREE.WebGLRenderer.copyTextureToTexture3D: untested support for compressed srcTexture.");
-            _gl.compressedTexSubImage3D(glTarget, level, position.x, position.y, position.z, width2, height2, depth2, glFormat, image.data);
+            _gl.compressedTexSubImage3D(glTarget, level, position.x, position.y, position.z, width, height, depth2, glFormat, image.data);
           } else {
-            _gl.texSubImage3D(glTarget, level, position.x, position.y, position.z, width2, height2, depth2, glFormat, glType, image);
+            _gl.texSubImage3D(glTarget, level, position.x, position.y, position.z, width, height, depth2, glFormat, glType, image);
           }
         }
         _gl.pixelStorei(3314, unpackRowLen);
@@ -19207,7 +19207,7 @@
     }
   }
 
-  // ../node_modules/three/examples/jsm/controls/ArcballControls.js
+  // node_modules/three/examples/jsm/controls/ArcballControls.js
   var STATE = {
     IDLE: Symbol(),
     ROTATE: Symbol(),
@@ -20076,9 +20076,9 @@
         const multiplier = 3;
         let size, divisions, maxLength, tick;
         if (this.camera.isOrthographicCamera) {
-          const width2 = this.camera.right - this.camera.left;
-          const height2 = this.camera.bottom - this.camera.top;
-          maxLength = Math.max(width2, height2);
+          const width = this.camera.right - this.camera.left;
+          const height = this.camera.bottom - this.camera.top;
+          maxLength = Math.max(width, height);
           tick = maxLength / 20;
           size = maxLength / this.camera.zoom * multiplier;
           divisions = size / tick * this.camera.zoom;
@@ -21071,7 +21071,7 @@
     }
   }
 
-  // ../js/player.js
+  // js/player.js
   var PrismGeometry = class extends BufferGeometry {
     constructor() {
       super();
@@ -21269,41 +21269,44 @@
     });
     return parsedMoves;
   }
-  var renderer = new WebGLRenderer({
-    antialias: true,
-    canvas: document.getElementById("canvas")
-  });
-  var width = renderer.domElement.offsetWidth;
-  var height = renderer.domElement.offsetHeight;
-  renderer.setSize(width, height);
-  renderer.setClearColor(0, 0);
-  var scene = new Scene();
-  var ambLight = new AmbientLight(16777215, 0.8);
-  var dirLight = new DirectionalLight(16777215, 0.5);
-  dirLight.castShadow = true;
-  dirLight.position.set(1, 1, 1);
-  scene.add(ambLight);
-  scene.add(dirLight);
-  var aspect2 = width / height;
-  var frustumSize = 10;
-  var camera = new OrthographicCamera(frustumSize * aspect2 / -2, frustumSize * aspect2 / 2, frustumSize / 2, frustumSize / -2, 0, 1e3);
-  scene.add(camera);
-  var controls = new ArcballControls(camera, renderer.domElement, scene);
-  controls.enablePan = false;
-  controls.addEventListener("change", function() {
-    renderer.render(scene, camera);
-    if (figure) {
-      console.log(figure.rotation);
-    }
-  });
-  controls.setGizmosVisible(false);
+  var renderer = null;
+  var scene = null;
+  var figure = null;
+  var camera = null;
   var materials = [
     // new THREE.MeshBasicMaterial({ color: 0x93CEBD }),
     // new THREE.MeshBasicMaterial({ color: 0x9F93CE }),
     new MeshLambertMaterial({ color: 6711211 }),
     new MeshLambertMaterial({ color: 51347 })
   ];
-  var figure = null;
+  window.snakeCreate = () => {
+    renderer = new WebGLRenderer({
+      antialias: true,
+      canvas: document.getElementById("canvas")
+    });
+    const width = renderer.domElement.offsetWidth;
+    const height = renderer.domElement.offsetHeight;
+    renderer.setSize(width, height);
+    renderer.setClearColor(0, 0);
+    scene = new Scene();
+    const ambLight = new AmbientLight(16777215, 0.8);
+    const dirLight = new DirectionalLight(16777215, 0.5);
+    dirLight.castShadow = true;
+    dirLight.position.set(1, 1, 1);
+    scene.add(ambLight);
+    scene.add(dirLight);
+    const aspect2 = width / height;
+    const frustumSize = 10;
+    camera = new OrthographicCamera(frustumSize * aspect2 / -2, frustumSize * aspect2 / 2, frustumSize / 2, frustumSize / -2, 0, 1e3);
+    scene.add(camera);
+    const controls = new ArcballControls(camera, renderer.domElement, scene);
+    controls.enablePan = false;
+    controls.addEventListener("change", function() {
+      renderer.render(scene, camera);
+    });
+    controls.setGizmosVisible(false);
+    return scene;
+  };
   window.snakeUpdate = (humanNotation, euler = [0, 0, 0]) => {
     scene.remove(figure);
     figure = new Figure(materials);
@@ -21312,11 +21315,14 @@
     const bsphere = new Sphere();
     bbox.getBoundingSphere(bsphere);
     const viewRadius = bsphere.radius * 2 * 1.02;
-    const frustumSize2 = viewRadius;
-    camera.left = frustumSize2 * aspect2 / -2;
-    camera.right = frustumSize2 * aspect2 / 2;
-    camera.top = frustumSize2 / 2;
-    camera.bottom = frustumSize2 / -2;
+    const width = renderer.domElement.offsetWidth;
+    const height = renderer.domElement.offsetHeight;
+    const aspect2 = width / height;
+    const frustumSize = viewRadius;
+    camera.left = frustumSize * aspect2 / -2;
+    camera.right = frustumSize * aspect2 / 2;
+    camera.top = frustumSize / 2;
+    camera.bottom = frustumSize / -2;
     camera.position.set(0, 0, viewRadius);
     camera.updateProjectionMatrix();
     scene.add(figure);
@@ -21324,7 +21330,6 @@
     centerObject(figure);
     renderer.render(scene, camera);
   };
-  window.snakeUpdate("");
 })();
 /*! Bundled license information:
 

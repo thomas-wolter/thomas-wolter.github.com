@@ -7,5 +7,13 @@
   "dependencies": {
     "normalize.css": "^8.0.1",
     "three": "^0.151.2"
+  },
+  "scripts": {
+    "bundle": "esbuild js/player.js --bundle --outfile=_gen/render.js",
+    "images": "node _gen/sprites.js",
+    "generate": "npm run bundle && npm run images",
+    "build": "npx @11ty/eleventy",
+    "deploy": "npm run generate && npm run build",
+    "serve": "npx @11ty/eleventy --serve"
   }
 }

@@ -26,7 +26,7 @@ module.exports = function(eleventyConfig) {
                 let output = await esbuild.build({
                     target: 'es2015',
                     entryPoints: [path],
-                    minify: true,
+                    minify: false,
                     bundle: true,
                     write: false,
                 });

@@ -6,7 +6,7 @@ title: Manuals - Rubik's Snake - Fansite by Thomas Wolter
 <div class="card-grid">
     {%- for figure in manuals[0].figures %}
         <div class="card">
-            <div class="card-media">
+            <div class="card-media" onclick="window.openLightbox(); window.updateLightbox('{{figure.data}}', {{figure.rotation}});">
                 <img src="/images/figures/manuals/{{ figure.filename }}" alt="Figure Image">
             </div>
             <div class="card-content">
@@ -20,7 +20,7 @@ title: Manuals - Rubik's Snake - Fansite by Thomas Wolter
 <div class="card-grid">
     {%- for figure in manuals[1].figures %}
         <div class="card">
-            <div class="card-media">
+            <div class="card-media" onclick="window.openLightbox(); window.updateLightbox('{{figure.data}}', {{figure.rotation}});">
                 <img src="/images/figures/manuals/{{ figure.filename }}" alt="Figure Image">
             </div>
             <div class="card-content">
